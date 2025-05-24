@@ -1,0 +1,21 @@
+{
+  "Index": {
+    "title": "Stories of Guidance from Around the World",
+    "featuredStories": "Featured Stories",
+    "whoAreNewMuslims": "Who Are the New Muslims?",
+    "learnMore": "Learn More",
+    "whatsNext": "What's Next?",
+    "contactCenters": "Contact Islamic Centers"
+  },
+  "Story": {
+    "lifeBeforeIslam": "My Life Before Islam",
+    "momentOfGuidance": "The Moment of Guidance",
+    "reflections": "Reflections"
+  },
+  "Common": {
+    "filterByCountry": "Filter by Country",
+    "filterByPreviousReligion": "Filter by Previous Religion",
+    "searchStories": "Search Stories...",
+    "storyOfTheDay": "Story of the Day"
+  }
+}

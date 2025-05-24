@@ -1,0 +1,21 @@
+{
+  "Index": {
+    "title": "قصص هداية من جميع أنحاء العالم",
+    "featuredStories": "قصص مميزة",
+    "whoAreNewMuslims": "من هم المسلمون الجدد؟",
+    "learnMore": "تعلم المزيد",
+    "whatsNext": "ماذا بعد؟",
+    "contactCenters": "اتصل بالمراكز الإسلامية"
+  },
+  "Story": {
+    "lifeBeforeIslam": "حياتي قبل الإسلام",
+    "momentOfGuidance": "لحظة الهداية",
+    "reflections": "تأملات"
+  },
+  "Common": {
+    "filterByCountry": "تصفية حسب البلد",
+    "filterByPreviousReligion": "تصفية حسب الديانة السابقة",
+    "searchStories": "ابحث عن القصص...",
+    "storyOfTheDay": "قصة اليوم"
+  }
+}
