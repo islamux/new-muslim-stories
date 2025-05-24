@@ -1,4 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# New Muslim Stories
+
+## 🧠 General Idea
+
+This web application, built with Next.js and TypeScript, focuses on showcasing stories of new Muslims from around the world. The application aims to be a source of inspiration and an introduction to the experiences of these individuals and how they embraced Islam, along with brief information about their previous cultural and religious backgrounds. The goal is to convey powerful human and spiritual messages in a visually appealing and engaging manner.
+
+## 🧱 Technical Requirements
+
+*   **Framework:** Next.js (App Router) with TypeScript.
+*   **Styling:** Tailwind CSS for the user interface.
+*   **Responsiveness:** Fully responsive design for mobile, tablet, and desktop.
+*   **Multilingual Support:** Internationalization (i18n) with support for at least English and Arabic.
+*   **Content Storage:** Markdown or a CMS (e.g., Sanity.io or Contentful) for storing stories.
+
+## 🎨 UI/UX Design
+
+*   **Overall Aesthetic:** Attractive and modern interface with calm and spiritual touches.
+*   **Homepage:**
+    *   Elegant header with a welcoming phrase (e.g., "Stories of Guidance from Around the World").
+    *   Featured Stories section displaying selected stories using animated cards.
+    *   "Who are New Muslims?" section with introductory information.
+*   **Individual Story Page:**
+    *   Person's photo (if available), country, first name only (for privacy), and age.
+    *   Brief background about their life before Islam.
+    *   Details about the moment of conversion and reason for embracing Islam.
+    *   Impactful quotes from them after embracing Islam.
+*   **Visual Effects:**
+    *   Parallax scrolling.
+    *   Framer Motion for animating elements on scroll.
+    *   Calm color gradients (colors like light green, beige, gold, sky blue).
+
+## 🧩 Application Features
+
+*   **Story Filtering:** Ability to filter stories by country or previous religious background.
+*   **Search:** Search box to find stories based on keywords.
+*   **Social Sharing:** Share buttons for stories on social media.
+*   **"Story of the Day":** A featured story displayed automatically each day.
+*   **"What's Next?":** Section providing links to learn more about Islam or connect with Islamic centers.
+
+## 🧪 Development and Testing
+
+*   **Project Structure:** Project built with reusable components.
+*   **Testing:** Unit and UI tests using Jest and React Testing Library.
+*   **Data Fetching:** Separation of data fetching logic using `getStaticProps` or `getServerSideProps` as needed.
+
+## ✨ Suggested Additions
+
+*   **Dark Mode:** Support for a dark theme.
+*   **Admin Interface:** Simple administrative interface for adding new stories.
+*   **Media Integration:** Ability to add introductory videos or audio recordings with stories.
+*   **Simple Analytics:** Basic statistics (number of stories, represented countries, etc.).
 
 ## Getting Started
 
