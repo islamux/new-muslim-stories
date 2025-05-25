@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
+import Link from 'next-intl/link'; // Updated import for next-intl Link
 
 export default function Home() {
   const t = useTranslations('Index');
@@ -95,9 +95,8 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Footer */}
+
       <footer className="bg-gray-800 text-white py-6 text-center">
-        <p>&copy; {new Date().getFullYear()} New Muslim Stories. All rights reserved.</p>
       </footer>
     </div>
   );

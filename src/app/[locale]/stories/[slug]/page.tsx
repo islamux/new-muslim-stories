@@ -14,7 +14,7 @@ export default async function StoryPage({ params }: { params: { locale: string; 
 
   try {
     story = await getStoryData(slug);
-  } catch (_error) {
+  } catch {
     notFound();
   }
 

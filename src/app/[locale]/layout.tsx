@@ -1,5 +1,6 @@
 import { getMessages } from 'next-intl/server';
 import ClientProviders from '@/components/ClientProviders';
+import LanguageSwitcher from '@/components/LanguageSwitcher'; // Import the new component
 
 export default async function LocaleLayout({
   children,
@@ -13,6 +14,7 @@ export default async function LocaleLayout({
 
   return (
     <ClientProviders messages={messages} locale={locale}>
+      <LanguageSwitcher /> {/* Add the component here */}
       {children}
     </ClientProviders>
   );
