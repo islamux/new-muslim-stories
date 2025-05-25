@@ -1,7 +1,9 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import Link from 'next-intl/navigation'; // Updated import for next-intl Link
+import { createNavigation } from 'next-intl/navigation';
+
+const { Link } = createNavigation();
 
 export default function Home() {
   const t = useTranslations('Index');

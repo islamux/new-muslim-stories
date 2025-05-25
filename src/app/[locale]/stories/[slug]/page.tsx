@@ -2,14 +2,20 @@ import { getStoryData, getAllStorySlugs, StoryData } from '@/lib/stories';
 import { notFound } from 'next/navigation';
 import StoryContentDisplay from '@/components/StoryContentDisplay';
 
+interface StoryPageProps {
+  params: Promise<unknown>; // To satisfy the PageProps constraint
+  // Add other props if any, e.g., searchParams if used
+}
+
 // This function is required for dynamic routes in Next.js App Router
 export async function generateStaticParams() {
   const slugs = getAllStorySlugs();
   return slugs;
 }
 
-export default async function StoryPage({ params }: { params: { locale: string; slug: string } }) {
-  const { slug } = params;
+export default async function StoryPage({ params }: Readonly<StoryPageProps>) {
+  const actualParams = params as unknown as { locale: string; slug: string };
+  const { slug } = actualParams;
   let story: StoryData;
 
   try {
