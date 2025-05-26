@@ -39,11 +39,11 @@ export default async function StoryPage({ params }: Readonly<StoryPageProps>) {
   let story: StoryData; // This will hold the data for the story we fetch.
 
   try {
-    // Attempt to fetch the story data using the 'slug'.
+    // Diagnostic log to check slug and locale values immediately before calling getStoryData
+    console.log(`[StoryPage] Calling getStoryData with slug: "${slug}", locale: "${locale}"`);
+    // Attempt to fetch the story data using both 'slug' and 'locale'.
     // getStoryData is an async function, so we use 'await'.
-    // It's assumed that getStoryData might implicitly use 'locale' if stories are localized,
-    // or it could be modified to accept 'locale' as an argument if needed.
-    story = await getStoryData(slug);
+    story = await getStoryData(slug, locale); // Ensuring locale is passed
   } catch (error) {
     // If fetching the story data fails (e.g., story not found for the given slug, or any other error),
     // we log the error for server-side debugging and then call notFound().
