@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import StoryContentDisplay from '@/components/StoryContentDisplay';
 
 interface StoryPageProps {
-  params: Promise<unknown>; // To satisfy the PageProps constraint
+  params: { locale: string; slug: string }; // Updated params type
   // Add other props if any, e.g., searchParams if used
 }
 
@@ -14,11 +14,12 @@ export async function generateStaticParams() {
 }
 
 export default async function StoryPage({ params }: Readonly<StoryPageProps>) {
-  const actualParams = params as unknown as { locale: string; slug: string };
-  const { slug } = actualParams;
+  const { slug, locale } = params; // Directly destructure from correctly typed params
+  // locale can be used if needed later, e.g. for fetching localized story data
   let story: StoryData;
 
   try {
+    // Assuming getStoryData might implicitly use locale or it's passed if needed
     story = await getStoryData(slug);
   } catch {
     notFound();
