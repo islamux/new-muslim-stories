@@ -1,4 +1,5 @@
-import { getMessages } from 'next-intl/server';
+// Import the project-specific configured instance of getRequestConfig from src/i18n.ts
+import getIntlConfig from '@/i18n'; // Using path alias as '@/' points to 'src/'
 import ClientProviders from '@/components/ClientProviders';
 import LanguageSwitcher from '@/components/LanguageSwitcher'; // Import the new component
 
@@ -25,12 +26,13 @@ export default async function LocaleLayout({
   const { locale: routeLocale } = resolvedParams;
 
   // Fetch the full internationalization configuration using the resolved 'routeLocale'.
-  // getMessages is an alias for getRequestConfig from i18n.ts in this project.
+  // Use the project-specific getIntlConfig from src/i18n.ts (aliased as getMessages in original setup).
+  // This ensures that our message loading logic (e.g., from JSON files) and timezone are applied.
   // This object is expected to contain:
   // - messages: The localized messages for the given locale.
   // - locale: The actual locale string (e.g., 'en', 'ar'), confirming what was processed.
   // - timeZone: The configured time zone string (e.g., 'America/New_York', 'Asia/Dubai').
-  const intlConfig = await getMessages({ locale: routeLocale });
+  const intlConfig = await getIntlConfig({ locale: routeLocale });
 
   // Pass the specific properties from intlConfig to ClientProviders.
   // - intlConfig.messages: Provides the translations.
