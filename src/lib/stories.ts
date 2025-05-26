@@ -92,6 +92,9 @@ export function getAllStorySlugs() {
 
 // Fetches data for a single story based on its slug and locale (language from frontmatter).
 export async function getStoryData(slug: string, locale: string): Promise<StoryData> {
+  // ADD THIS LINE FOR DIAGNOSTICS:
+  console.log(`[getStoryData] Attempting to fetch story with slug: "${slug}", locale: "${locale}"`);
+
   const fileNames = fs.readdirSync(storiesDirectory);
 
   for (const fileName of fileNames) {

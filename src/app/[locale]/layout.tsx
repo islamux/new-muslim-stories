@@ -21,13 +21,27 @@ export default async function LocaleLayout({
   const resolvedParams = await params;
 
   // Destructure 'locale' from the 'resolvedParams' object.
-  const { locale } = resolvedParams;
+  // Renaming to routeLocale to avoid confusion with locale from intlConfig.
+  const { locale: routeLocale } = resolvedParams;
 
-  // Fetch localized messages using the resolved 'locale'.
-  const messages = await getMessages({ locale });
+  // Fetch the full internationalization configuration using the resolved 'routeLocale'.
+  // getMessages is an alias for getRequestConfig from i18n.ts in this project.
+  // This object is expected to contain:
+  // - messages: The localized messages for the given locale.
+  // - locale: The actual locale string (e.g., 'en', 'ar'), confirming what was processed.
+  // - timeZone: The configured time zone string (e.g., 'America/New_York', 'Asia/Dubai').
+  const intlConfig = await getMessages({ locale: routeLocale });
 
+  // Pass the specific properties from intlConfig to ClientProviders.
+  // - intlConfig.messages: Provides the translations.
+  // - intlConfig.locale: Ensures the client-side provider uses the same locale that server-side rendering determined.
+  // - intlConfig.timeZone: Provides the time zone for date/time formatting on the client.
   return (
-    <ClientProviders messages={messages} locale={locale}>
+    <ClientProviders
+      messages={intlConfig.messages}
+      locale={intlConfig.locale}
+      timeZone={intlConfig.timeZone}
+    >
       <LanguageSwitcher /> {/* LanguageSwitcher component for changing locales */}
       {children}
     </ClientProviders>
