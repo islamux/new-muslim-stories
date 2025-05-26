@@ -82,11 +82,11 @@ export default function Home() {
             {t('featuredStories')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Placeholder for Story Cards - Redesigned */}
+            {/* Story Card 1 - Updated Content */}
             <div className="bg-beige-100 dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-in-out">
-              <h3 className="font-heading text-xl text-gray-800 dark:text-beige-50 mb-3">Story Card 1</h3>
-              <p className="font-sans text-gray-700 dark:text-gray-300 mb-4">Short description...</p>
-              <Link href="/stories/sample-story" className="font-semibold text-coral-600 hover:text-coral-700 dark:text-coral-400 dark:hover:text-coral-500 hover:underline">
+              <h3 className="font-heading text-xl text-gray-800 dark:text-beige-50 mb-3">My Journey to Islam: A Story of Peace</h3>
+              <p className="font-sans text-gray-700 dark:text-gray-300 mb-4">Before embracing Islam, my life was a constant search for meaning and inner peace. I grew up in a loving Christian family, and while I appreciated the values instilled in me, I always felt a void.</p>
+              <Link href="/stories/aisha-story-of-peace" className="font-semibold text-coral-600 hover:text-coral-700 dark:text-coral-400 dark:hover:text-coral-500 hover:underline">
                 {commonT('learnMore')}
               </Link>
             </div>
