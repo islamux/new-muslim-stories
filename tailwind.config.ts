@@ -63,6 +63,37 @@ export default {
           900: '#0C4A6E',
           950: '#082F49',
         },
+        coral: { // New accent color
+          50: '#FFF0ED',
+          100: '#FFE0D9',
+          200: '#FFC9BF',
+          300: '#FFAF9F',
+          400: '#FF8F7F',
+          500: '#FF7060', // Main coral
+          600: '#E65A4B',
+          700: '#CC4436',
+          800: '#B32E22',
+          900: '#99180D',
+          950: '#800200',
+        },
+        gray: { // New neutral gray palette
+          50: '#F9FAFB',
+          100: '#F3F4F6',
+          200: '#E5E7EB',
+          300: '#D1D5DB',
+          400: '#9CA3AF',
+          500: '#6B7280',
+          600: '#4B5563',
+          700: '#374151',
+          800: '#1F2937',
+          850: '#18212F', // Added gray-850
+          900: '#111827',
+          950: '#030712',
+        }
+      },
+      fontFamily: { // Added font families
+        sans: ['Inter', 'sans-serif'],
+        heading: ['Montserrat', 'sans-serif'],
       },
     },
   },
