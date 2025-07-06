@@ -39,13 +39,17 @@ export default async function LocaleLayout({
   // - intlConfig.locale: Ensures the client-side provider uses the same locale that server-side rendering determined.
   // - intlConfig.timeZone: Provides the time zone for date/time formatting on the client.
   return (
-    <ClientProviders
-      messages={intlConfig.messages}
-      locale={intlConfig.locale}
-      timeZone={intlConfig.timeZone}
-    >
-      <LanguageSwitcher /> {/* LanguageSwitcher component for changing locales */}
-      {children}
-    </ClientProviders>
+    <html lang={routeLocale} dir={routeLocale === 'ar' ? 'rtl' : 'ltr'}>
+      <body>
+        <ClientProviders
+          messages={intlConfig.messages}
+          locale={intlConfig.locale}
+          timeZone={intlConfig.timeZone}
+        >
+          <LanguageSwitcher /> {/* LanguageSwitcher component for changing locales */}
+          {children}
+        </ClientProviders>
+      </body>
+    </html>
   );
 }

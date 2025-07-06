@@ -34,21 +34,12 @@ export default async function StoryPage({ params }: Readonly<StoryPageProps>) {
   // This assumes 'params' resolves to an object matching the StoryPageProps['params'] type.
   const { slug, locale } = resolvedParams;
 
-  // 'locale' can be used if needed later, e.g., for fetching localized story data.
-  // For now, it's extracted to ensure 'resolvedParams' has the expected shape.
-  let story: StoryData; // This will hold the data for the story we fetch.
+  let story: StoryData;
 
   try {
-    // Diagnostic log to check slug and locale values immediately before calling getStoryData
-    console.log(`[StoryPage] Calling getStoryData with slug: "${slug}", locale: "${locale}"`);
-    // Attempt to fetch the story data using both 'slug' and 'locale'.
-    // getStoryData is an async function, so we use 'await'.
-    story = await getStoryData(slug, locale); // Ensuring locale is passed
+    story = await getStoryData(slug, locale);
   } catch (error) {
-    // If fetching the story data fails (e.g., story not found for the given slug, or any other error),
-    // we log the error for server-side debugging and then call notFound().
-    // notFound() is a Next.js function that will render the nearest 404 page (not-found.tsx).
-    console.error(`Error fetching story data for slug "${slug}" (locale: ${locale}):`, error);
+    console.error(`Error fetching story data for slug "${slug}":`, error);
     notFound();
   }
 
@@ -65,7 +56,7 @@ export default async function StoryPage({ params }: Readonly<StoryPageProps>) {
       </header>
 
       <main className="container mx-auto px-4 py-8">
-        <StoryContentDisplay story={story} />
+        <StoryContentDisplay story={story} locale={locale} />
       </main>
 
       {/* Footer - Re-use or create a dedicated footer component */}

@@ -17,7 +17,8 @@
     "react-dom": "^19.0.0",
     "react-scroll-parallax": "^3.4.5",
     "remark": "^15.0.1",
-    "remark-html": "^16.0.1"
+    "remark-html": "^16.0.1",
+    "server-only": "^0.0.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
