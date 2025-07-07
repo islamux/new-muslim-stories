@@ -2,12 +2,7 @@ import { getStoryData, getAllStorySlugs, StoryData } from '@/lib/stories';
 import { notFound } from 'next/navigation';
 import StoryContentDisplay from '@/components/StoryContentDisplay';
 
-// Defines the expected shape of the 'params' object once it's resolved.
-// For a route like /[locale]/stories/[slug], Next.js should provide 'locale' and 'slug'.
-interface StoryPageProps {
-  params: { locale: string; slug: string };
-  // Add other props if any, e.g., searchParams if used
-}
+
 
 // This function is required for dynamic routes in Next.js App Router (Server Components).
 // It tells Next.js which dynamic segments (slugs and locales) to pre-render at build time.
@@ -22,18 +17,12 @@ export async function generateStaticParams() {
 
 // This is the main React component for displaying a single story page.
 // It's an async Server Component, allowing us to fetch data directly within it.
-export default async function StoryPage({ params }: Readonly<StoryPageProps>) {
-  // According to Next.js documentation for async Server Components, 'params' should be a resolved object.
-  // However, runtime errors suggest 'params' (or its properties) are not resolved when accessed.
-  // As a workaround, we explicitly await 'params' here.
-  // This is not a typical pattern for page props if types are correctly inferred by Next.js,
-  // but it's an attempt to resolve the persistent "params should be awaited" error.
-  const resolvedParams = await params;
-
-  // Now, destructure 'slug' and 'locale' from the 'resolvedParams' object.
-  // This assumes 'params' resolves to an object matching the StoryPageProps['params'] type.
-  const { slug, locale } = resolvedParams;
-
+export default async function StoryPage({
+  params,
+}: {
+  params: { slug: string; locale: string };
+}) {
+  const { slug, locale } = params;
   let story: StoryData;
 
   try {
@@ -56,7 +45,7 @@ export default async function StoryPage({ params }: Readonly<StoryPageProps>) {
       </header>
 
       <main className="container mx-auto px-4 py-8">
-        <StoryContentDisplay story={story} locale={locale} />
+        <StoryContentDisplay story={story} />
       </main>
 
       {/* Footer - Re-use or create a dedicated footer component */}
