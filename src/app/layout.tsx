@@ -14,6 +14,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // Note: <html> is defined in the locale layout to set proper lang/dir
-  return <body className={inter.className}>{children}</body>;
+  return (
+    <html lang="en">
+      <body className={inter.className}>{children}</body>
+    </html>
+  );
 }
