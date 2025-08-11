@@ -11,8 +11,9 @@ export async function generateStaticParams() {
   // getAllStorySlugs is expected to return an array of objects,
   // where each object contains the 'slug' and potentially 'locale' for a story.
   // Example: [{ slug: 'aisha-story-of-peace', locale: 'en' }, { slug: 'another-story', locale: 'en' }]
-  const slugs = getAllStorySlugs();
-  return slugs;
+  const entries = getAllStorySlugs();
+  // Next.js App Router expects an array of plain params objects
+  return entries.map((entry) => entry.params);
 }
 
 // This is the main React component for displaying a single story page.

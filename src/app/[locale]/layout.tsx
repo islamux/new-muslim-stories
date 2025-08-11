@@ -15,13 +15,17 @@ export default async function LocaleLayout({
   const timeZone = await getTimeZone();
 
   return (
-    <ClientProviders
-      messages={messages}
-      locale={locale}
-      timeZone={timeZone}
-    >
-      <LanguageSwitcher />
-      {children}
-    </ClientProviders>
+    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+      <body>
+        <ClientProviders
+          messages={messages}
+          locale={locale}
+          timeZone={timeZone}
+        >
+          <LanguageSwitcher />
+          {children}
+        </ClientProviders>
+      </body>
+    </html>
   );
 }
