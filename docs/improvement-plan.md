@@ -59,3 +59,24 @@
 ## Next actions
 - Implement P0 + P1 correctness items and add autoprefixer.
 - Clean lockfiles and workspace file.
+
+## Progress log
+
+- 2025-08-11
+  - Merged `feat/add-new-stories` into `main`.
+  - Created branch `chore/improvement-plan-phase-0` for ongoing work.
+  - Added this plan at `docs/improvement-plan.md`.
+  - Standardized on pnpm: removed `package-lock.json`, kept/updated `pnpm-lock.yaml`.
+  - Build tooling: installed `autoprefixer` and updated `postcss.config.mjs` to include it.
+  - Next.js correctness: fixed `generateStaticParams` in `src/app/[locale]/stories/[slug]/page.tsx` to return plain params.
+  - i18n/HTML semantics: moved `<html>` wrapper to `src/app/[locale]/layout.tsx` with `lang` and `dir` (`rtl` for `ar`), simplified `src/app/layout.tsx` body wrapper.
+  - Verified with `pnpm build`: production build succeeded and prerendered localized story routes.
+
+### Up next (resume here)
+- Content/UX
+  - Home: filter featured stories; add an "All Stories" section.
+  - Safer excerpts: strip HTML before truncation in `HomePageClient`.
+- SEO
+  - Implement `generateMetadata` for `[slug]` using frontmatter; add Open Graph/Twitter tags.
+- Repo hygiene
+  - Review `pnpm-workspace.yaml`: remove if not using workspaces.
