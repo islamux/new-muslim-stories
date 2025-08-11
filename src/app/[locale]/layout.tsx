@@ -1,22 +1,26 @@
-import { getMessages } from 'next-intl/server';
+import { ReactNode } from 'react';
+import { getLocale, getMessages, getTimeZone } from 'next-intl/server';
 import ClientProviders from '@/components/ClientProviders';
-import LanguageSwitcher from '@/components/LanguageSwitcher'; // Import the new component
-
-interface LocaleLayoutProps {
-  children: React.ReactNode;
-  params: Promise<unknown>; // Use unknown instead of any to satisfy ESLint
-}
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export default async function LocaleLayout({
   children,
   params,
-}: Readonly<LocaleLayoutProps>) {
-  const { locale } = params as unknown as { locale: string }; // Cast params to expected runtime type
-  const messages = await getMessages({ locale });
+}: {
+  children: ReactNode;
+  params: { locale: string };
+}) {
+  const locale = await getLocale();
+  const messages = await getMessages();
+  const timeZone = await getTimeZone();
 
   return (
-    <ClientProviders messages={messages} locale={locale}>
-      <LanguageSwitcher /> {/* Add the component here */}
+    <ClientProviders
+      messages={messages}
+      locale={locale}
+      timeZone={timeZone}
+    >
+      <LanguageSwitcher />
       {children}
     </ClientProviders>
   );

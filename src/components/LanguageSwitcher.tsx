@@ -16,7 +16,7 @@ export default function LanguageSwitcher() {
 
   return (
     <div style={{ padding: '10px', border: '1px solid #ccc', margin: '10px 0' }}>
-      <strong>Language Switcher:</strong>
+      <strong></strong>
       <button 
         onClick={() => switchLocale('en')} 
         style={{ fontWeight: locale === 'en' ? 'bold' : 'normal', margin: '0 5px' }}

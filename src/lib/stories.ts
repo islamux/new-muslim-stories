@@ -19,13 +19,16 @@ export interface StoryData {
   contentHtml: string; // Changed from 'content' to 'contentHtml'
 }
 
-export async function getSortedStoriesData(): Promise<StoryData[]> {
+export async function getSortedStoriesData(locale: string): Promise<StoryData[]> {
   // Get file names under /stories
   const fileNames = fs.readdirSync(storiesDirectory);
   const allStoriesData = await Promise.all(
     fileNames.map(async (fileName) => {
       // Remove ".md" from file name to get slug
-      const slug = fileName.replace(/\.md$/, '');
+      const isArabic = fileName.endsWith('-ar.md');
+      const slug = isArabic
+        ? fileName.replace(/-ar\.md$/, '')
+        : fileName.replace(/\.md$/, '');
 
       // Read markdown file as string
       const fullPath = path.join(storiesDirectory, fileName);
@@ -55,8 +58,11 @@ export async function getSortedStoriesData(): Promise<StoryData[]> {
       };
     })
   );
+  // Filter stories by locale
+  const filteredStories = allStoriesData.filter(story => story.language === locale);
+
   // Sort stories by title alphabetically
-  return allStoriesData.sort((a, b) => {
+  return filteredStories.sort((a, b) => {
     if (a.title < b.title) {
       return -1;
     } else {
@@ -65,19 +71,37 @@ export async function getSortedStoriesData(): Promise<StoryData[]> {
   });
 }
 
+// Generates all possible story paths (slugs and locales) based on frontmatter.
+// This is used by Next.js's generateStaticParams to pre-render dynamic routes.
 export function getAllStorySlugs() {
   const fileNames = fs.readdirSync(storiesDirectory);
+
   return fileNames.map((fileName) => {
+    const isArabic = fileName.endsWith('-ar.md');
+    const slug = isArabic
+      ? fileName.replace(/-ar\.md$/, '')
+      : fileName.replace(/\.md$/, '');
+    const locale = isArabic ? 'ar' : 'en';
+
     return {
       params: {
-        slug: fileName.replace(/\.md$/, ''),
+        slug,
+        locale,
       },
     };
   });
 }
 
-export async function getStoryData(slug: string): Promise<StoryData> {
-  const fullPath = path.join(storiesDirectory, `${slug}.md`);
+export async function getStoryData(slug: string, locale: string): Promise<StoryData> {
+  const fileName = locale === 'ar' ? `${slug}-ar.md` : `${slug}.md`;
+  const fullPath = path.join(storiesDirectory, fileName);
+
+  // Handle cases where the file might not exist
+  if (!fs.existsSync(fullPath)) {
+    // A more specific error message can be helpful for debugging
+    throw new Error(`Story with slug '${slug}' not found at ${fullPath}`);
+  }
+
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
   // Use gray-matter to parse the story metadata section
@@ -90,7 +114,7 @@ export async function getStoryData(slug: string): Promise<StoryData> {
   // Combine the data with the slug and contentHtml
   return {
     slug,
-    contentHtml, // Use contentHtml
+    contentHtml,
     ...(matterResult.data as {
       title: string;
       firstName: string;
