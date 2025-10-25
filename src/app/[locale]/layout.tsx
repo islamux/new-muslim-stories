@@ -3,14 +3,12 @@ import { getLocale, getMessages, getTimeZone } from 'next-intl/server';
 import ClientProviders from '@/components/ClientProviders';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 
-export default async function LocaleLayout({
-  children,
-  params,
-}: {
+type Props = {
   children: ReactNode;
   params: { locale: string };
-}) {
-  const locale = await getLocale();
+};
+
+export default async function LocaleLayout({ children, params: { locale } }: Props) {
   const messages = await getMessages();
   const timeZone = await getTimeZone();
 
