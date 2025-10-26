@@ -12,6 +12,7 @@ export default getRequestConfig(async ({ locale }) => {
 
   const messages = (await import(`../messages/${currentLocale}.json`)).default;
   console.log(`i18n.ts - Loaded messages for ${currentLocale}:`, messages);
+  console.log(`i18n.ts - Hero messages for ${currentLocale}:`, messages.Hero);
 
   return {
     locale: currentLocale,

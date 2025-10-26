@@ -125,10 +125,7 @@ This document outlines the steps to build the "New Muslim Stories" website from 
     *   Installed and configured all the necessary ESLint plugins to work with Next.js, TypeScript, and React.
     *   Resolved all the linting errors in the codebase.
 
-3.  **Fix locale switcher:**
-    *   Fixed a bug in the `LanguageSwitcher.tsx` component that was causing a 404 error when switching locales.
-    *   The component now uses the `useRouter` and `usePathname` hooks from `next/navigation` to correctly construct the new path.
-
+## Phase 5: Testing and Quality Assurance
 
 1.  **Write tests:**
     *   Set up Jest for testing using `jest.config.js` and `jest.setup.js`.
@@ -137,6 +134,42 @@ This document outlines the steps to build the "New Muslim Stories" website from 
 2.  **Lint your code:**
     *   Use the `pnpm lint` command to check for any ESLint errors.
 
-3.  **Build and deploy:**
+## Phase 6: Refactoring and Bug Fixing
+
+1.  **Refactor `next-intl` navigation:**
+    *   Created a centralized `src/navigation.ts` file to handle `next-intl` navigation hooks, following the recommended best practices.
+    *   Updated all components to import navigation hooks (`usePathname`, `useRouter`, `Link`) from the new `src/navigation.ts` file.
+
+2.  **Fix ESLint configuration:**
+    *   Upgraded the ESLint configuration to the new flat config format (`eslint.config.mjs`).
+    *   Installed and configured all the necessary ESLint plugins to work with Next.js, TypeScript, and React.
+    *   Resolved all the linting errors in the codebase.
+
+3.  **Fix locale switcher:**
+    *   Fixed a bug in the `LanguageSwitcher.tsx` component that was causing a 404 error when switching locales.
+    *   The component now uses the `useRouter` and `usePathname` hooks from `next/navigation` to correctly construct the new path.
+
+## Phase 7: Dark Mode Implementation
+
+1.  **Install `next-themes`:**
+    *   Installed the `next-themes` library to handle theme switching.
+
+2.  **Configure Tailwind CSS for Class-Based Dark Mode:**
+    *   Added `darkMode: 'class'` to the `tailwind.config.ts` file.
+
+3.  **Create a Theme Provider Component:**
+    *   Created a new `src/components/ThemeProvider.tsx` component to wrap the `ThemeProvider` from `next-themes`.
+
+4.  **Update the Root Layout:**
+    *   Wrapped the application with the `ThemeProvider` in `src/app/layout.tsx`.
+    *   Added `suppressHydrationWarning` to the `<html>` tag.
+
+5.  **Update Global Styles:**
+    *   Consolidated the dark mode styles in `src/app/globals.css` to use Tailwind's `dark:` variants for the body background.
+
+## Phase 8: Deployment
+
+1.  **Build and deploy:**
     *   Use `pnpm build` to create a production build of your application.
     *   Deploy the application to a hosting provider like Vercel.
+

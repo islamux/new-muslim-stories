@@ -1,0 +1,12 @@
+- is it scalable and maintainable?
+- is it secure?
+- indexing for data. 
+- -- if the data of app always fetch "reading" so indexing is GOOD.
+- indexing is not good for "writing" data frequently "client will add data ".
+- make sure the app use the best practices for nextjs.
+- remove unwanted files and code, fonts, images, components etc.
+- optimize performance and loading speed.
+- implement proper error handling and logging.
+- make the part of codes is consistent. متناسق 
+- respect single source of truth
+- 
