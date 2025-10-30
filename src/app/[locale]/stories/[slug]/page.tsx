@@ -36,23 +36,23 @@ export default async function StoryPage({
   // If story data is successfully fetched, we render the page content.
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
-      {/* Header - Re-use or create a dedicated header component */}
-      <header className="bg-white shadow-sm py-6">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-3xl font-bold text-green-700">
-            {story.title}
-          </h1>
-        </div>
-      </header>
+    {/* Header - Re-use or create a dedicated header component */}
+    <header className="bg-white shadow-sm py-6">
+    <div className="container mx-auto px-4 text-center">
+    <h1 className="text-3xl font-bold text-green-700">
+    {story.title}
+    </h1>
+    </div>
+    </header>
 
-      <main className="container mx-auto px-4 py-8">
-        <StoryContentDisplay story={story} />
-      </main>
+    <main className="container mx-auto px-4 py-8">
+    <StoryContentDisplay story={story} />
+    </main>
 
-      {/* Footer - Re-use or create a dedicated footer component */}
-      <footer className="bg-gray-800 text-white py-6 text-center">
-        <p>&copy; {new Date().getFullYear()} New Muslim Stories. All rights reserved.</p>
-      </footer>
+    {/* Footer - Re-use or create a dedicated footer component */}
+    <footer className="bg-gray-800 text-white py-6 text-center">
+    <p>&copy; {new Date().getFullYear()} New Muslim Stories. All rights for all.</p>
+    </footer>
     </div>
   );
 }

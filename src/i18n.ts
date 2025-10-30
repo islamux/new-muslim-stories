@@ -11,7 +11,6 @@ export default getRequestConfig(async ({ locale }) => {
   if (!locales.includes(currentLocale)) notFound();
 
   const messages = (await import(`../messages/${currentLocale}.json`)).default;
-  console.log(`i18n.ts - Loaded messages for ${currentLocale}:`, messages);
 
   return {
     locale: currentLocale,
