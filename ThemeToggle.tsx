@@ -1,13 +1,13 @@
 'use client';
 
 import { useTheme } from 'next-themes';
-import { useTranslation } from "react-i18next";
-import Button from './Button';
+import { useTranslations } from 'next-intl';
+import Button from '@/components/Button';
 import { useHasMounted } from '@/hooks/useHasMounted';
 
 export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();
-  const { t } = useTranslation('common');
+  const t = useTranslations('Common');
   const mounted = useHasMounted();
 
   const toggleTheme = () => {
