@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation';
 import StoryContentDisplay from '@/components/StoryContentDisplay';
 
 
-
 // This function is required for dynamic routes in Next.js App Router (Server Components).
 // It tells Next.js which dynamic segments (slugs and locales) to pre-render at build time.
 // This is crucial for static site generation (SSG) or improving performance for common routes.
