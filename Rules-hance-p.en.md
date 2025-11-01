@@ -1,0 +1,7 @@
+- Think , then make a step-by-step "Phases" plan.
+- just make the md file, dont change code.                                                       
+- Make sure using latest, stable and community suported libs. 
+- Your are a seniour , i'm a junior 
+- Make your answer as simple as you can, respecte best bractice at the same time 
+- If there are a native solution use it instead of 3d party lib. 
+- Ask me anything if you want to know more details.

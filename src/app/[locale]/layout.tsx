@@ -2,10 +2,11 @@ import { ReactNode } from 'react';
 import { getLocale, getMessages, getTimeZone } from 'next-intl/server';
 import ClientProviders from '@/components/ClientProviders';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import type { Locale } from '@/types';
 
 type Props = {
   children: ReactNode;
-  params: { locale: string };
+  params: { locale: Locale };
 };
 
 export default async function LocaleLayout({ children, params: { locale } }: Props) {

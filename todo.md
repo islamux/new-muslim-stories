@@ -1,2 +1,3 @@
 - remove unneccary packages
 - search by ...
+- add photos of new mulims

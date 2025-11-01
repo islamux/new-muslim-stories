@@ -3,11 +3,7 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
-import { StoryData } from '@/lib/stories';
-
-interface StoryContentDisplayProps {
-  story: StoryData;
-}
+import type { StoryContentDisplayProps } from '@/types';
 
 export default function StoryContentDisplay({ story }: StoryContentDisplayProps) {
   const t = useTranslations('Story');
