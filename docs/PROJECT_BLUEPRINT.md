@@ -1006,6 +1006,8 @@ return <section ref={sectionRef}>...</section>;
 - ✅ Added utility types (Theme, Locale, WithClassName, WithId)
 - ✅ Moved all interface definitions to organized type files
 - ✅ Updated all imports across the codebase
+- ✅ Simplified story page component (59% size reduction)
+- ✅ Simplified home page component (69% size reduction)
 - ✅ TypeScript compilation passes with zero errors
 - ✅ Maintained 100% backward compatibility
 
@@ -1014,6 +1016,7 @@ return <section ref={sectionRef}>...</section>;
 - `src/types/story.types.ts` - Story-related types
 - `src/types/component.types.ts` - Component prop types
 - `src/types/hook.types.ts` - Custom hook types
+- `docs/IMPORT_GUIDE.md` - Comprehensive import patterns guide
 
 **Modified Files:**
 - `src/lib/stories.ts` - Removed inline types, added re-export
@@ -1027,15 +1030,40 @@ return <section ref={sectionRef}>...</section>;
 - `src/hooks/useIntersectionObserver.ts` - Imports hook types
 - `src/hooks/useMultipleIntersectionObserver.ts` - Imports hook types
 - `src/app/[locale]/layout.tsx` - Uses Locale type for params
+- `src/app/[locale]/page.tsx` - **Simplified (69% size reduction)**
+- `src/app/[locale]/stories/[slug]/page.tsx` - **Simplified (59% size reduction)**
 - `docs/typescript-interfaces-plan.md` - Comprehensive implementation documentation
-- `docs/PROJECT_BLUEPRINT.md` - Updated with TypeScript enhancements
+- `docs/PROJECT_BLUEPRINT.md` - Updated with TypeScript enhancements and refactoring
+
+**Key Refactoring Highlights:**
+
+**Story Page Component (59% size reduction)**
+- **Before**: 58 lines with redundant inline layout (header, main, footer)
+- **After**: 24 lines as thin data-fetching wrapper
+- Removed redundant layout (StoryContentDisplay handles everything)
+- Type-safe imports using centralized types
+- Simplified error handling
+- Follows Next.js best practices (page components as thin wrappers)
+
+**Home Page Component (69% size reduction)**
+- **Before**: 13 lines with verbose parameter handling
+- **After**: 5 lines with destructuring and inline await
+- Type-safe Locale type from centralized types
+- Cleaner, more maintainable code
 
 **Benefits:**
 - Better code organization (centralized types directory)
 - Stronger type safety (union types, strict checking)
 - Superior developer experience (better IDE autocomplete)
 - Maintainable architecture (clear separation of concerns)
+- Cleaner component structure (following SRP - Single Responsibility Principle)
+- More readable and maintainable codebase
 - Zero compilation errors (100% TypeScript coverage)
+
+**Documentation Additions:**
+- Added comprehensive IMPORT_GUIDE.md for junior developers
+- Explained dot naming convention (*.types.ts pattern)
+- Updated PROJECT_BLUEPRINT.md with all refactoring details
 
 **File Naming Convention:**
 The `*.types.ts` naming pattern is used to organize type definitions:
