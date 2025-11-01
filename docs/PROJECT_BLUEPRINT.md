@@ -73,6 +73,12 @@ new-muslim-stories/
 │   │   ├── story.types.ts     # Story-related types
 │   │   ├── component.types.ts # Component prop types
 │   │   └── hook.types.ts      # Custom hook types
+│   │
+│   │   **Note**: Filenames use dot notation (e.g., `component.types.ts`)
+│   │   This is a naming convention where:
+│   │   - The dot separates the purpose (component) from the content (types)
+│   │   - Makes it clear what's in each file
+│   │   - Easier to organize and find related types
 │   ├── lib/             # Core business logic & utilities
 │   │   ├── stories.ts   # Public API & StoryData interface
 │   │   ├── story-parser.ts    # Markdown parsing & file I/O
@@ -1030,6 +1036,14 @@ return <section ref={sectionRef}>...</section>;
 - Superior developer experience (better IDE autocomplete)
 - Maintainable architecture (clear separation of concerns)
 - Zero compilation errors (100% TypeScript coverage)
+
+**File Naming Convention:**
+The `*.types.ts` naming pattern is used to organize type definitions:
+- `story.types.ts` = Types related to stories and data models
+- `component.types.ts` = Types for React component props
+- `hook.types.ts` = Types for custom React hooks
+- Dots in filenames are part of the naming convention (not TypeScript syntax)
+- This makes it clear what types are in each file
 
 **Testing Results:**
 ```bash
