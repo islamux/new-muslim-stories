@@ -3,14 +3,9 @@
 
 import { useTranslations } from 'next-intl';
 import { Link } from '@/navigation';
-import type { StoryData } from '@/lib/stories';
+import type { FeaturedStoriesProps } from '@/types';
 import Section from '@/components/ui/Section';
 
-
-
-interface FeaturedStoriesProps {
-  stories: StoryData[];
-}
 
 export default function FeaturedStories({ stories }: FeaturedStoriesProps) {
   const t = useTranslations('Index');

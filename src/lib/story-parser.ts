@@ -3,7 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
-import type { StoryData } from './stories';
+import type { StoryData, Locale } from '@/types';
 
 const storiesDirectory = path.join(process.cwd(), 'src/stories');
 
@@ -27,19 +27,22 @@ export async function parseStoryFile(fileName: string): Promise<StoryData> {
   const contentHtml = processedContent.toString();
 
   // Combine the data with the slug and contentHtml
+  const data = matterResult.data as {
+    title: string;
+    firstName: string;
+    age: number;
+    country: string;
+    previousReligion: string;
+    profilePhoto: string;
+    featured: boolean;
+    language: string;
+  };
+
   return {
     slug,
     contentHtml,
-    ...(matterResult.data as {
-      title: string;
-      firstName: string;
-      age: number;
-      country: string;
-      previousReligion: string;
-      profilePhoto: string;
-      featured: boolean;
-      language: string;
-    }),
+    ...data,
+    language: data.language as Locale,
   };
 }
 

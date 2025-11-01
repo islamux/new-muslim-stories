@@ -1,10 +1,5 @@
 import React from 'react';
-
-interface SectionProps {
-  id?: string;
-  className?: string;
-  children: React.ReactNode;
-}
+import type { SectionProps } from '@/types/component.types';
 
 const Section: React.FC<SectionProps> = ({ id, className, children }) => {
   return (

@@ -1,6 +1,6 @@
 'use client';
 
-import type { StoryData } from '@/lib/stories';
+import type { HomePageClientProps } from '@/types';
 import HeroSection from '@/components/HeroSection';
 import FeaturedStories from '@/components/FeaturedStories';
 import WhoAreNewMuslims from '@/components/WhoAreNewMuslims';
@@ -8,10 +8,6 @@ import StoryOfTheDay from '@/components/StoryOfTheDay';
 import WhatsNext from '@/components/WhatsNext';
 import { useTranslations } from 'next-intl';
 import Section from '@/components/ui/Section';
-
-interface HomePageClientProps {
-  stories: StoryData[];
-}
 
 export default function HomePageClient({ stories }: HomePageClientProps) {
   const t = useTranslations('Index');

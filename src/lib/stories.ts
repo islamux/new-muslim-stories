@@ -1,15 +1,5 @@
-export interface StoryData {
-  slug: string;
-  title: string;
-  firstName: string;
-  age: number;
-  country: string;
-  previousReligion: string;
-  profilePhoto: string;
-  featured: boolean;
-  language: string;
-  contentHtml: string;
-}
+// Re-export all types from the centralized types directory
+export * from '@/types';
 
 // Import StoryService locally to create function aliases
 import { StoryService } from './story-service';

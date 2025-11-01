@@ -1,11 +1,5 @@
 import { useEffect } from 'react';
-
-interface UseMultipleIntersectionObserver {
-  (
-    refs: Array<{ ref: React.RefObject<HTMLElement>; id?: string }>,
-    options?: IntersectionObserverInit
-  ): void;
-}
+import type { UseMultipleIntersectionObserver, RefItem } from '@/types/hook.types';
 
 /**
  * Custom hook for observing multiple elements with intersection observer

@@ -1,8 +1,5 @@
 import { useEffect, RefObject } from 'react';
-
-interface UseIntersectionObserver {
-  (elementRef: RefObject<HTMLElement>, options?: IntersectionObserverInit): void;
-}
+import type { UseIntersectionObserver } from '@/types/hook.types';
 
 /**
  * Custom hook for observing element intersection with viewport
