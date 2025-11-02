@@ -67,3 +67,13 @@ export interface ThemeToggleProps {
   initialTheme?: Theme;
   onThemeChange?: (theme: Theme) => void;
 }
+
+// Profile header component props
+export interface ProfileHeaderProps {
+  story: StoryData;
+}
+
+// Story of the day component props
+export interface StoryOfTheDayProps {
+  story: StoryData;
+}

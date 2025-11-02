@@ -1,1 +1,4 @@
 - add photos of new mulims.
+- remove daed code "import , ..."
+- useState, useEffect, useMemo, ...
+- en @layout.tsx
