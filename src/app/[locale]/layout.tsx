@@ -4,19 +4,19 @@ import ClientProviders from '@/components/ClientProviders';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import type { Locale } from '@/types';
 
-type Props = {
+interface LocaleLayoutProps  {
   children: ReactNode;
   params: { locale: Locale };
 };
 
-export default async function LocaleLayout({ children, params: { locale } }: Props) {
+export default async function LocaleLayout({ children, params: { locale } }: LocaleLayoutProps) {
   const messages = await getMessages();
   const timeZone = await getTimeZone();
 
   return (
     <ClientProviders messages={messages} locale={locale} timeZone={timeZone}>
-      <LanguageSwitcher />
-      <div dir={locale === 'ar' ? 'rtl' : 'ltr'}>{children}</div>
+    <LanguageSwitcher />
+    <div dir={locale === 'ar' ? 'rtl' : 'ltr'}>{children}</div>
     </ClientProviders>
   );
 }

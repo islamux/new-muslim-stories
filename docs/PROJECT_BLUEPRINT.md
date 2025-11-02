@@ -62,6 +62,8 @@ new-muslim-stories/
 │   │   ├── ui/          # UI primitives
 │   │   │   └── Section.tsx
 │   │   ├── HeroSection.tsx
+│   │   ├── Header.tsx           # Page header component
+│   │   ├── Footer.tsx           # Page footer component
 │   │   ├── FeaturedStories.tsx
 │   │   ├── StoryOfTheDay.tsx
 │   │   ├── WhatsNext.tsx
@@ -451,6 +453,46 @@ export default function FeaturedStories({ stories }: { stories: StoryData[] }) {
 }
 ```
 
+**Header Component:**
+```typescript
+// src/components/Header.tsx
+import { useTranslations } from 'next-intl';
+
+export default function Header() {
+  const t = useTranslations('Index');
+
+  return (
+    <header className="bg-gray-100 dark:bg-gray-850 shadow-md py-6">
+      <div className="container mx-auto px-4 text-center">
+        <div className="font-heading text-3xl font-bold text-gray-900 dark:text-gray-100">
+          {t('title')}
+        </div>
+      </div>
+    </header>
+  );
+}
+```
+
+**Footer Component:**
+```typescript
+// src/components/Footer.tsx
+import { useTranslations } from 'next-intl';
+
+export default function Footer() {
+  const t = useTranslations('Index');
+
+  return (
+    <footer className="bg-gray-900 dark:bg-gray-950 text-white py-10 text-center">
+      <div className="container mx-auto px-4">
+        <p className="text-sm text-gray-400 dark:text-gray-500 font-sans">
+          {t('footerCopyright', { year: new Date().getFullYear() })}
+        </p>
+      </div>
+    </footer>
+  );
+}
+```
+
 **5. Custom React Hooks**
 
 The project includes reusable custom hooks for common functionality:
@@ -691,6 +733,8 @@ Structured components with clear separation:
 src/components/
 ├── ui/Section.tsx          # Reusable section wrapper
 ├── HeroSection.tsx         # Hero banner
+├── Header.tsx              # Page header with title
+├── Footer.tsx              # Page footer with copyright
 ├── FeaturedStories.tsx     # Story grid
 ├── StoryOfTheDay.tsx       # Daily highlight
 ├── WhoAreNewMuslims.tsx    # Information section
@@ -893,6 +937,8 @@ No environment variables required for basic setup.
 | File | Purpose | Props |
 |------|---------|-------|
 | `src/components/HomePageClient.tsx` | Main page orchestrator | `stories: StoryData[]` |
+| `src/components/Header.tsx` | Page header with title | None |
+| `src/components/Footer.tsx` | Page footer with copyright | None |
 | `src/components/FeaturedStories.tsx` | Story grid display | `stories: StoryData[]` |
 | `src/components/ui/Section.tsx` | Reusable section wrapper | `children`, `id?`, `className?` |
 | `src/components/HeroSection.tsx` | Hero banner | None |
@@ -997,6 +1043,30 @@ return <section ref={sectionRef}>...</section>;
 ---
 
 ## Changelog
+
+### Version 2.2 - Header and Footer Component Extraction (2025-11-02)
+
+**Major Changes:**
+- ✅ Extracted inline header from HomePageClient to reusable Header component
+- ✅ Extracted inline footer from HomePageClient to reusable Footer component
+- ✅ Improved component composition and reusability
+- ✅ Enhanced code maintainability by separating concerns
+- ✅ Updated HomePageClient to use new Header and Footer components
+- ✅ Updated PROJECT_BLUEPRINT.md with complete component documentation
+
+**New Files:**
+- `src/components/Header.tsx` - Page header component with title and i18n
+- `src/components/Footer.tsx` - Page footer component with copyright
+
+**Modified Files:**
+- `src/components/HomePageClient.tsx` - Now imports and uses Header and Footer components
+- `docs/PROJECT_BLUEPRINT.md` - Updated documentation with new component details
+
+**Benefits:**
+- Better component reusability (Header/Footer can be used on other pages)
+- Cleaner HomePageClient component (focused on orchestration)
+- Follows single responsibility principle
+- Easier to maintain and test individual components
 
 ### Version 2.1 - TypeScript Interface Refactoring (2025-11-01)
 
@@ -1110,6 +1180,6 @@ $ npx tsc --noEmit
 
 ---
 
-**Last Updated:** 2025-11-01
-**Version:** 2.1
+**Last Updated:** 2025-11-02
+**Version:** 2.2
 **Contributors:** Development Team
