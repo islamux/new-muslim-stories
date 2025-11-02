@@ -152,4 +152,4 @@ language: "en"  # or "ar"
 ## Recent Changes Context
 
 Current branch: `feat/ui-improvement`
-- Recent commits include UI improvements, translation button changes, theme toggle implementation, i18n navigation fixes, font loading/module import error fixes, RootLayoutProps interface addition for better TypeScript type safety, and Header/Footer component extraction for improved code reusability.
+- Recent commits include UI improvements, translation button changes, theme toggle implementation, i18n navigation fixes, font loading/module import error fixes, RootLayoutProps interface addition for better TypeScript type safety, Header/Footer component extraction for improved code reusability, and StoryCard component extraction for better component composition.

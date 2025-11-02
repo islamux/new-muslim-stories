@@ -64,6 +64,7 @@ new-muslim-stories/
 │   │   ├── HeroSection.tsx
 │   │   ├── Header.tsx           # Page header component
 │   │   ├── Footer.tsx           # Page footer component
+│   │   ├── StoryCard.tsx        # Individual story card component
 │   │   ├── FeaturedStories.tsx
 │   │   ├── StoryOfTheDay.tsx
 │   │   ├── WhatsNext.tsx
@@ -493,6 +494,35 @@ export default function Footer() {
 }
 ```
 
+**StoryCard Component:**
+```typescript
+// src/components/StoryCard.tsx
+import { Link } from '@/navigation';
+import type { StoryCardProps } from '@/types';
+import { useTranslations } from 'next-intl';
+
+export default function StoryCard({ story }: StoryCardProps) {
+  const commonT = useTranslations('Common');
+
+  return (
+    <div className="bg-beige-100 dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-in-out">
+      <h3 className="font-heading text-xl text-gray-800 dark:text-beige-50 mb-3">
+        {story.title}
+      </h3>
+      <p className="font-sans text-gray-700 dark:text-gray-300 mb-4">
+        {story.contentHtml.substring(0, 150)}...
+      </p>
+      <Link
+        href={`/stories/${story.slug}`}
+        className="font-semibold text-coral-600 hover:text-coral-700 dark:text-coral-400 dark:hover:text-coral-500 hover:underline"
+      >
+        {commonT('learnMore')}
+      </Link>
+    </div>
+  );
+}
+```
+
 **5. Custom React Hooks**
 
 The project includes reusable custom hooks for common functionality:
@@ -735,6 +765,7 @@ src/components/
 ├── HeroSection.tsx         # Hero banner
 ├── Header.tsx              # Page header with title
 ├── Footer.tsx              # Page footer with copyright
+├── StoryCard.tsx           # Individual story card component
 ├── FeaturedStories.tsx     # Story grid
 ├── StoryOfTheDay.tsx       # Daily highlight
 ├── WhoAreNewMuslims.tsx    # Information section
@@ -939,6 +970,7 @@ No environment variables required for basic setup.
 | `src/components/HomePageClient.tsx` | Main page orchestrator | `stories: StoryData[]` |
 | `src/components/Header.tsx` | Page header with title | None |
 | `src/components/Footer.tsx` | Page footer with copyright | None |
+| `src/components/StoryCard.tsx` | Individual story card display | `story: StoryData` |
 | `src/components/FeaturedStories.tsx` | Story grid display | `stories: StoryData[]` |
 | `src/components/ui/Section.tsx` | Reusable section wrapper | `children`, `id?`, `className?` |
 | `src/components/HeroSection.tsx` | Hero banner | None |
@@ -1068,6 +1100,34 @@ return <section ref={sectionRef}>...</section>;
 - Follows single responsibility principle
 - Easier to maintain and test individual components
 
+### Version 2.3 - StoryCard Component Extraction (2025-11-02)
+
+**Major Changes:**
+- ✅ Extracted story card rendering logic from FeaturedStories to reusable StoryCard component
+- ✅ Improved FeaturedStories component clarity and focus
+- ✅ Enhanced component reusability (StoryCard can be used in other contexts)
+- ✅ Better separation of concerns and easier testing
+- ✅ Updated all documentation with new component details
+
+**New Files:**
+- `src/components/StoryCard.tsx` - Individual story card display component
+
+**Modified Files:**
+- `src/components/FeaturedStories.tsx` - Now uses StoryCard component (reduced from 42 to 24 lines)
+- `src/types/component.types.ts` - Added StoryCardProps interface
+- `docs/PROJECT_BLUEPRINT.md` - Updated with complete component documentation
+
+**Benefits:**
+- StoryCard can be reused in other contexts (story lists, related stories, etc.)
+- FeaturedStories is now cleaner and more focused on composition
+- Easier to test individual story cards independently
+- Better adherence to single responsibility principle
+- More maintainable code structure
+
+**Metrics:**
+- FeaturedStories: 42 lines → 24 lines (43% reduction)
+- New StoryCard: 29 lines (focused, reusable component)
+
 ### Version 2.1 - TypeScript Interface Refactoring (2025-11-01)
 
 **Major Changes:**
@@ -1181,5 +1241,5 @@ $ npx tsc --noEmit
 ---
 
 **Last Updated:** 2025-11-02
-**Version:** 2.2
+**Version:** 2.3
 **Contributors:** Development Team

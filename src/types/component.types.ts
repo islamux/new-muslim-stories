@@ -28,6 +28,11 @@ export interface FeaturedStoriesProps {
   stories: StoryData[];
 }
 
+// Story card component props
+export interface StoryCardProps {
+  story: StoryData;
+}
+
 // Story content display component props
 export interface StoryContentDisplayProps {
   story: StoryData;
