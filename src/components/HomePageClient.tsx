@@ -1,40 +1,41 @@
 'use client';
 
 import type { HomePageClientProps } from '@/types';
+import TopNav from '@/components/TopNav';
 import HeroSection from '@/components/HeroSection';
+import Header from '@/components/Header';
 import FeaturedStories from '@/components/FeaturedStories';
 import WhoAreNewMuslims from '@/components/WhoAreNewMuslims';
 import StoryOfTheDay from '@/components/StoryOfTheDay';
 import WhatsNext from '@/components/WhatsNext';
+import Footer from '@/components/Footer';
 import { useTranslations } from 'next-intl';
 import Section from '@/components/ui/Section';
 
 export default function HomePageClient({ stories }: HomePageClientProps) {
   const t = useTranslations('Index');
+  const commonT = useTranslations('Common');
+
+  // Get the first story for "Story of the Day"
+  const storyOfTheDay = stories[0];
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-50">
+      <TopNav />
       <HeroSection />
-      <header className="bg-gray-100 dark:bg-gray-850 shadow-md py-6">
-        <div className="container mx-auto px-4 text-center">
-          <div className="font-heading text-3xl font-bold text-gray-900 dark:text-gray-100">
-            {t('title')}
-          </div>
-        </div>
-      </header>
+      <Header />
       <main className="container mx-auto px-4 py-8">
         <FeaturedStories stories={stories} />
         <WhoAreNewMuslims />
-        <StoryOfTheDay />
+        <Section className="my-12">
+          <h2 className="text-2xl font-semibold text-center mb-6 text-coral-600 dark:text-coral-400">
+            {commonT('storyOfTheDay')}
+          </h2>
+          {storyOfTheDay && <StoryOfTheDay story={storyOfTheDay} />}
+        </Section>
         <WhatsNext />
       </main>
-      <footer className="bg-gray-900 dark:bg-gray-950 text-white py-10 text-center">
-        <div className="container mx-auto px-4">
-          <p className="text-sm text-gray-400 dark:text-gray-500 font-sans">
-            {t('footerCopyright', { year: new Date().getFullYear() })}
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

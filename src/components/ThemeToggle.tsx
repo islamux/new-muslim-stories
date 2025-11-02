@@ -1,36 +1,73 @@
 'use client';
 
 import { useTheme } from 'next-themes';
-import { useTranslations } from 'next-intl';
-import Button from './Button';
 import { useHasMounted } from '@/hooks/useHasMounted';
 
 export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();
-  const t = useTranslations('Common'); // Using Common namespace for now
   const mounted = useHasMounted();
 
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
+  // Prevent hydration mismatch by not rendering until mounted
   if (!mounted) {
     return (
-      <Button
-      disabled
-      className="hover:bg-gray-200 dark:hover:bg-gray-700"
-    >
-      {t('theme')}
-      </Button>
+      <div className="w-10 h-10" />
     );
   }
 
   return (
-    <Button
-    onClick={toggleTheme}
-    className="hover:bg-gray-200 dark:hover:bg-gray-700"
-  >
-    {theme === 'light' ? t('dark') : t('light')} {t('theme')}
-    </Button>
+    <button
+      onClick={toggleTheme}
+      className="group relative inline-flex items-center justify-center w-10 h-10 rounded-lg bg-white dark:bg-gray-800 shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-200 ease-in-out hover:scale-105 active:scale-95"
+      aria-label="Toggle theme"
+    >
+      {/* Sun Icon - visible in light mode */}
+      <svg
+        className={`w-5 h-5 text-yellow-500 transition-all duration-200 ${
+          theme === 'light' ? 'opacity-100 rotate-0' : 'opacity-0 rotate-90'
+        }`}
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+        />
+      </svg>
+
+      {/* Moon Icon - visible in dark mode */}
+      <svg
+        className={`absolute w-5 h-5 text-blue-400 transition-all duration-200 ${
+          theme === 'dark' ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-90'
+        }`}
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+        />
+      </svg>
+
+      {/* Glow effect for active state */}
+      <div
+        className={`absolute inset-0 rounded-lg transition-opacity duration-200 ${
+          theme === 'dark'
+            ? 'bg-blue-500 opacity-0 group-hover:opacity-20'
+            : 'bg-yellow-400 opacity-0 group-hover:opacity-20'
+        }`}
+      />
+    </button>
   );
 }

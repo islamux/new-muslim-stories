@@ -123,6 +123,12 @@ interface StoryData {
 - Extends: `next/core-web-vitals` and `next/typescript`
 - Config file: `.eslintrc.json`
 
+**TypeScript Interface Patterns**:
+- Component props use named interfaces (e.g., `RootLayoutProps` in `src/app/layout.tsx:9`)
+- Layout components define explicit props interfaces for clarity and reusability
+- Interface naming convention: `{ComponentName}Props` (e.g., `LocaleLayoutProps`, `RootLayoutProps`)
+- Benefits: Better IDE support, self-documenting code, and clear component contracts
+
 ## Story Content Format
 
 Stories use YAML frontmatter followed by Markdown content:
@@ -146,4 +152,4 @@ language: "en"  # or "ar"
 ## Recent Changes Context
 
 Current branch: `feat/ui-improvement`
-- Recent commits include UI improvements, translation button changes, theme toggle implementation, i18n navigation fixes, and font loading/module import error fixes.
+- Recent commits include UI improvements, translation button changes, theme toggle implementation, i18n navigation fixes, font loading/module import error fixes, RootLayoutProps interface addition for better TypeScript type safety, Header/Footer component extraction for improved code reusability, and StoryCard component extraction for better component composition.

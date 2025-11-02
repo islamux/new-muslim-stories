@@ -82,7 +82,14 @@ Based on the rules emphasizing simplicity, native solutions, and best practices,
 - Add loading states with React Suspense
 - Cache strategy for markdown files
 
-### 3.4 Metadata & SEO
+### 3.4 PWA Support (Progressive Web App)
+- Add web app manifest for installability
+- Implement service worker for offline caching
+- Cache critical resources (stories, fonts, CSS)
+- Add "Add to Home Screen" prompt
+- Enable offline reading of cached stories
+
+### 3.5 Metadata & SEO
 - Add proper meta tags
 - Implement Open Graph tags
 - Add structured data for stories
@@ -92,6 +99,9 @@ Based on the rules emphasizing simplicity, native solutions, and best practices,
 - [ ] Implement code splitting
 - [ ] Optimize all images
 - [ ] Add metadata to pages
+- [ ] Create PWA manifest file
+- [ ] Implement service worker
+- [ ] Setup offline caching strategy
 
 ---
 
@@ -166,6 +176,9 @@ Based on the rules emphasizing simplicity, native solutions, and best practices,
 - Faster theme switching (CSS native)
 - Better animation performance (GPU)
 - Smaller JavaScript bundle
+- Offline access to stories (PWA)
+- Installable web app
+- Faster loading with cached resources
 
 ### Code Quality ✅ ACHIEVED
 - ✅ More maintainable code (centralized types)
@@ -228,8 +241,18 @@ Based on the rules emphasizing simplicity, native solutions, and best practices,
 - [ ] Phase 1: Remove 3 dependencies from package.json
 - [ ] Phase 2: Simplify ClientProviders structure
 - [ ] Phase 2: Remove useHasMounted hook (no longer needed)
+- [ ] Phase 3: Add PWA support (web app manifest + service worker)
+- [ ] Phase 3: Setup offline caching for stories
 
 ### Phase 1 Benefits (Ready to Implement)
 - Remove: next-themes, @fontsource/inter, @fontsource/montserrat, framer-motion, react-scroll-parallax
 - Save: ~60KB bundle size reduction
 - Gain: Native performance, no hydration issues, simpler code
+
+### PWA Benefits (High Impact)
+- 📱 **Installable**: Users can add app to home screen (iOS/Android/Desktop)
+- 🔄 **Offline Access**: Read cached stories without internet
+- ⚡ **Faster Loading**: Cache critical resources for instant load
+- 📊 **Better Engagement**: Native app-like experience
+- 🔒 **Secure**: HTTPS required, enhanced security
+- 🎯 **SEO Friendly**: Improved discoverability

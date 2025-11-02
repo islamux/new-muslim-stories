@@ -1,3 +1,7 @@
-- remove unneccary packages
-- search by ...
-- add photos of new mulims
+- remove unnecessary packages
+- search functionality
+- add photos of new Muslims
+- remove dead code (unused imports, etc.)
+- optimize useState, useEffect, useMemo usage
+- update layout.tsx
+- clean up codebase

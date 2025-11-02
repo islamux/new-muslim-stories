@@ -28,6 +28,11 @@ export interface FeaturedStoriesProps {
   stories: StoryData[];
 }
 
+// Story card component props
+export interface StoryCardProps {
+  story: StoryData;
+}
+
 // Story content display component props
 export interface StoryContentDisplayProps {
   story: StoryData;
@@ -61,4 +66,14 @@ export interface LanguageSwitcherProps {
 export interface ThemeToggleProps {
   initialTheme?: Theme;
   onThemeChange?: (theme: Theme) => void;
+}
+
+// Profile header component props
+export interface ProfileHeaderProps {
+  story: StoryData;
+}
+
+// Story of the day component props
+export interface StoryOfTheDayProps {
+  story: StoryData;
 }
