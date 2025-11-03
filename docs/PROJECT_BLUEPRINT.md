@@ -1090,6 +1090,211 @@ return <section ref={sectionRef}>...</section>;
 
 ## Changelog
 
+### Version 2.8 - Component & Library Refactoring (2025-11-03)
+
+**Major Changes:**
+- ✅ Refactored StoryContentDisplay component (40% size reduction)
+- ✅ Refactored ThemeToggle component (28% size reduction)
+- ✅ Refactored story-parser library (12% size reduction)
+- ✅ Refactored story-service library (9% size reduction)
+- ✅ Eliminated code duplication across multiple files
+- ✅ Improved component reusability and maintainability
+- ✅ Applied DRY (Don't Repeat Yourself) principle throughout
+
+**Modified Files:**
+
+**StoryContentDisplay (src/components/StoryContentDisplay.tsx)**
+- ✅ Extracted StorySection sub-component for reusable section rendering
+- ✅ Replaced repetitive section blocks with array.map pattern
+- ✅ Used existing Button component instead of inline button
+- ✅ Reduced from 45 to 27 lines (40% reduction)
+- ✅ Added StorySectionProps interface for type safety
+
+**Before (45 lines):**
+```typescript
+// Three identical section blocks (lines 28-41)
+<section className="my-8">
+  <h2 className="text-2xl font-semibold text-green-700 mb-4">{t('lifeBeforeIslam')}</h2>
+  <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: lifeBeforeIslam }} />
+</section>
+
+<section className="my-8">
+  <h2 className="text-2xl font-semibold text-green-700 mb-4">{t('momentOfGuidance')}</h2>
+  <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: momentOfGuidance }} />
+</section>
+
+<section className="my-8">
+  <h2 className="text-2xl font-semibold text-green-700 mb-4">{t('reflections')}</h2>
+  <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: reflections }} />
+</section>
+```
+
+**After (27 lines):**
+```typescript
+// Define sections array for clean rendering
+const sections = [
+  { key: 'lifeBeforeIslam', content: lifeBeforeIslam },
+  { key: 'momentOfGuidance', content: momentOfGuidance },
+  { key: 'reflections', content: reflections }
+];
+
+// Single map function renders all sections
+{sections.map(({ key, content }) => (
+  <StorySection key={key} title={t(key)} content={content} />
+))}
+
+// Extracted sub-component
+const StorySection = ({ title, content }: StorySectionProps) => (
+  <section className="my-8">
+    <h2 className="text-2xl font-semibold text-green-700 mb-4">{title}</h2>
+    <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: content }} />
+  </section>
+);
+```
+
+**ThemeToggle (src/components/ThemeToggle.tsx)**
+- ✅ Extracted SunIcon and MoonIcon components from inline SVG
+- ✅ Moved import statement to conventional top position
+- ✅ Reduced from 74 to 53 lines (28% reduction)
+- ✅ Improved component readability and maintainability
+- ✅ Icons can now be reused in other components
+
+**Before (74 lines):**
+```typescript
+// Two large inline SVG blocks (~17 lines each)
+<svg className={`w-5 h-5 text-yellow-500 transition-all duration-200 ${
+  theme === 'light' ? 'opacity-100 rotate-0' : 'opacity-0 rotate-90'
+}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" /* ... */>
+  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /* ... */ />
+</svg>
+
+<svg className={`absolute w-5 h-5 text-blue-400 transition-all duration-200 ${
+  theme === 'dark' ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-90'
+}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" /* ... */>
+  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /* ... */ />
+</svg>
+```
+
+**After (53 lines):**
+```typescript
+// Extracted icon components
+const SunIcon = ({ theme }: IconProps) => (
+  <svg className={`w-5 h-5 text-yellow-500 transition-all duration-200 ${
+    theme === 'light' ? 'opacity-100 rotate-0' : 'opacity-0 rotate-90'
+  }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /* ... */ />
+  </svg>
+);
+
+const MoonIcon = ({ theme }: IconProps) => (
+  <svg className={`absolute w-5 h-5 text-blue-400 transition-all duration-200 ${
+    theme === 'dark' ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-90'
+  }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /* ... */ />
+  </svg>
+);
+
+// Clean usage
+<SunIcon theme={theme} />
+<MoonIcon theme={theme} />
+```
+
+**story-parser (src/lib/story-parser.ts)**
+- ✅ Extracted extractSlug utility function to eliminate duplication
+- ✅ parseStoryFile now uses shared extractSlug function
+- ✅ extractSlugAndLocale now uses shared extractSlug function
+- ✅ Reduced from 77 to 68 lines (12% reduction)
+- ✅ Single source of truth for slug extraction logic
+
+**Before (duplicated logic):**
+```typescript
+// In parseStoryFile
+const isArabic = fileName.endsWith('-ar.md');
+const slug = isArabic
+  ? fileName.replace(/-ar\.md$/, '')
+  : fileName.replace(/\.md$/, '');
+
+// In extractSlugAndLocale (DUPLICATED!)
+const isArabic = fileName.endsWith('-ar.md');
+const slug = isArabic
+  ? fileName.replace(/-ar\.md$/, '')
+  : fileName.replace(/\.md$/, '');
+```
+
+**After (68 lines):**
+```typescript
+// Shared utility function
+function extractSlug(fileName: string): string {
+  const isArabic = fileName.endsWith('-ar.md');
+  return isArabic
+    ? fileName.replace(/-ar\.md$/, '')
+    : fileName.replace(/\.md$/, '');
+}
+
+// Used in both functions
+const slug = extractSlug(fileName);
+```
+
+**story-service (src/lib/story-service.ts)**
+- ✅ Moved import statement to conventional top position
+- ✅ Simplified sorting logic using native localeCompare method
+- ✅ Removed unnecessary re-export at bottom of file
+- ✅ Reduced from 97 to 88 lines (9% reduction)
+- ✅ More conventional file structure
+
+**Before:**
+```typescript
+// Import scattered across file
+import type { StoryData } from './stories';
+import { parseStoryFile, getStoryFileNames } from './story-parser';
+// ... later at bottom ...
+import { extractSlugAndLocale } from './story-parser';
+
+// Verbose sorting (6 lines)
+return filteredStories.sort((a, b) => {
+  if (a.title < b.title) {
+    return -1;
+  } else {
+    return 1;
+  }
+});
+```
+
+**After:**
+```typescript
+// Single, conventional import at top
+import type { StoryData } from './stories';
+import { parseStoryFile, getStoryFileNames, extractSlugAndLocale } from './story-parser';
+
+// Simple, efficient sorting (1 line)
+return filteredStories.sort((a, b) => a.title.localeCompare(b.title));
+```
+
+**Benefits:**
+- ✅ Applied DRY principle across entire codebase
+- ✅ Improved maintainability (logic changes in one place)
+- ✅ Enhanced component reusability (extracted icons, sections)
+- ✅ Better testability (independent, focused components)
+- ✅ Cleaner, more readable code structure
+- ✅ Follows React and TypeScript best practices
+- ✅ Reduced technical debt
+
+**Metrics:**
+- StoryContentDisplay: 45 → 27 lines (40% reduction)
+- ThemeToggle: 74 → 53 lines (28% reduction)
+- story-parser: 77 → 68 lines (12% reduction)
+- story-service: 97 → 88 lines (9% reduction)
+- Total: 293 → 236 lines (19% overall reduction)
+- 4 files refactored
+- 0 breaking changes
+- All TypeScript compilation checks pass
+
+**Testing Results:**
+```bash
+$ npx tsc --noEmit
+✅ SUCCESS - 0 errors, 0 warnings
+```
+
 ### Version 2.7 - Hydration Fixes & Translation Fixes (2025-11-02)
 
 **Major Changes:**
