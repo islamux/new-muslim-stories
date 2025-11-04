@@ -8,13 +8,20 @@ import type { StoryData, Locale } from '@/types';
 const storiesDirectory = path.join(process.cwd(), 'src/stories');
 
 /**
+ * Extracts slug from filename (handles both en and ar locales)
+ */
+function extractSlug(fileName: string): string {
+  const isArabic = fileName.endsWith('-ar.md');
+  return isArabic
+    ? fileName.replace(/-ar\.md$/, '')
+    : fileName.replace(/\.md$/, '');
+}
+
+/**
  * Parses a single markdown file into StoryData
  */
 export async function parseStoryFile(fileName: string): Promise<StoryData> {
-  const isArabic = fileName.endsWith('-ar.md');
-  const slug = isArabic
-    ? fileName.replace(/-ar\.md$/, '')
-    : fileName.replace(/\.md$/, '');
+  const slug = extractSlug(fileName);
 
   const fullPath = path.join(storiesDirectory, fileName);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
@@ -58,9 +65,7 @@ export function getStoryFileNames(): string[] {
  */
 export function extractSlugAndLocale(fileName: string): { slug: string; locale: string } {
   const isArabic = fileName.endsWith('-ar.md');
-  const slug = isArabic
-    ? fileName.replace(/-ar\.md$/, '')
-    : fileName.replace(/\.md$/, '');
+  const slug = extractSlug(fileName);
   const locale = isArabic ? 'ar' : 'en';
 
   return { slug, locale };

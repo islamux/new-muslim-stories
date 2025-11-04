@@ -6,9 +6,11 @@ A Next.js 14 application showcasing inspiring stories of people who converted to
 - **Multi-language**: English & Arabic with RTL support
 - **Markdown-based content**: Stories stored as `.md` files with YAML frontmatter
 - **Static generation**: Pre-rendered pages for optimal performance
+- **PWA Support**: Installable web app with offline reading capabilities
 - **Modern stack**: App Router, TypeScript, Tailwind CSS, next-intl
 - **Clean Architecture**: Separated parsing, business logic, and UI components
 - **Custom Hooks**: Reusable intersection observer hooks for animations
+- **Service Worker**: Intelligent caching for offline story reading
 
 ---
 
@@ -644,7 +646,61 @@ export default async function StoryPage({
 }
 ```
 
-### Feature 4: Client Providers
+### Feature 4: PWA (Progressive Web App) ✅
+
+Implemented full PWA support for installability and offline access.
+
+#### 4.1 Web App Manifest (`public/manifest.json`)
+- **Installable**: Users can install the app to their home screen (mobile/desktop)
+- **Custom branding**: App name, description, theme colors
+- **Shortcuts**: Quick access to "Browse Stories" and "Featured Stories"
+- **Icons**: Support for multiple icon sizes (192x192, 512x512)
+- **Standalone display**: Opens like a native app without browser UI
+
+#### 4.2 Service Worker (`public/sw.js`)
+- **Intelligent caching**:
+  - Cache-first for static assets (CSS, JS, images, fonts)
+  - Stale-while-revalidate for stories (fast loading + background updates)
+  - Network-first for HTML pages (fresh content when online)
+- **Offline page**: `/offline` route for when users are offline
+- **Background sync**: Retries failed requests when connection is restored
+- **Push notifications**: Ready for future story notification features
+
+#### 4.3 Installation Prompt (`src/components/PWAInstallPrompt.tsx`)
+- **Smart detection**: Shows prompt when `beforeinstallprompt` event fires
+- **User-friendly**: Explains benefits (offline reading, faster loading, home screen)
+- **Non-intrusive**: Won't show again if user dismisses (stored in localStorage)
+- **Features list**:
+  - ✅ Read stories offline
+  - ✅ Faster loading
+  - ✅ Home screen access
+
+#### 4.4 PWA Integration Points
+- **Root Layout** (`src/app/layout.tsx`):
+  - Service worker registration script
+  - PWA meta tags (theme-color, apple-mobile-web-app, etc.)
+  - Manifest link
+- **ClientProviders** (`src/components/ClientProviders.tsx`):
+  - PWAInstallPrompt component rendered globally
+
+#### 4.5 Offline Experience
+- **Cached stories**: Previously viewed stories available offline
+- **Offline page**: User-friendly message with "Try Again" and "Go to Homepage" buttons
+- **Background updates**: Service worker updates cache in background when online
+
+#### 4.6 Icon Requirements
+The following icons need to be created for production:
+- `public/icon-192x192.png` (required)
+- `public/icon-512x512.png` (required)
+- `public/apple-touch-icon.png` (180x180, for iOS)
+- `public/favicon.ico` (32x32, browser tab)
+
+**Status**: ✅ **COMPLETED** (Nov 4, 2025)
+**Build Status**: ✅ Successfully builds with all PWA features
+
+---
+
+### Feature 5: Client Providers
 
 ```typescript
 // src/components/ClientProviders.tsx

@@ -2,3 +2,4 @@
 - remove daed code "import , ..."
 - useState, useEffect, useMemo, ...
 - en @layout.tsx
+- using old way of importing. 
