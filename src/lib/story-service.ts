@@ -1,5 +1,5 @@
 import type { StoryData } from './stories';
-import { parseStoryFile, getStoryFileNames } from './story-parser';
+import { parseStoryFile, getStoryFileNames, extractSlugAndLocale } from './story-parser';
 
 /**
  * Service for managing story data operations
@@ -19,13 +19,7 @@ export class StoryService {
     const filteredStories = allStoriesData.filter(story => story.language === locale);
 
     // Sort stories by title alphabetically
-    return filteredStories.sort((a, b) => {
-      if (a.title < b.title) {
-        return -1;
-      } else {
-        return 1;
-      }
-    });
+    return filteredStories.sort((a, b) => a.title.localeCompare(b.title));
   }
 
   /**
@@ -91,6 +85,3 @@ export class StoryService {
     return Array.from(countries).sort();
   }
 }
-
-// Re-export the parser's helper function
-import { extractSlugAndLocale } from './story-parser';

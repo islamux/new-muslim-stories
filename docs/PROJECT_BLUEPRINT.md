@@ -6,9 +6,11 @@ A Next.js 14 application showcasing inspiring stories of people who converted to
 - **Multi-language**: English & Arabic with RTL support
 - **Markdown-based content**: Stories stored as `.md` files with YAML frontmatter
 - **Static generation**: Pre-rendered pages for optimal performance
+- **PWA Support**: Installable web app with offline reading capabilities
 - **Modern stack**: App Router, TypeScript, Tailwind CSS, next-intl
 - **Clean Architecture**: Separated parsing, business logic, and UI components
 - **Custom Hooks**: Reusable intersection observer hooks for animations
+- **Service Worker**: Intelligent caching for offline story reading
 
 ---
 
@@ -644,7 +646,61 @@ export default async function StoryPage({
 }
 ```
 
-### Feature 4: Client Providers
+### Feature 4: PWA (Progressive Web App) ✅
+
+Implemented full PWA support for installability and offline access.
+
+#### 4.1 Web App Manifest (`public/manifest.json`)
+- **Installable**: Users can install the app to their home screen (mobile/desktop)
+- **Custom branding**: App name, description, theme colors
+- **Shortcuts**: Quick access to "Browse Stories" and "Featured Stories"
+- **Icons**: Support for multiple icon sizes (192x192, 512x512)
+- **Standalone display**: Opens like a native app without browser UI
+
+#### 4.2 Service Worker (`public/sw.js`)
+- **Intelligent caching**:
+  - Cache-first for static assets (CSS, JS, images, fonts)
+  - Stale-while-revalidate for stories (fast loading + background updates)
+  - Network-first for HTML pages (fresh content when online)
+- **Offline page**: `/offline` route for when users are offline
+- **Background sync**: Retries failed requests when connection is restored
+- **Push notifications**: Ready for future story notification features
+
+#### 4.3 Installation Prompt (`src/components/PWAInstallPrompt.tsx`)
+- **Smart detection**: Shows prompt when `beforeinstallprompt` event fires
+- **User-friendly**: Explains benefits (offline reading, faster loading, home screen)
+- **Non-intrusive**: Won't show again if user dismisses (stored in localStorage)
+- **Features list**:
+  - ✅ Read stories offline
+  - ✅ Faster loading
+  - ✅ Home screen access
+
+#### 4.4 PWA Integration Points
+- **Root Layout** (`src/app/layout.tsx`):
+  - Service worker registration script
+  - PWA meta tags (theme-color, apple-mobile-web-app, etc.)
+  - Manifest link
+- **ClientProviders** (`src/components/ClientProviders.tsx`):
+  - PWAInstallPrompt component rendered globally
+
+#### 4.5 Offline Experience
+- **Cached stories**: Previously viewed stories available offline
+- **Offline page**: User-friendly message with "Try Again" and "Go to Homepage" buttons
+- **Background updates**: Service worker updates cache in background when online
+
+#### 4.6 Icon Requirements
+The following icons need to be created for production:
+- `public/icon-192x192.png` (required)
+- `public/icon-512x512.png` (required)
+- `public/apple-touch-icon.png` (180x180, for iOS)
+- `public/favicon.ico` (32x32, browser tab)
+
+**Status**: ✅ **COMPLETED** (Nov 4, 2025)
+**Build Status**: ✅ Successfully builds with all PWA features
+
+---
+
+### Feature 5: Client Providers
 
 ```typescript
 // src/components/ClientProviders.tsx
@@ -1089,6 +1145,211 @@ return <section ref={sectionRef}>...</section>;
 ---
 
 ## Changelog
+
+### Version 2.8 - Component & Library Refactoring (2025-11-03)
+
+**Major Changes:**
+- ✅ Refactored StoryContentDisplay component (40% size reduction)
+- ✅ Refactored ThemeToggle component (28% size reduction)
+- ✅ Refactored story-parser library (12% size reduction)
+- ✅ Refactored story-service library (9% size reduction)
+- ✅ Eliminated code duplication across multiple files
+- ✅ Improved component reusability and maintainability
+- ✅ Applied DRY (Don't Repeat Yourself) principle throughout
+
+**Modified Files:**
+
+**StoryContentDisplay (src/components/StoryContentDisplay.tsx)**
+- ✅ Extracted StorySection sub-component for reusable section rendering
+- ✅ Replaced repetitive section blocks with array.map pattern
+- ✅ Used existing Button component instead of inline button
+- ✅ Reduced from 45 to 27 lines (40% reduction)
+- ✅ Added StorySectionProps interface for type safety
+
+**Before (45 lines):**
+```typescript
+// Three identical section blocks (lines 28-41)
+<section className="my-8">
+  <h2 className="text-2xl font-semibold text-green-700 mb-4">{t('lifeBeforeIslam')}</h2>
+  <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: lifeBeforeIslam }} />
+</section>
+
+<section className="my-8">
+  <h2 className="text-2xl font-semibold text-green-700 mb-4">{t('momentOfGuidance')}</h2>
+  <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: momentOfGuidance }} />
+</section>
+
+<section className="my-8">
+  <h2 className="text-2xl font-semibold text-green-700 mb-4">{t('reflections')}</h2>
+  <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: reflections }} />
+</section>
+```
+
+**After (27 lines):**
+```typescript
+// Define sections array for clean rendering
+const sections = [
+  { key: 'lifeBeforeIslam', content: lifeBeforeIslam },
+  { key: 'momentOfGuidance', content: momentOfGuidance },
+  { key: 'reflections', content: reflections }
+];
+
+// Single map function renders all sections
+{sections.map(({ key, content }) => (
+  <StorySection key={key} title={t(key)} content={content} />
+))}
+
+// Extracted sub-component
+const StorySection = ({ title, content }: StorySectionProps) => (
+  <section className="my-8">
+    <h2 className="text-2xl font-semibold text-green-700 mb-4">{title}</h2>
+    <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: content }} />
+  </section>
+);
+```
+
+**ThemeToggle (src/components/ThemeToggle.tsx)**
+- ✅ Extracted SunIcon and MoonIcon components from inline SVG
+- ✅ Moved import statement to conventional top position
+- ✅ Reduced from 74 to 53 lines (28% reduction)
+- ✅ Improved component readability and maintainability
+- ✅ Icons can now be reused in other components
+
+**Before (74 lines):**
+```typescript
+// Two large inline SVG blocks (~17 lines each)
+<svg className={`w-5 h-5 text-yellow-500 transition-all duration-200 ${
+  theme === 'light' ? 'opacity-100 rotate-0' : 'opacity-0 rotate-90'
+}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" /* ... */>
+  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /* ... */ />
+</svg>
+
+<svg className={`absolute w-5 h-5 text-blue-400 transition-all duration-200 ${
+  theme === 'dark' ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-90'
+}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" /* ... */>
+  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /* ... */ />
+</svg>
+```
+
+**After (53 lines):**
+```typescript
+// Extracted icon components
+const SunIcon = ({ theme }: IconProps) => (
+  <svg className={`w-5 h-5 text-yellow-500 transition-all duration-200 ${
+    theme === 'light' ? 'opacity-100 rotate-0' : 'opacity-0 rotate-90'
+  }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /* ... */ />
+  </svg>
+);
+
+const MoonIcon = ({ theme }: IconProps) => (
+  <svg className={`absolute w-5 h-5 text-blue-400 transition-all duration-200 ${
+    theme === 'dark' ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-90'
+  }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /* ... */ />
+  </svg>
+);
+
+// Clean usage
+<SunIcon theme={theme} />
+<MoonIcon theme={theme} />
+```
+
+**story-parser (src/lib/story-parser.ts)**
+- ✅ Extracted extractSlug utility function to eliminate duplication
+- ✅ parseStoryFile now uses shared extractSlug function
+- ✅ extractSlugAndLocale now uses shared extractSlug function
+- ✅ Reduced from 77 to 68 lines (12% reduction)
+- ✅ Single source of truth for slug extraction logic
+
+**Before (duplicated logic):**
+```typescript
+// In parseStoryFile
+const isArabic = fileName.endsWith('-ar.md');
+const slug = isArabic
+  ? fileName.replace(/-ar\.md$/, '')
+  : fileName.replace(/\.md$/, '');
+
+// In extractSlugAndLocale (DUPLICATED!)
+const isArabic = fileName.endsWith('-ar.md');
+const slug = isArabic
+  ? fileName.replace(/-ar\.md$/, '')
+  : fileName.replace(/\.md$/, '');
+```
+
+**After (68 lines):**
+```typescript
+// Shared utility function
+function extractSlug(fileName: string): string {
+  const isArabic = fileName.endsWith('-ar.md');
+  return isArabic
+    ? fileName.replace(/-ar\.md$/, '')
+    : fileName.replace(/\.md$/, '');
+}
+
+// Used in both functions
+const slug = extractSlug(fileName);
+```
+
+**story-service (src/lib/story-service.ts)**
+- ✅ Moved import statement to conventional top position
+- ✅ Simplified sorting logic using native localeCompare method
+- ✅ Removed unnecessary re-export at bottom of file
+- ✅ Reduced from 97 to 88 lines (9% reduction)
+- ✅ More conventional file structure
+
+**Before:**
+```typescript
+// Import scattered across file
+import type { StoryData } from './stories';
+import { parseStoryFile, getStoryFileNames } from './story-parser';
+// ... later at bottom ...
+import { extractSlugAndLocale } from './story-parser';
+
+// Verbose sorting (6 lines)
+return filteredStories.sort((a, b) => {
+  if (a.title < b.title) {
+    return -1;
+  } else {
+    return 1;
+  }
+});
+```
+
+**After:**
+```typescript
+// Single, conventional import at top
+import type { StoryData } from './stories';
+import { parseStoryFile, getStoryFileNames, extractSlugAndLocale } from './story-parser';
+
+// Simple, efficient sorting (1 line)
+return filteredStories.sort((a, b) => a.title.localeCompare(b.title));
+```
+
+**Benefits:**
+- ✅ Applied DRY principle across entire codebase
+- ✅ Improved maintainability (logic changes in one place)
+- ✅ Enhanced component reusability (extracted icons, sections)
+- ✅ Better testability (independent, focused components)
+- ✅ Cleaner, more readable code structure
+- ✅ Follows React and TypeScript best practices
+- ✅ Reduced technical debt
+
+**Metrics:**
+- StoryContentDisplay: 45 → 27 lines (40% reduction)
+- ThemeToggle: 74 → 53 lines (28% reduction)
+- story-parser: 77 → 68 lines (12% reduction)
+- story-service: 97 → 88 lines (9% reduction)
+- Total: 293 → 236 lines (19% overall reduction)
+- 4 files refactored
+- 0 breaking changes
+- All TypeScript compilation checks pass
+
+**Testing Results:**
+```bash
+$ npx tsc --noEmit
+✅ SUCCESS - 0 errors, 0 warnings
+```
 
 ### Version 2.7 - Hydration Fixes & Translation Fixes (2025-11-02)
 
