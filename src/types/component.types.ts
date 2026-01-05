@@ -38,14 +38,6 @@ export interface StoryContentDisplayProps {
   story: StoryData;
 }
 
-// Client providers props
-export interface ClientProvidersProps {
-  messages: any; // AbstractIntlMessages from next-intl
-  locale: Locale;
-  timeZone: string;
-  children: React.ReactNode;
-}
-
 // Section component props
 export interface SectionProps extends WithClassName, WithId {
   children: React.ReactNode;
