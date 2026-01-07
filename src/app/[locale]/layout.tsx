@@ -1,16 +1,16 @@
 import { ReactNode } from 'react';
-import { getLocale, getMessages, getTimeZone } from 'next-intl/server';
-import { NextIntlClientProvider, AbstractIntlMessages } from 'next-intl';
+import { getMessages, getTimeZone } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
 import { ThemeProvider } from 'next-themes';
 import PWAInstallPrompt from '@/components/PWAInstallPrompt';
-import type { Locale } from '@/types';
 
 interface LocaleLayoutProps {
   children: ReactNode;
-  params: { locale: Locale };
+  params: Promise<{ locale: string }>;
 };
 
-export default async function LocaleLayout({ children, params: { locale } }: LocaleLayoutProps) {
+export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
+  const { locale } = await params;
   const messages = await getMessages();
   const timeZone = await getTimeZone();
 

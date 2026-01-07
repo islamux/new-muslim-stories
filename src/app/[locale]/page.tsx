@@ -4,9 +4,9 @@ import HomePageClient from '@/components/HomePageClient';
 export default async function Home({
   params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = params;
+  const { locale } = await params;
   const stories = await getSortedStoriesData(locale);
 
   return <HomePageClient stories={stories} />;
