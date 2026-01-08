@@ -1,9 +1,8 @@
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
 @import '@fontsource/inter';
 @import '@fontsource/montserrat';
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 :root {
   --foreground-rgb: 17, 24, 39; /* gray-900 */
