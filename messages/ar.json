@@ -30,6 +30,13 @@
     "storyOfTheDay": "قصة اليوم",
     "learnMore": "اعرف المزيد",
     "yearsOldFrom": "{age} سنة، من {country}",
-    "previousReligion": "الديانة السابقة: {religion}"
+    "previousReligion": "الديانة السابقة: {religion}",
+    "installAppTitle": "تثبيت التطبيق",
+    "installAppDescription": "ثبت قصص المسلمين الجدد للقراءة دون اتصال بالإنترنت والوصول الأسرع",
+    "installFeatureOfflineReading": "قراءة القصص دون اتصال",
+    "installFeatureFasterLoading": "تحميل أسرع",
+    "installFeatureHomeScreenAccess": "الوصول من الشاشة الرئيسية",
+    "installButton": "تثبيت",
+    "notNowButton": "ليس الآن"
   }
 }

@@ -30,6 +30,13 @@
     "storyOfTheDay": "Story of the Day",
     "learnMore": "Learn More",
     "yearsOldFrom": "{age} years old, from {country}",
-    "previousReligion": "Previous Religion: {religion}"
+    "previousReligion": "Previous Religion: {religion}",
+    "installAppTitle": "Install App",
+    "installAppDescription": "Install New Muslim Stories for offline reading and faster access",
+    "installFeatureOfflineReading": "Read stories offline",
+    "installFeatureFasterLoading": "Faster loading",
+    "installFeatureHomeScreenAccess": "Home screen access",
+    "installButton": "Install",
+    "notNowButton": "Not Now"
   }
 }
