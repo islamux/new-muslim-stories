@@ -1,8 +1,8 @@
-# PWA Install Prompt Component - Fixed Version
+# PWA Install Component - Fixed Version
 
 ## Current Issues Identified
 
-The current `PWAInstallPrompt.tsx` component has some hardcoded values and potential improvements:
+The current `PWAInstall.tsx` component has some hardcoded values and potential improvements:
 
 ### Issues:
 1. **Hardcoded feature keys**: `PWA_FEATURES` array uses hardcoded strings that don't match translation keys
@@ -34,7 +34,7 @@ const PWA_FEATURES = [
   { key: 'featureHome', icon: 'home' }
 ];
 
-export default function PWAInstallPrompt() {
+export default function PWAInstall() {
   const [installPrompt, setInstallPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [showInstallPrompt, setShowInstallPrompt] = useState(false);
   const t = useTranslations('PWA');
