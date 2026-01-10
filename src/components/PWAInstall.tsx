@@ -13,7 +13,12 @@ interface BeforeInstallPromptEvent extends Event {
   prompt(): Promise<void>;
 }
 
-const PWA_FEATURES = ['offlineReading', 'fasterLoading', 'homeScreenAccess'];
+// Fixed: Use translation keys that match the actual message files
+const PWA_FEATURES = [
+  { key: 'featureOffline', icon: 'offline' },
+  { key: 'featureFast', icon: 'speed' },
+  { key: 'featureHome', icon: 'home' }
+];
 
 export default function PWAInstall() {
   const [installPrompt, setInstallPrompt] = useState<BeforeInstallPromptEvent | null>(null);
@@ -63,8 +68,7 @@ export default function PWAInstall() {
     localStorage.setItem('pwa-install-dismissed', 'true');
   };
 
-  const getTranslation = (key: string, fallback: string) => t(key) || fallback;
-
+  // Fixed: Direct translation usage without fallback logic
   if (!showInstallPrompt || !installPrompt) return null;
 
   return (
@@ -76,10 +80,10 @@ export default function PWAInstall() {
           </div>
           <div className="ms-3 flex-1">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              {getTranslation('installAppTitle', 'Install App')}
+              {t('installTitle')}
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-              {getTranslation('installAppDescription', 'Install New Muslim Stories for offline reading and faster access')}
+              {t('installDescription')}
             </p>
           </div>
           <button
@@ -93,9 +97,9 @@ export default function PWAInstall() {
 
         <ul className="space-y-2 mb-4 text-sm text-gray-600 dark:text-gray-400">
           {PWA_FEATURES.map((feature) => (
-            <li key={feature} className="flex items-center">
+            <li key={feature.key} className="flex items-center">
               <Icon name="check" className="w-4 h-4 text-green-600 me-2" />
-              {getTranslation(`installFeature${feature.charAt(0).toUpperCase() + feature.slice(1)}`, feature.replace(/([A-Z])/g, ' $1').trim())}
+              {t(feature.key)}
             </li>
           ))}
         </ul>
@@ -105,13 +109,13 @@ export default function PWAInstall() {
             onClick={handleInstall}
             className="flex-1 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
           >
-            {getTranslation('installButton', 'Install')}
+            {t('install')}
           </button>
           <button
             onClick={handleDismiss}
             className="flex-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-900 dark:text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
           >
-            {getTranslation('notNowButton', 'Not Now')}
+            {t('notNow')}
           </button>
         </div>
       </div>
