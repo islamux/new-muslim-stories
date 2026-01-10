@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { getMessages, getTimeZone } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 import { ThemeProvider } from 'next-themes';
-import PWAInstallPrompt from '@/components/PWAInstallPrompt';
+import PWAInstall from '@/components/PWAInstall';
 
 interface LocaleLayoutProps {
   children: ReactNode;
@@ -19,7 +19,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
       <NextIntlClientProvider messages={messages} locale={locale} timeZone={timeZone}>
         <div dir={locale === 'ar' ? 'rtl' : 'ltr'}>
           {children}
-          <PWAInstallPrompt />
+          <PWAInstall />
         </div>
       </NextIntlClientProvider>
     </ThemeProvider>

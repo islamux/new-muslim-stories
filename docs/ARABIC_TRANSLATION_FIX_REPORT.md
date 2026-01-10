@@ -13,67 +13,73 @@ There are two `messages` directories:
 
 ## 2. Hardcoded Strings (Internationalization Needed)
 
-Several components have hardcoded English strings that are not using `next-intl`.
+Severalcomponents have hardcoded English strings that are not using `next-intl`.
 
 ### `PWAInstallPrompt.tsx`
 
-This component is completely hardcoded in English.
+This component has fallback hardcoded English strings that should be properly internationalized:
 
-- **Header**: "Install App"
-- **Description**: "Install New Muslim Stories for offline reading and faster access"
-- **Features List**: "Read stories offline", "Faster loading", "Home screen access"
-- **Buttons**: "Install", "Not Now"
+- **Header**: "Install App" (fallback for `installAppTitle`)
+- **Description**: "Install New Muslim Stories for offline reading and faster access" (fallback for `installAppDescription`)
+- **Features List**: 
+  - "Read stories offline" (fallback for `installFeatureOfflineReading`)
+  - "Faster loading" (fallback for `installFeatureFasterLoading`)
+  - "Home screen access" (fallback for `installFeatureHomeScreenAccess`)
+- **Buttons**: 
+  - "Install" (fallback for `installButton`)
+  - "Not Now" (fallback for `notNowButton`)
+- **Dismiss button**: `aria-label="Dismiss"` (hardcoded, not using translations)
+
+**Current Status**: The component uses a `getTranslation()` fallback system but still has hardcoded English strings as fallbacks. These should be properly internationalized using the existing translation keys in `messages/en.json` and `messages/ar.json`.
 
 ### `ThemeToggle.tsx`
 
-- The `aria-label="Toggle theme"` is hardcoded in English.
+- **Aria-label**: The component has `aria-label="Dismiss"` in the dismiss button that is hardcoded in English
+- **Theme labels**: Uses translations for "Theme", "Light", and "Dark" but could benefit from proper aria-labels
+
+**Current Status**: Most text is properly internationalized, but accessibility attributes need attention.
+
+### Additional Findings
+
+#### `aria-label` Issues
+- `PWAInstallPrompt.tsx` line 88: `aria-label="Dismiss"` - This accessibility label is hardcoded
+
+#### Translation Key Analysis
+The translation files (`messages/en.json` and `messages/ar.json`) already contain proper translations for:
+- PWA installation strings under `PWA` namespace
+- Theme-related strings under `Common` namespace
+
+**Recommendation**: Remove fallback hardcoded strings and rely entirely on the translation system to ensure consistent Arabic support.
+
+### Action Plan for Hardcoded Strings Fix
+
+#### Step 1: Update PWAInstallPrompt.tsx
+- Remove the `getTranslation()` fallback function
+- Replace all hardcoded fallback strings with direct translation calls
+- Add proper aria-label translation for the dismiss button
+- Example: Replace `getTranslation('installAppTitle', 'Install App')` with `t('installAppTitle')`
+
+#### Step 2: Update ThemeToggle.tsx  
+- Add proper aria-label for theme toggle button using translations
+- Ensure all theme-related strings use the existing translation keys
+
+#### Step 3: Verify Translation Files
+- Confirm all required translation keys exist in both `messages/en.json` and `messages/ar.json`
+- Add missing keys if any are found during implementation
+
+#### Step 4: Test Arabic Support
+- Switch application to Arabic locale
+- Verify all PWA prompt text appears in Arabic
+- Verify theme toggle accessibility labels work in Arabic
+- Test on both mobile and desktop views
+
+#### Expected Outcome
+After implementing these changes:
+- All user-facing text will be properly internationalized
+- Arabic users will see complete Arabic translations
+- Accessibility will be improved with proper aria-labels
+- No hardcoded English strings will remain in the UI
 
 ---
 
-## 3. RTL (Right-to-Left) Styling Issues
 
-Some components use physical spacing (`mr-*`, `ml-*`) instead of logical properties (`me-*`, `ms-*`), which causes inconsistent margins in Arabic.
-
-### `ProfileHeader.tsx`
-
-- **Current**: `className="rounded-full mr-4 object-cover"`
-- **Fix**: Change `mr-4` to `me-4` (margin-end) so it works correctly for both LTR and RTL.
-
----
-
-## 4. Why Hero/Header showed English on `/ar`
-
-The `TRANSLATION_ISSUE_ANALYSIS.md` indicated that Hero and Header components were failing to show Arabic.
-
-- Ensure that the `Hero` and `Index` namespaces in `messages/ar.json` are properly formatted.
-- Verify that `NextIntlClientProvider` in `LocaleLayout` is receiving the correct `messages` object.
-
----
-
-## Recommended Manual Fix Steps
-
-### Step 1: Update `messages/ar.json`
-
-Add a new `PWA` namespace and update `Common` for the theme toggle:
-
-```json
-{
-  "PWA": {
-    "installTitle": "تثبيت التطبيق",
-    "installDescription": "قم بتثبيت 'قصص المسلمين الجدد' للقراءة بدون إنترنت ووصول أسرع",
-    "featureOffline": "قراءة القصص بدون إنترنت",
-    "featureFast": "تحميل أسرع",
-    "featureHome": "وصول من الشاشة الرئيسية",
-    "install": "تثبيت",
-    "notNow": "ليس الآن"
-  }
-}
-```
-
-### Step 2: Use Translations in Components
-
-Update `PWAInstallPrompt.tsx` to use the `useTranslations('PWA')` hook and replace strings with `{t('key')}`.
-
-### Step 3: Switch to Logical CSS
-
-Search the codebase for `mr-` and `ml-` and replace them with `me-` and `ms-` where they relate to horizontal layout spacing.

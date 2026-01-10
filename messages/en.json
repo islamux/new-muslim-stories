@@ -1,4 +1,13 @@
 {
+  "PWA": {
+  "installTitle": "Install the App",
+  "installDescription": "Install 'Stories of New Muslims' to read offline and enjoy faster access",
+  "featureOffline": "Read stories offline",
+  "featureFast": "Faster loading",
+  "featureHome": "Access from the home screen",
+  "install": "Install",
+  "notNow": "Not now"
+},
   "Index": {
     "title": "Stories of Guidance from Around the World",
     "featuredStories": "Featured Stories",
@@ -37,6 +46,9 @@
     "installFeatureFasterLoading": "Faster loading",
     "installFeatureHomeScreenAccess": "Home screen access",
     "installButton": "Install",
-    "notNowButton": "Not Now"
+    "notNowButton": "Not Now",
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark"
   }
 }
