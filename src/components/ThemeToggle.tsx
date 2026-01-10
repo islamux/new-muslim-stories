@@ -1,7 +1,9 @@
 'use client';
 
 import { useTheme } from 'next-themes';
+import { useTranslations } from 'next-intl';
 import { useHasMounted } from '@/hooks/useHasMounted';
+import Button from './Button';
 
 interface IconProps {
   theme: string | undefined;
@@ -9,9 +11,8 @@ interface IconProps {
 
 const SunIcon = ({ theme }: IconProps) => (
   <svg
-    className={`w-5 h-5 text-yellow-500 transition-all duration-200 ${
-      theme === 'light' ? 'opacity-100 rotate-0' : 'opacity-0 rotate-90'
-    }`}
+    className={`w-5 h-5 text-yellow-500 transition-all duration-200 ${theme === 'light' ? 'opacity-100 rotate-0' : 'opacity-0 rotate-90'
+      }`}
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
@@ -28,9 +29,8 @@ const SunIcon = ({ theme }: IconProps) => (
 
 const MoonIcon = ({ theme }: IconProps) => (
   <svg
-    className={`absolute w-5 h-5 text-blue-400 transition-all duration-200 ${
-      theme === 'dark' ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-90'
-    }`}
+    className={`w-5 h-5 text-blue-400 transition-all duration-200 ${theme === 'dark' ? 'opacity-100 rotate-0' : 'opacity-0 rotate-90'
+      }`}
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
@@ -45,8 +45,10 @@ const MoonIcon = ({ theme }: IconProps) => (
   </svg>
 );
 
+// --- 
 export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();
+  const t = useTranslations('Common');
   const mounted = useHasMounted();
 
   const toggleTheme = () => {
@@ -55,24 +57,25 @@ export default function ThemeToggle() {
 
   // Prevent hydration mismatch by not rendering until mounted
   if (!mounted) {
-    return <div className="w-10 h-10" />;
+    return (
+      <Button
+        disabled
+        className='hover:bg-gray-200 dark:hover:bg-gray-700'
+      >
+        {t('theme')}
+      </Button>
+    );
   }
-
   return (
-    <button
+    <Button
       onClick={toggleTheme}
-      className="group relative inline-flex items-center justify-center w-10 h-10 rounded-lg bg-white dark:bg-gray-800 shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-200 ease-in-out hover:scale-105 active:scale-95"
-      aria-label="Toggle theme"
+      className='hover:bg-gray-200 dark:hover:bg-gray-700'
     >
-      <SunIcon theme={theme} />
-      <MoonIcon theme={theme} />
-      <div
-        className={`absolute inset-0 rounded-lg transition-opacity duration-200 ${
-          theme === 'dark'
-            ? 'bg-blue-500 opacity-0 group-hover:opacity-20'
-            : 'bg-yellow-400 opacity-0 group-hover:opacity-20'
-        }`}
-      />
-    </button>
+      <div className="w-5 h-5">
+        <SunIcon theme={theme} />
+        <MoonIcon theme={theme} />
+      </div>
+      <span className="ml-2">{theme === 'light' ? t('dark') : t('light')} {t('theme')}</span>
+    </Button>
   );
 }

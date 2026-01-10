@@ -1,4 +1,13 @@
 {
+  "PWA": {
+    "installTitle": "تثبيت التطبيق",
+    "installDescription": "قم بتثبيت 'قصص المسلمين الجدد' للقراءة بدون إنترنت ووصول أسرع",
+    "featureOffline": "قراءة القصص بدون إنترنت",
+    "featureFast": "تحميل أسرع",
+    "featureHome": "وصول من الشاشة الرئيسية",
+    "install": "تثبيت",
+    "notNow": "ليس الآن"
+  },
   "Index": {
     "title": "قصص هداية من جميع أنحاء العالم",
     "featuredStories": "قصص مميزة",
@@ -37,6 +46,9 @@
     "installFeatureFasterLoading": "تحميل أسرع",
     "installFeatureHomeScreenAccess": "الوصول من الشاشة الرئيسية",
     "installButton": "تثبيت",
-    "notNowButton": "ليس الآن"
+    "notNowButton": "ليس الآن",
+    "theme": "المظهر",
+    "light": "فاتح",
+    "dark": "داكن"
   }
 }

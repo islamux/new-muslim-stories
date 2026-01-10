@@ -17,20 +17,19 @@ export default function ThemeToggle() {
   if (!mounted) {
     return (
       <Button
-      disabled
-      className="hover:bg-gray-200 dark:hover:bg-gray-700"
-    >
-      {t('theme')}
+        disabled
+        className="hover:bg-gray-200 dark:hover:bg-gray-700"
+      >
+        {t('theme')}
       </Button>
     );
   }
 
   return (
     <Button
-    onClick={toggleTheme}
-    className="hover:bg-gray-200 dark:hover:bg-gray-700"
-  >
-    {theme === 'light' ? t('dark') : t('light')} {t('theme')}
+      onClick={toggleTheme}
+      className="hover:bg-gray-200 dark:hover:bg-gray-700"
+    >{theme === 'light' ? t('dark') : t('light')} {t('theme')}
     </Button>
   );
 }

@@ -15,7 +15,7 @@ export default function ProfileHeader({ story }: ProfileHeaderProps) {
           alt={story.firstName}
           width={80}
           height={80}
-          className="rounded-full mr-4 object-cover"
+          className="rounded-full me-4 object-cover"
         />
       )}
       <div>

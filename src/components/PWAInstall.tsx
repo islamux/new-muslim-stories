@@ -15,10 +15,10 @@ interface BeforeInstallPromptEvent extends Event {
 
 const PWA_FEATURES = ['offlineReading', 'fasterLoading', 'homeScreenAccess'];
 
-export default function PWAInstallPrompt() {
+export default function PWAInstall() {
   const [installPrompt, setInstallPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [showInstallPrompt, setShowInstallPrompt] = useState(false);
-  const t = useTranslations('Common');
+  const t = useTranslations('PWA');
 
   useEffect(() => {
     const dismissedStorage = localStorage.getItem('pwa-install-dismissed');
@@ -74,7 +74,7 @@ export default function PWAInstallPrompt() {
           <div className="flex-shrink-0">
             <Icon name="app" className="w-8 h-8 text-green-600" />
           </div>
-          <div className="ml-3 flex-1">
+          <div className="ms-3 flex-1">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
               {getTranslation('installAppTitle', 'Install App')}
             </h3>
@@ -94,7 +94,7 @@ export default function PWAInstallPrompt() {
         <ul className="space-y-2 mb-4 text-sm text-gray-600 dark:text-gray-400">
           {PWA_FEATURES.map((feature) => (
             <li key={feature} className="flex items-center">
-              <Icon name="check" className="w-4 h-4 text-green-600 mr-2" />
+              <Icon name="check" className="w-4 h-4 text-green-600 me-2" />
               {getTranslation(`installFeature${feature.charAt(0).toUpperCase() + feature.slice(1)}`, feature.replace(/([A-Z])/g, ' $1').trim())}
             </li>
           ))}
