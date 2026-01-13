@@ -1,10 +1,13 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
+import { useHasMounted } from '@/hooks/useHasMounted';
 
 export default function Header() {
   const t = useTranslations('Index');
+  const hasMounted = useHasMounted();
 
+  if (!hasMounted) return null;
   return (
     <section className="bg-gray-100 dark:bg-gray-850 py-8">
       <div className="container mx-auto px-4 text-center">

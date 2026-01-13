@@ -19,7 +19,7 @@
     "contactCenters": "Contact Islamic Centers",
     "dailyStoryTitle": "Daily Featured Story Title",
     "dailyStoryExcerpt": "A brief excerpt from today's inspiring story.",
-    "footerCopyright": "© {year} Discover Islam. All Rights Reserved."
+    "footerCopyright": "{year} Discover Islam. All Rights Reserved."
   },
   "Hero": {
     "headline": "Discover Inspiring Journeys",

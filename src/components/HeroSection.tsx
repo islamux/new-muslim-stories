@@ -1,11 +1,23 @@
 "use client";
 
 import React from 'react';
-import {useTranslations} from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
+import { useHasMounted } from '@/hooks/useHasMounted';
 
 const HeroSection = () => {
   const t = useTranslations('Hero');
+  const hasMounted = useHasMounted(); // avoid headration issues
 
+  // Add debug logging here 
+  // console.log('HeroSection - Available translation:', Object.keys(useTranslations('Hero').messages));
+
+  // console.log('HeroSection - Translation:', useTranslations('Hero translation Object').messages);
+  // console.log('Provider messages:', messages);
+  // console.log('Translation loading order:', performance.now());
+  // console.log('HeroSection - Current locale:', useLocale());
+  // console.log('HeroSection - Translation for headline:', t('headline'));
+
+  if (!hasMounted) return null;
   return (
     <section className="w-full py-20 md:py-32 lg:py-40 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-950 text-gray-900 dark:text-white transition-colors duration-300">
       <div className="container mx-auto px-4 md:px-6 text-center">

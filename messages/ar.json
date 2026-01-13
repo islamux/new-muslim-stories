@@ -19,7 +19,7 @@
     "contactCenters": "اتصل بالمراكز الإسلامية",
     "dailyStoryTitle": "عنوان القصة اليومية المميزة",
     "dailyStoryExcerpt": "مقتطف موجز من قصة اليوم الملهمة.",
-    "footerCopyright": "© {year} اكتشف الإسلام. جميع الحقوق محفوظة."
+    "footerCopyright": "{year} اكتشف الإسلام. جميع الحقوق محفوظة."
   },
   "Hero": {
     "headline": "اكتشف رحلات ملهمة",
