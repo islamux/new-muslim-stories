@@ -9,6 +9,7 @@ export default createMiddleware({
 });
 
 export const config = {
-  // Match only internationalized pathnames
-  matcher: ['/', '/(ar|en)/:path*'],
+  // Match only internationalized pathnames.
+  // This regex excludes paths for static assets, API routes, and Next.js internal files.
+  matcher: ['/((?!api|_next|.*\\..*).*)'],
 };
