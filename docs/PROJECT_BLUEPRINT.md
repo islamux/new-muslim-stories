@@ -2,7 +2,7 @@
 
 ## Overview
 
-A Next.js 14 application showcasing inspiring stories of people who converted to Islam. Features:
+A Next.js 16 application showcasing inspiring stories of people who converted to Islam. Features:
 - **Multi-language**: English & Arabic with RTL support
 - **Markdown-based content**: Stories stored as `.md` files with YAML frontmatter
 - **Static generation**: Pre-rendered pages for optimal performance
@@ -107,25 +107,72 @@ new-muslim-stories/
 
 ### Feature 1: Internationalization (i18n)
 
-**1. Configure locales**
+**⚠️ IMPORTANT: Next.js 16 + next-intl Setup**
+
+This project uses Next.js 16 which requires specific i18n setup. See [`NEXT_INTL_FIX_GUIDE.md`](NEXT_INTL_FIX_GUIDE.md) for complete details.
+
+**1. Configure routing** (`src/i18n/routing.ts`)
 ```typescript
-// src/i18n.ts
-import {getRequestConfig} from 'next-intl/server';
+import { defineRouting } from 'next-intl/routing';
 
-export default getRequestConfig(async ({locale}) => ({
-  messages: (await import(`../messages/${locale}.json`)).default
-}));
-```
-
-**2. Setup middleware**
-```typescript
-// src/middleware.ts
-import createMiddleware from 'next-intl/middleware';
-
-export default createMiddleware({
+export const routing = defineRouting({
   locales: ['en', 'ar'],
   defaultLocale: 'en'
 });
+```
+
+**2. Configure request** (`src/i18n/request.ts`)
+```typescript
+import { getRequestConfig } from 'next-intl/server';
+import { hasLocale } from 'next-intl';
+import { routing } from './routing';
+
+export default getRequestConfig(async ({ requestLocale }) => {
+  const requested = await requestLocale;
+  const locale = hasLocale(routing.locales, requested)
+    ? requested
+    : routing.defaultLocale;
+
+  const messages = (await import(`../../messages/${locale}.json`)).default;
+
+  return { locale, messages, timeZone: 'Asia/Aden' };
+});
+```
+
+**3. Setup proxy** (`src/proxy.ts` - Next.js 16 uses `proxy.ts`, not `middleware.ts`)
+```typescript
+import createMiddleware from 'next-intl/middleware';
+import { routing } from './i18n/routing';
+
+export default createMiddleware(routing);
+
+export const config = {
+  matcher: ['/((?!api|_next|.*\\..*).*)'], // Exclude static assets
+};
+```
+
+**4. Call setRequestLocale in layouts and pages** ⭐ CRITICAL
+```typescript
+// src/app/[locale]/layout.tsx
+import { setRequestLocale } from 'next-intl/server';
+import { routing } from '@/i18n/routing';
+import { hasLocale } from 'next-intl';
+import { notFound } from 'next/navigation';
+
+export default async function LocaleLayout({ children, params }: Props) {
+  const { locale } = await params;
+
+  // Validate locale
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
+  // ⭐ CRITICAL: Must call before getMessages()
+  setRequestLocale(locale);
+
+  const messages = await getMessages();
+  // ...
+}
 ```
 
 **3. Create translation files**
@@ -351,24 +398,40 @@ export async function generateStaticParams() {
 ```typescript
 // src/app/[locale]/layout.tsx
 import {ReactNode} from 'react';
-import {getMessages} from 'next-intl/server';
-import ClientProviders from '@/components/ClientProviders';
+import {getMessages, getTimeZone, setRequestLocale} from 'next-intl/server';
+import {NextIntlClientProvider} from 'next-intl';
+import {ThemeProvider} from 'next-themes';
+import {routing} from '@/i18n/routing';
+import {hasLocale} from 'next-intl';
+import {notFound} from 'next/navigation';
 
-export default async function LocaleLayout({
-  children,
-  params: {locale}
-}: {
+interface LocaleLayoutProps {
   children: ReactNode;
-  params: {locale: string};
-}) {
+  params: Promise<{locale: string}>;
+}
+
+export default async function LocaleLayout({children, params}: LocaleLayoutProps) {
+  const {locale} = await params;
+
+  // Validate locale
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
+  // ⭐ CRITICAL: Enable static rendering and set locale for all next-intl calls
+  setRequestLocale(locale);
+
   const messages = await getMessages();
+  const timeZone = await getTimeZone();
 
   return (
-    <ClientProviders messages={messages} locale={locale}>
-      <div dir={locale === 'ar' ? 'rtl' : 'ltr'}>
-        {children}
-      </div>
-    </ClientProviders>
+    <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+      <NextIntlClientProvider messages={messages} locale={locale} timeZone={timeZone}>
+        <div dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+          {children}
+        </div>
+      </NextIntlClientProvider>
+    </ThemeProvider>
   );
 }
 ```
@@ -1145,6 +1208,116 @@ return <section ref={sectionRef}>...</section>;
 ---
 
 ## Changelog
+
+### Version 2.9 - Next.js 16 + next-intl Complete Fix (2026-01-13)
+
+**Critical Fix:**
+- ✅ Fixed Arabic translations showing English text on `/ar` routes
+- ✅ Resolved INVALID_MESSAGE errors for missing static assets
+- ✅ Updated to Next.js 16 + next-intl proper setup
+
+**Major Changes:**
+
+**File Structure Updates:**
+- Created `src/i18n/routing.ts` - Central routing configuration required by Next.js 16
+- Renamed `src/i18n.ts` → `src/i18n/request.ts` - Updated to new `requestLocale` API
+- `src/proxy.ts` - Now uses routing config (Next.js 16 renamed `middleware.ts` → `proxy.ts`)
+- Created missing icon files: `icon-192x192.png`, `icon-512x512.png`
+
+**Critical Code Changes:**
+
+**1. Added `setRequestLocale()` in layout** (MOST IMPORTANT):
+```typescript
+// src/app/[locale]/layout.tsx
+import { setRequestLocale } from 'next-intl/server';
+
+export default async function LocaleLayout({ children, params }) {
+  const { locale } = await params;
+  setRequestLocale(locale); // ⭐ MUST call before getMessages()
+  const messages = await getMessages(); // Now loads correct locale
+}
+```
+
+**2. Updated request config** (`src/i18n/request.ts`):
+```typescript
+// Old: ({ locale }) => ...
+// New: ({ requestLocale }) => ...
+export default getRequestConfig(async ({ requestLocale }) => {
+  const requested = await requestLocale;
+  const locale = hasLocale(routing.locales, requested)
+    ? requested
+    : routing.defaultLocale;
+  // ...
+});
+```
+
+**3. Updated proxy matcher** (`src/proxy.ts`):
+```typescript
+export const config = {
+  // Now properly excludes static assets (files with dots)
+  matcher: ['/((?!api|_next|.*\\..*).*)'],
+};
+```
+
+**Documentation Added:**
+- ✅ `docs/NEXT_INTL_FIX_GUIDE.md` - Comprehensive fix guide with before/after examples
+- ✅ `README.md` - Updated with Next.js 16 i18n setup information
+- ✅ `docs/TRANSLATION_ISSUE_ANALYSIS.md` - Marked as resolved
+
+**Key Learnings:**
+1. **`setRequestLocale()` is critical** - Must be called before `getMessages()` in Next.js 16
+2. **Middleware → Proxy** - Next.js 16 renamed the file
+3. **Centralized routing config** - All i18n config in `src/i18n/routing.ts`
+4. **Static assets matcher** - Must exclude files with dots from middleware
+
+**Before Fix:**
+- Arabic pages (`/ar`) showed English text
+- INVALID_MESSAGE errors for missing icons
+- Used old `middleware.ts` naming
+
+**After Fix:**
+- ✅ Arabic pages display correct translations
+- ✅ No INVALID_MESSAGE errors
+- ✅ Uses Next.js 16 `proxy.ts` convention
+- ✅ All translations work correctly
+
+**Testing Results:**
+```bash
+# English page
+curl http://localhost:3000/en
+✅ "Stories of Guidance from Around the World"
+
+# Arabic page
+curl http://localhost:3000/ar
+✅ "قصص هداية من جميع أنحاء العالم"
+
+# No errors in console
+✅ No INVALID_MESSAGE errors
+✅ No 404 errors for icons
+```
+
+**Files Modified:**
+- `src/proxy.ts` - Uses routing config, updated matcher
+- `src/i18n/request.ts` - New API with requestLocale
+- `src/i18n/routing.ts` - NEW: Central routing config
+- `src/navigation.ts` - Imports from routing
+- `src/app/[locale]/layout.tsx` - Added setRequestLocale()
+- `src/app/[locale]/page.tsx` - Added setRequestLocale()
+- `src/components/Header.tsx` - Removed debug logs
+- `next.config.mjs` - Points to request.ts
+- `public/icon-192x192.png` - NEW: Created missing icon
+- `public/icon-512x512.png` - NEW: Created missing icon
+- `README.md` - Updated with i18n info
+- `docs/NEXT_INTL_FIX_GUIDE.md` - NEW: Complete fix guide
+- `docs/TRANSLATION_ISSUE_ANALYSIS.md` - Marked resolved
+
+**Impact:**
+- 🌍 Arabic users can now properly use the site
+- 🐛 Critical bug fixes for internationalization
+- 📚 Comprehensive documentation for Next.js 16 + next-intl
+- ✅ Production-ready i18n setup
+
+---
 
 ### Version 2.8 - Component & Library Refactoring (2025-11-03)
 

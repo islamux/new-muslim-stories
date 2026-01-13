@@ -1,15 +1,69 @@
 # Arabic Translation Issue Analysis
 
-## Problem Statement
+## ⚠️ ISSUE RESOLVED
 
-**ISSUE**: Arabic translations are NOT working for some components on `/ar` route.
+**Status**: ✅ **FIXED** (January 13, 2026)
+**Solution**: See [`NEXT_INTL_FIX_GUIDE.md`](NEXT_INTL_FIX_GUIDE.md) for complete fix details.
 
-**OBSERVED**:
-- ❌ HeroSection shows: "Discover Inspiring Journeys" (should be: "اكتشف رحلات ملهمة")
-- ❌ Header shows: "Stories of Guidance from Around the World" (should be: "قصص هداية من جميع أنحاء العالم")
-- ✅ Story content shows correctly in Arabic
-- ✅ RTL direction works (`dir="rtl"`)
+---
+
+## Original Problem Statement
+
+**ISSUE**: Arabic translations were NOT working for some components on `/ar` route.
+
+**OBSERVED** (BEFORE FIX):
+- ❌ HeroSection showed: "Discover Inspiring Journeys" (should be: "اكتشف رحلات ملهمة")
+- ❌ Header showed: "Stories of Guidance from Around the World" (should be: "قصص هداية من جميع أنحاء العالم")
+- ✅ Story content showed correctly in Arabic
+- ✅ RTL direction worked (`dir="rtl"`)
 - ✅ HTML lang set to "ar"
+
+**ROOT CAUSE**: Missing `setRequestLocale()` calls in layouts and pages. Next.js 16 with next-intl requires explicit locale setting before `getMessages()` or `useTranslations()` can work correctly.
+
+---
+
+## Solution Applied
+
+### Key Changes Made:
+
+1. **Created `src/i18n/routing.ts`** - Central routing configuration
+2. **Renamed `src/i18n.ts` → `src/i18n/request.ts`** - Updated to new Next.js 16 API
+3. **Updated `src/proxy.ts`** - Uses routing config, proper matcher for static assets
+4. **Added `setRequestLocale()` calls** in `src/app/[locale]/layout.tsx` and `page.tsx`
+5. **Created missing icon files** - `icon-192x192.png` and `icon-512x512.png`
+
+### Critical Fix:
+
+```typescript
+// src/app/[locale]/layout.tsx
+import { setRequestLocale } from 'next-intl/server';
+
+export default async function LocaleLayout({ children, params }) {
+  const { locale } = await params;
+
+  // ⭐ CRITICAL: Must call BEFORE getMessages()
+  setRequestLocale(locale);
+
+  const messages = await getMessages();
+  // Now messages will correctly load Arabic translations for /ar
+}
+```
+
+---
+
+## Verification
+
+**After Fix:**
+- ✅ HeroSection shows: "اكتشف رحلات ملهمة" (Arabic)
+- ✅ Header shows: "قصص هداية من جميع أنحاء العالم" (Arabic)
+- ✅ All components display correct translations
+- ✅ Story content in Arabic works
+- ✅ RTL direction works
+- ✅ No INVALID_MESSAGE errors
+
+---
+
+## Remaining Analysis (For Reference)
 
 ---
 
@@ -478,7 +532,7 @@ head -1 src/components/HeroSection.tsx
 
 ---
 
-**Status**: 🔴 Translation broken for specific components
-**Priority**: High
-**Impact**: Arabic users see English UI text
-**ETA**: Fix within 1 hour after diagnosis
+**Status**: ✅ **RESOLVED**
+**Fix Date**: January 13, 2026
+**See Also**: [`NEXT_INTL_FIX_GUIDE.md`](NEXT_INTL_FIX_GUIDE.md) for complete solution
+**Impact**: All Arabic pages now display correct translations

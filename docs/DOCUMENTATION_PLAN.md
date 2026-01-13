@@ -5,7 +5,7 @@
 
 ## 📋 Documentation Overview
 
-This plan outlines the complete documentation structure for the New Muslim Stories project, a Next.js 14 application with internationalization support featuring stories of new Muslims worldwide.
+This plan outlines the complete documentation structure for the New Muslim Stories project, a Next.js 16 application with internationalization support featuring stories of new Muslims worldwide.
 
 ## 📚 Documentation Structure
 
@@ -32,8 +32,10 @@ This plan outlines the complete documentation structure for the New Muslim Stori
    - **COMPONENT_LIBRARY.md** (UI components documentation)
 
 ### 5. **Internationalization Documentation**
+   - **NEXT_INTL_FIX_GUIDE.md** ✅ (Next.js 16 + next-intl setup - COMPLETED)
    - **I18N_GUIDE.md** (Internationalization implementation)
    - **TRANSLATION_PROCESS.md** (Managing translations)
+   - **TRANSLATION_ISSUE_ANALYSIS.md** ✅ (Arabic translation fix - RESOLVED)
 
 ---
 
