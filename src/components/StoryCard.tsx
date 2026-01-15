@@ -16,7 +16,7 @@ export default function StoryCard({ story }: StoryCardProps) {
         {story.title}
       </h3>
       <p className="font-sans text-gray-700 dark:text-gray-300 mb-4">
-        {story.contentHtml.substring(0, 150)}...
+        {story.contentHtml.replace(/<[^>]*>/g, '').substring(0, 150)}...
       </p>
       <Link
         href={`/stories/${story.slug}`}
