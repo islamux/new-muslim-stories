@@ -71,7 +71,7 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       className='hover:bg-gray-200 dark:hover:bg-gray-700'
     >
-      <div className="w-5 h-5">
+      <div className="flex flex-col items-center justify-center w-5 h-5">
         <SunIcon theme={theme} />
         <MoonIcon theme={theme} />
       </div>
