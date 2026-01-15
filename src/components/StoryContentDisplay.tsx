@@ -15,7 +15,7 @@ interface StorySectionProps {
 const StorySection = ({ title, content }: StorySectionProps) => (
   <section className="my-8">
     <h2 className="text-2xl font-semibold text-green-700 mb-4">{title}</h2>
-    <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: content }} />
+    <div className="prose prose-slate dark:prose-invert max-w-none text-gray-900 dark:text-white " dangerouslySetInnerHTML={{ __html: content }} />
   </section>
 );
 
@@ -34,7 +34,7 @@ export default function StoryContentDisplay({ story }: StoryContentDisplayProps)
   ];
 
   return (
-    <article className="bg-white rounded-lg shadow-md p-8">
+    <article className="bg-gray-50 dark:bg-gray-900 rounded-lg shadow-md p-8">
       <div className="flex justify-between items-start">
         <ProfileHeader story={story} />
         <Button
