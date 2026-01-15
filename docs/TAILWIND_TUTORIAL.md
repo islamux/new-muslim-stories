@@ -1,4 +1,7 @@
 # Complete Tailwind CSS Tutorial
+
+**Date**: January 15, 2026
+
 ## Real-World Examples from New Muslim Stories Project
 
 Welcome! This comprehensive tutorial teaches you Tailwind CSS by examining a real, production-ready application. Each concept is explained with actual code from the project.
