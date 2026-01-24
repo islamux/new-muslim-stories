@@ -1,8 +1,7 @@
+- upgrad the databse to my hostinger.
 - remove unnecessary packages
 - search functionality
 - add photos of new Muslims
-- remove dead code (unused imports, etc.)
 - optimize useState, useEffect, useMemo usage
-- update layout.tsx
-- clean up codebase
-
+create-if not exist - issues of fixes for all project
+update tailwind, issues , md files.

@@ -1,23 +1,8 @@
----
-title: "رحلة العسكري البرازيلي إلى الإسلام"
-author: "العسكري البرازيلي"
-image: "/public/file.svg"
-language: "ar"
-firstName: "العسكري البرازيلي"
-age: null
-country: "البرازيل"
-previousReligion: null
-profilePhoto: "/public/file.svg"
-featured: false
-date: null
----
-
-### حياتي قبل الإسلام
+## حياتي قبل الإسلام
 عسكري برازيلي كان يخدم في الجيش، بعيدًا عن الإسلام وغير مهتم بالدين. عاش حياة عادية مليئة بالشكوك حول الأديان. [youtube](https://www.youtube.com/watch?v=4kHdx6Yl7gw)
 
-### لحظة الهداية
+## لحظة الهداية
 تأثر بقصة إسلام أحد البرازيليين أو معجزة قرآنية، مما دفعَه للبحث والإيمان. أعلن إسلامه علنًا ونشره للناس. [youtube](https://www.youtube.com/watch?v=13E5WG0VfPs)
 
-### تأملات
+## تأملات
 أصبح يدعو جيشه ومجتمعه للإسلام، مشددًا على أهمية الدعوة العملية. قصته تُبرز كيف يغير الإسلام الأفراد في مجتمعات غير مسلمة. [youtube](https://www.youtube.com/watch?v=4kHdx6Yl7gw)
-
