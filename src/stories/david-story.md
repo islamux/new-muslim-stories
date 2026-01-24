@@ -2,7 +2,7 @@
 title: "From Addiction to Faith: David's Story"
 author: "David"
 date: "2023-11-20"
-image: "/public/file.svg"
+image: "https://source.unsplash.com/random/800x600?sig=73"
 language: "en"
 ---
 

@@ -1,17 +1,3 @@
----
-title: "The Christian Young Man Who Declared His Islam Before His Mother on TV"
-author: "Christian Young Man"
-image: "https://source.unsplash.com/random/800x600?sig=965"
-language: "en"
-firstName: "Christian Young Man"
-age: null
-country: null
-previousReligion: "Christianity"
-profilePhoto: "https://source.unsplash.com/random/400x400?sig=446"
-featured: false
-date: null
----
-
 ## Life Before Islam
 Tim (now Jamal), a British Christian, converted to Islam privately but faced family tension, especially from his mother who didn't take it seriously initially. For 10 years, they had a difficult relationship as his family thought something was wrong with him. [youtube](https://www.youtube.com/watch?v=-Dp2Nyts5U4)
 
@@ -20,4 +6,3 @@ Quranic verses guided him to Islam through Sheikh Fahad Al-Kandari's program, tr
 
 ## Reflections
 When his mother saw him on television speaking about Islam, she panicked, calling family saying "Tim is one of those fundamentalists." Now she's proud of him, relies on him for everything, and their relationship is healed through patience. [youtube](https://www.youtube.com/watch?v=-Dp2Nyts5U4)
-

@@ -1,13 +1,13 @@
 ---
 title: "رحلة آسيا: اعتناق الإسلام بماء زمزم"
 author: "آسيا"
-image: "/public/file.svg"
+image: "https://source.unsplash.com/random/800x600?sig=716"
 language: "ar"
 firstName: "عائشة"
 age: null
 country: "اليابان"
 previousReligion: null
-profilePhoto: "/public/file.svg"
+profilePhoto: "https://source.unsplash.com/random/400x400?sig=956"
 featured: false
 date: null
 ---

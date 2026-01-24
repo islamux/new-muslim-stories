@@ -1,13 +1,13 @@
 ---
 title: "The British Police Officer Who Recites Quran with Tajweed"
 author: "British Police Officer"
-image: "/public/file.svg"
+image: "https://source.unsplash.com/random/800x600?sig=240"
 language: "en"
 firstName: "British Police Officer"
 age: null
 country: "United Kingdom"
 previousReligion: null
-profilePhoto: "/public/file.svg"
+profilePhoto: "https://source.unsplash.com/random/400x400?sig=840"
 featured: false
 date: null
 ---

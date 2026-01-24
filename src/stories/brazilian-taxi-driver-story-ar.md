@@ -1,13 +1,13 @@
 ---
 title: "رحلة سائق التاكسي البرازيلي إلى الإسلام"
 author: "سائق التاكسي البرازيلي"
-image: "/public/file.svg"
+image: "https://source.unsplash.com/random/800x600?sig=507"
 language: "ar"
 firstName: "سائق التاكسي البرازيلي"
 age: null
 country: "البرازيل"
 previousReligion: null
-profilePhoto: "/public/file.svg"
+profilePhoto: "https://source.unsplash.com/random/400x400?sig=315"
 featured: false
 date: null
 ---

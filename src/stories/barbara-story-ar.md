@@ -2,13 +2,13 @@
 title: "رحلة باربرا: طالبة جامعية فرنسية تعتنق الإسلام"
 author: "باربرا"
 date: "2023-01-15"
-image: "/public/file.svg"
+image: "https://source.unsplash.com/random/800x600?sig=952"
 language: "ar"
 firstName: "باربرا"
 age: 22
 country: "فرنسا"
 previousReligion: "المسيحية"
-profilePhoto: "/public/file.svg"
+profilePhoto: "https://source.unsplash.com/random/400x400?sig=790"
 featured: false
 ---
 

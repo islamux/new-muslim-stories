@@ -2,13 +2,13 @@
 title: "Madeline's Journey: A Swedish Convert's Embrace of Islam"
 author: "Madeline"
 date: "2023-03-01"
-image: "/public/file.svg"
+image: "https://source.unsplash.com/random/800x600?sig=64"
 language: "en"
 firstName: "Madeline"
 age: 25
 country: "Sweden"
 previousReligion: "Agnosticism"
-profilePhoto: "/public/file.svg"
+profilePhoto: "https://source.unsplash.com/random/400x400?sig=950"
 featured: false
 ---
 

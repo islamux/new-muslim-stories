@@ -2,13 +2,13 @@
 title: "رحلة مادلين: سويدية اعتنقت الإسلام"
 author: "مادلين"
 date: "2023-03-01"
-image: "/public/file.svg"
+image: "https://source.unsplash.com/random/800x600?sig=850"
 language: "ar"
 firstName: "مادلين"
 age: 25
 country: "السويد"
 previousReligion: "اللاأدرية"
-profilePhoto: "/public/file.svg"
+profilePhoto: "https://source.unsplash.com/random/400x400?sig=528"
 featured: false
 ---
 

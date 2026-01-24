@@ -1,13 +1,13 @@
 ---
 title: "الدكتورة البرازيلية: 15 عامًا من الدراسة قبل اعتناق الإسلام"
 author: "الدكتورة البرازيلية"
-image: "/public/file.svg"
+image: "https://source.unsplash.com/random/800x600?sig=687"
 language: "ar"
 firstName: "الدكتورة البرازيلية"
 age: null
 country: "البرازيل"
 previousReligion: null
-profilePhoto: "/public/file.svg"
+profilePhoto: "https://source.unsplash.com/random/400x400?sig=564"
 featured: false
 date: null
 ---

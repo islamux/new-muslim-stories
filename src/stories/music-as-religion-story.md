@@ -1,14 +1,23 @@
 ---
 title: "The Young Man Who Considered Music His Religion and Embraced Islam"
 author: "Young Man"
-image: "/public/file.svg"
+image: "https://source.unsplash.com/random/800x600?sig=699"
 language: "en"
 firstName: "Young Man"
 age: null
 country: null
 previousReligion: null
-profilePhoto: "/public/file.svg"
+profilePhoto: "https://source.unsplash.com/random/400x400?sig=20"
 featured: false
 date: null
 ---
+
+## My Life Before Islam
+I was born in London as Stephen Demetre Georgiou and grew up in a diverse religious environment. My passion for music started young, and I soon became the global star "Cat Stevens," with my fame spreading across the world, filled with wealth and immense success. Yet, behind this glamour, there was a constant search for the truth. The turning point came when I contracted tuberculosis at the height of my fame, which pushed me to reflect on the value of life and seek spiritual peace in various religions and philosophies, such as Buddhism and Yoga, without finding what I was looking for.
+
+## The Moment of Guidance
+The moment I was saved from drowning at Malibu Beach in 1976 was my true encounter with the Creator; I cried out to God, promising to dedicate my life to Him if I survived. Shortly after, my brother gave me a copy of the Quran he had brought from Jerusalem. When I opened it and began to read, I felt the greatness and precision of the words, realizing that this book was speaking directly to me. I was deeply moved by the story of Prophet Joseph and found the answers I had been searching for. In December 1977, I officially announced my conversion and took the name "Yusuf Islam," after Prophet Yusuf (peace be upon him).
+
+## Reflections
+For me, Islam was not just a change in belief, but a message of action and striving for the truth. I learned that true fame is what is used in the service of good; hence, I founded Islamic schools in London and relief organizations like "Muslim Aid" to support orphans and the needy. My story is a lesson in sincere seeking and an invitation to every person to take pride in their faith and be an ambassador for peace and tolerance. Guidance is the greatest miracle through which God opens a human heart, leading it from the distress of confusion to the light of certainty.
 

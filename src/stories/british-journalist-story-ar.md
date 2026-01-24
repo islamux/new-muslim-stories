@@ -1,13 +1,13 @@
 ---
 title: "الصحفية البريطانية التي سافرت إلى فلسطين واعتنقت الإسلام"
 author: "الصحفية البريطانية"
-image: "/public/file.svg"
+image: "https://source.unsplash.com/random/800x600?sig=915"
 language: "ar"
 firstName: "الصحفية البريطانية"
 age: null
 country: "المملكة المتحدة"
 previousReligion: null
-profilePhoto: "/public/file.svg"
+profilePhoto: "https://source.unsplash.com/random/400x400?sig=915"
 featured: false
 date: null
 ---

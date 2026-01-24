@@ -2,7 +2,7 @@
 title: "From Skepticism to Belief: Karen Meek's Story"
 author: "Karen Meek"
 date: "2021-05-25"
-image: "/public/file.svg"
+image: "https://source.unsplash.com/random/800x600?sig=848"
 language: "en"
 ---
 

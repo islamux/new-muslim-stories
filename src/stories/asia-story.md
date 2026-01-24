@@ -1,13 +1,13 @@
 ---
 title: "Asia's Journey: Embracing Islam Through Zamzam Water"
 author: "Asia"
-image: "/public/file.svg"
+image: "https://source.unsplash.com/random/800x600?sig=209"
 language: "en"
 firstName: "Aisha"
 age: null
 country: "Japan"
 previousReligion: null
-profilePhoto: "/public/file.svg"
+profilePhoto: "https://source.unsplash.com/random/400x400?sig=833"
 featured: false
 date: null
 ---

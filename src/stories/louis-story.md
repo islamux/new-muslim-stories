@@ -1,13 +1,13 @@
 ---
 title: "Louis's Strength: A Brazilian Weightlifting Champion Embraces Islam"
 author: "Louis"
-image: "/public/file.svg"
+image: "https://source.unsplash.com/random/800x600?sig=385"
 language: "en"
 firstName: "Louis"
 age: null
 country: "Brazil"
 previousReligion: null
-profilePhoto: "/public/file.svg"
+profilePhoto: "https://source.unsplash.com/random/400x400?sig=544"
 featured: false
 date: null
 ---

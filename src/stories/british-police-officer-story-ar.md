@@ -1,13 +1,13 @@
 ---
 title: "الشرطي البريطاني الذي يقرأ القرآن بالتجويد"
 author: "الشرطي البريطاني"
-image: "/public/file.svg"
+image: "https://source.unsplash.com/random/800x600?sig=65"
 language: "ar"
 firstName: "الشرطي البريطاني"
 age: null
 country: "المملكة المتحدة"
 previousReligion: null
-profilePhoto: "/public/file.svg"
+profilePhoto: "https://source.unsplash.com/random/400x400?sig=754"
 featured: false
 date: null
 ---
