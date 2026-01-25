@@ -1,13 +1,13 @@
 ---
 title: "اعتناق حمزة: اعتناق الإسلام بسبب آية مؤثرة"
 author: "حمزة"
-image: "/public/file.svg"
+image: "https://source.unsplash.com/random/800x600?sig=627"
 language: "ar"
 firstName: "حمزة"
 age: null
 country: null
 previousReligion: "المسيحية"
-profilePhoto: "/public/file.svg"
+profilePhoto: "https://source.unsplash.com/random/400x400?sig=24"
 featured: false
 date: "2014-01-01"
 ---

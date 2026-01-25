@@ -2,7 +2,7 @@
 title: "من الشك إلى الإيمان: قصة كارين ميك"
 author: "كارين ميك"
 date: "2021-05-25"
-image: "/public/file.svg"
+image: "https://source.unsplash.com/random/800x600?sig=127"
 language: "ar"
 ---
 

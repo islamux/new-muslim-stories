@@ -2,13 +2,13 @@
 title: "Rashid's Journey: A Spanish Convert's Embrace of Islam"
 author: "Rashid"
 date: "2020-05-10"
-image: "/public/file.svg"
+image: "https://source.unsplash.com/random/800x600?sig=394"
 language: "en"
 firstName: "Rashid"
 age: 35
 country: "Spain"
 previousReligion: "Catholicism"
-profilePhoto: "/public/file.svg"
+profilePhoto: "https://source.unsplash.com/random/400x400?sig=725"
 featured: false
 ---
 

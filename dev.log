@@ -1,0 +1,85 @@
+
+> new-muslim-stories@0.1.0 dev /media/islamux/Variety/JavaScriptProjects/new-muslim-stories
+> next dev
+
+⚠ Port 3000 is in use by an unknown process, using available port 3001 instead.
+▲ Next.js 16.1.1 (Turbopack)
+- Local:         http://localhost:3001
+- Network:       http://192.168.8.14:3001
+
+✓ Starting...
+✓ Ready in 1948ms
+Killed
+
+thread 'tokio-runtime-worker' (18660) panicked at /build/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for get_type (TaskId 55680))
+
+Caused by:
+    0: Looking up data for TaskId 55680 from database failed
+    1: Failed to deserialize AMQF from 00000168.meta for 00000164.sst
+    2: ArrayLengthMismatch { required: 91, found: 4694 }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+thread 'tokio-runtime-worker' (18660) panicked at /build/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for get_type (TaskId 409))
+
+Caused by:
+    0: Looking up data for TaskId 409 from database failed
+    1: Failed to deserialize AMQF from 00000168.meta for 00000164.sst
+    2: ArrayLengthMismatch { required: 91, found: 4694 }
+Persisting failed: Unable to open static sorted file referenced from 00000166.meta
+
+Caused by:
+    0: Unable to open static sorted file 00000165.sst
+    1: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (31004) panicked at /build/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for read_matches (TaskId 76241))
+
+Caused by:
+    0: Looking up data for TaskId 76241 from database failed
+    1: Failed to deserialize AMQF from 00000168.meta for 00000164.sst
+    2: ArrayLengthMismatch { required: 91, found: 4694 }
+
+thread 'tokio-runtime-worker' (31004) panicked at /build/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for get_type (TaskId 37))
+
+Caused by:
+    0: Looking up data for TaskId 37 from database failed
+    1: Failed to deserialize AMQF from 00000168.meta for 00000164.sst
+    2: ArrayLengthMismatch { required: 91, found: 4694 }
+
+thread 'tokio-runtime-worker' (31004) panicked at /build/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for track_glob (TaskId 61035))
+
+Caused by:
+    0: Looking up data for TaskId 61035 from database failed
+    1: Failed to deserialize AMQF from 00000168.meta for 00000164.sst
+    2: ArrayLengthMismatch { required: 91, found: 4694 }
+
+thread 'tokio-runtime-worker' (31004) panicked at /build/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for <FileSource as Asset>::content (TaskId 228))
+
+Caused by:
+    0: Looking up data for TaskId 228 from database failed
+    1: Failed to deserialize AMQF from 00000168.meta for 00000164.sst
+    2: ArrayLengthMismatch { required: 91, found: 4694 }
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+
+thread 'tokio-runtime-worker' (31004) panicked at /build/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for get_type (TaskId 62061))
+
+Caused by:
+    0: Looking up data for TaskId 62061 from database failed
+    1: Failed to deserialize AMQF from 00000168.meta for 00000164.sst
+    2: ArrayLengthMismatch { required: 91, found: 4694 }
+
+thread 'tokio-runtime-worker' (31004) panicked at /build/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for read_dir (TaskId 56))
+
+Caused by:
+    0: Looking up data for TaskId 56 from database failed
+    1: Failed to deserialize AMQF from 00000168.meta for 00000164.sst
+    2: ArrayLengthMismatch { required: 91, found: 4694 }
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+⚠ Found a change in next.config.mjs. Restarting the server to apply the changes...

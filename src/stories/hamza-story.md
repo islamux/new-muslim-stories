@@ -1,13 +1,13 @@
 ---
 title: "Hamza's Conversion: Embracing Islam Due to an Influential Verse"
 author: "Hamza"
-image: "/public/file.svg"
+image: "https://source.unsplash.com/random/800x600?sig=1"
 language: "en"
 firstName: "Hamza"
 age: null
 country: null
 previousReligion: "Christianity"
-profilePhoto: "/public/file.svg"
+profilePhoto: "https://source.unsplash.com/random/400x400?sig=263"
 featured: false
 date: "2014-01-01"
 ---

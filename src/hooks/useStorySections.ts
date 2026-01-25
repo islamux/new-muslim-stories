@@ -12,7 +12,7 @@ export interface StorySections {
  */
 export function useStorySections(contentHtml: string): StorySections {
   // Split the contentHtml into sections based on the headings
-  const sections = contentHtml.split(/<h3>(.*?)<\/h3>/g);
+  const sections = contentHtml.split(/<h[23]>(.*?)<\/h[23]>/g);
 
   return {
     lifeBeforeIslam: sections[2] || '',

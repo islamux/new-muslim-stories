@@ -2,7 +2,7 @@
 title: "من الإدمان إلى الإيمان: قصة ديفيد"
 author: "ديفيد"
 date: "2023-11-20"
-image: "/public/file.svg"
+image: "https://source.unsplash.com/random/800x600?sig=601"
 language: "ar"
 ---
 
