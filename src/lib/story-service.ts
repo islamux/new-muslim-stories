@@ -31,7 +31,9 @@ export class StoryService {
     try {
       return await parseStoryFile(fileName);
     } catch (error) {
-      throw new Error(`Story with slug '${slug}' not found`);
+      const fileNames = getStoryFileNames();
+    const availableStories = fileNames.map(fileName => fileName.replace('.md', ''));
+    throw new Error(`Story with slug '${slug}' not found. Available stories: ${availableStories.join(', ')}`);
     }
   }
 

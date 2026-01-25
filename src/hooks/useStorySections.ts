@@ -8,11 +8,11 @@ export interface StorySections {
 
 /**
  * Custom hook to parse story content HTML into sections
- * Extracts content between h2 headings into separate sections
+ * Extracts content between h3 headings into separate sections
  */
 export function useStorySections(contentHtml: string): StorySections {
   // Split the contentHtml into sections based on the headings
-  const sections = contentHtml.split(/<h2>(.*?)<\/h2>/g);
+  const sections = contentHtml.split(/<h[23]>(.*?)<\/h[23]>/g);
 
   return {
     lifeBeforeIslam: sections[2] || '',
