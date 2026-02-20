@@ -2,13 +2,13 @@
 title: "Barbara's Journey: A French University Student's Embrace of Islam"
 author: "Barbara"
 date: "2023-01-15"
-image: "https://source.unsplash.com/random/800x600?sig=1000"
+image: "/images/stories/barbara.jpg"
 language: "en"
 firstName: "Barbara"
 age: 22
 country: "France"
 previousReligion: "Christianity"
-profilePhoto: "https://source.unsplash.com/random/400x400?sig=211"
+profilePhoto: "/images/stories/barbara.jpg"
 featured: false
 ---
 

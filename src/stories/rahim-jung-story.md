@@ -2,7 +2,8 @@
 title: "From Music to Faith: The Story of Rahim Jung"
 author: "Rahim Jung"
 date: "2014-07-01"
-image: "https://source.unsplash.com/random/800x600?sig=816"
+image: "/images/stories/rahim-jung.jpg"
+profilePhoto: "/images/stories/rahim-jung.jpg"
 language: "en"
 ---
 

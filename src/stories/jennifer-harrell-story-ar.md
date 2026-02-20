@@ -1,9 +1,14 @@
 ---
-title: "رحلة وزيرة إلى الإسلام: قصة جينيفر هاريل"
+title: "رحلة وزير إلى الإسلام: قصة جينيفر هاريل"
 author: "جينيفر هاريل"
 date: "2020-03-12"
-image: "https://source.unsplash.com/random/800x600?sig=597"
+image: "/images/stories/jennifer-harrell.jpeg"
+profilePhoto: "/images/stories/jennifer-harrell.jpeg"
 language: "ar"
+firstName: "جينيفر"
+age: 26
+country: "الولايات المتحدة"
+previousReligion: "المسيحية"
 ---
 
 ## حياتي قبل الإسلام

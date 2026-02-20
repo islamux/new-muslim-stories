@@ -2,8 +2,13 @@
 title: "رحلة تساؤل: قصة إيلين عائشة"
 author: "إيلين عائشة"
 date: "2022-08-10"
-image: "https://source.unsplash.com/random/800x600?sig=429"
+image: "/images/stories/elaine-aisyah.jpg"
+profilePhoto: "/images/stories/elaine-aisyah.jpg"
 language: "ar"
+firstName: "إيلين"
+age: 30
+country: "ماليزيا"
+previousReligion: "البوذية"
 ---
 
 نشأت إيلين عائشة، وهي امرأة صينية، مع القليل من التعرض للأديان الأخرى. بدأت رحلتها إلى الإسلام أثناء دراستها في الخارج. دفعها وجودها في بيئة جديدة إلى التشكيك في معتقداتها الخاصة وطبيعة الله.

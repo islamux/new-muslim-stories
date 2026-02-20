@@ -2,8 +2,13 @@
 title: "A Minister's Journey to Islam: Jennifer Harrell's Story"
 author: "Jennifer Harrell"
 date: "2020-03-12"
-image: "https://source.unsplash.com/random/800x600?sig=932"
+image: "/images/stories/jennifer-harrell.jpeg"
+profilePhoto: "/images/stories/jennifer-harrell.jpeg"
 language: "en"
+firstName: "Jennifer"
+age: 26
+country: "United States"
+previousReligion: "Christianity"
 ---
 
 ## My Life Before Islam

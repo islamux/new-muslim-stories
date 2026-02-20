@@ -1,13 +1,13 @@
 ---
 title: "الصحفية البريطانية التي سافرت إلى فلسطين واعتنقت الإسلام"
 author: "الصحفية البريطانية"
-image: "https://source.unsplash.com/random/800x600?sig=915"
+image: "/images/stories/lauren-booth.jpg"
 language: "ar"
-firstName: "الصحفية البريطانية"
+firstName: "لورين بوث"
 age: null
 country: "المملكة المتحدة"
 previousReligion: null
-profilePhoto: "https://source.unsplash.com/random/400x400?sig=915"
+profilePhoto: "/images/stories/lauren-booth.jpg"
 featured: false
 date: null
 ---

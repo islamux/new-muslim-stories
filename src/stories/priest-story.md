@@ -1,13 +1,13 @@
 ---
 title: "The Former Missionary Priest Who Embraced Islam"
 author: "Yusuf Estes"
-image: "https://source.unsplash.com/random/800x600?sig=903"
+image: "/images/stories/yusuf-estes.jpg"
 language: "en"
 firstName: "Yusuf Estes"
 age: null
 country: "USA"
 previousReligion: "Christianity"
-profilePhoto: "https://source.unsplash.com/random/400x400?sig=200"
+profilePhoto: "/images/stories/yusuf-estes.jpg"
 featured: false
 date: "2007-11-08"
 ---

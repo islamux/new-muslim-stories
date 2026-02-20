@@ -2,8 +2,13 @@
 title: "A Journey of Questioning: Elaine Aisyah's Story"
 author: "Elaine Aisyah"
 date: "2022-08-10"
-image: "https://source.unsplash.com/random/800x600?sig=16"
+image: "/images/stories/elaine-aisyah.jpg"
+profilePhoto: "/images/stories/elaine-aisyah.jpg"
 language: "en"
+firstName: "Elaine"
+age: 30
+country: "Malaysia"
+previousReligion: "Buddhism"
 ---
 
 Elaine Aisyah, a Chinese woman, grew up with little exposure to other religions. Her journey to Islam began while she was studying abroad. Being in a new environment prompted her to question her own beliefs and the nature of God.

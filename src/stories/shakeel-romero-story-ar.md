@@ -2,13 +2,13 @@
 title: "شاكيل روميرو: رحلة إلى الإسلام في لندن"
 author: "شاكيل روميرو"
 date: "2022-09-01"
-image: "https://source.unsplash.com/random/800x600?sig=106"
+image: "/images/stories/shakeel-romero.jpg"
 language: "ar"
 firstName: "شاكيل"
 age: 28
 country: "المملكة المتحدة"
 previousReligion: "المسيحية"
-profilePhoto: "https://source.unsplash.com/random/400x400?sig=451"
+profilePhoto: "/images/stories/shakeel-romero.jpg"
 featured: false
 ---
 

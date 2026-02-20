@@ -1,13 +1,13 @@
 ---
 title: "تحول إدي: رحلة المذيع الأمريكي الشهير إلى الإسلام"
 author: "إدي"
-image: "https://source.unsplash.com/random/800x600?sig=671"
+image: "/images/stories/eddie-redzovic.jpeg"
 language: "ar"
 firstName: "إدي"
 age: null
 country: "الولايات المتحدة الأمريكية"
 previousReligion: null
-profilePhoto: "https://source.unsplash.com/random/400x400?sig=137"
+profilePhoto: "/images/stories/eddie-redzovic.jpeg"
 featured: false
 date: null
 ---
