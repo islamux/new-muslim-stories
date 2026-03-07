@@ -55,7 +55,7 @@ This web application, built with Next.js and TypeScript, focuses on showcasing s
 ### Prerequisites
 
 - **Node.js**: 18+ (LTS recommended)
-- **Package Manager**: pnpm (v10.19.0+)
+- **Package Manager**: pnpm (v10.28.0+)
 
 ### Installation
 
@@ -81,17 +81,36 @@ pnpm lint      # Run ESLint
 ### Project Structure
 
 ```
-src/
-├── app/                 # Next.js App Router pages
-│   └── [locale]/       # Dynamic locale routes (en/ar)
-├── components/         # React components
-├── lib/               # Core business logic & utilities
-├── hooks/             # Custom React hooks
-├── stories/           # Markdown story files
-├── i18n/              # Internationalization configuration
-│   ├── routing.ts     # Central routing configuration
-│   └── request.ts     # Request configuration (renamed from i18n.ts)
-└── proxy.ts           # i18n middleware (Next.js 16 uses proxy.ts, not middleware.ts)
+new-muslim-stories/
+├── messages/              # i18n translations (en.json, ar.json)
+├── public/               # Static assets (photos, icons, manifest)
+│   ├── photos/          # Story profile photos
+│   ├── icon-192x192.png # PWA icon
+│   └── icon-512x512.png # PWA icon
+├── src/
+│   ├── app/              # Next.js App Router pages
+│   │   ├── [locale]/    # Dynamic locale routes (en/ar)
+│   │   └── offline/     # Offline fallback page
+│   ├── components/       # React components
+│   │   ├── ui/          # UI primitives (Section, Icon)
+│   │   ├── HeroSection.tsx
+│   │   ├── TopNav.tsx
+│   │   ├── LanguageSwitcher.tsx
+│   │   ├── ThemeToggle.tsx
+│   │   └── ...
+│   ├── lib/              # Core business logic & utilities
+│   │   ├── stories.ts
+│   │   ├── story-parser.ts
+│   │   └── story-service.ts
+│   ├── hooks/            # Custom React hooks
+│   │   ├── useIntersectionObserver.ts
+│   │   ├── useMultipleIntersectionObserver.ts
+│   │   └── useHasMounted.ts
+│   ├── stories/          # Markdown story files (~20+ stories)
+│   ├── i18n/             # Internationalization configuration
+│   │   ├── routing.ts    # Central routing configuration
+│   │   └── request.ts    # Request configuration
+│   └── proxy.ts          # i18n middleware (Next.js 16)
 ```
 
 ## Learn More
@@ -146,10 +165,31 @@ For detailed troubleshooting, see [`docs/NEXT_INTL_FIX_GUIDE.md`](docs/NEXT_INTL
 
 To learn more about the technologies used:
 
-- [Next.js Documentation](https://nextjs.org/docs)
-- [next-intl Documentation](https://next-intl.dev/docs)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Next.js Documentation](https://nextjs.org/docs) - Next.js 16 features and API
+- [React Documentation](https://react.dev/) - React 19 features
+- [next-intl Documentation](https://next-intl.dev/docs) - Internationalization
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs) - Tailwind v4
 - [TypeScript Documentation](https://www.typescriptlang.org/docs)
+
+## Current Features
+
+✅ **Implemented**:
+- Multi-language support (English/Arabic with RTL)
+- Markdown-based story content management
+- PWA with offline support
+- Dark/Light theme toggle
+- Profile photos for stories
+- Story filtering and search
+- Responsive design
+- Static site generation
+- Service worker caching
+
+🚧 **Planned**:
+- Unit testing with Vitest
+- Code splitting optimization
+- Image optimization with next/image
+- Storybook documentation
+- Analytics integration
 
 ## Deploy on Vercel
 

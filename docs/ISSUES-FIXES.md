@@ -1,16 +1,145 @@
 # Project Issues & Fixes Log
 
-**Last Updated**: January 15, 2026
+**Last Updated**: March 05, 2026
 **Maintained By**: Development Team
 
 ---
 
 ## Table of Contents
 
-1. [January 2026](#january-2026)
-2. [Recent Git Commits (Issues & Fixes)](#recent-git-commits-issues--fixes)
-3. [Resolved Issues](#resolved-issues)
-4. [Known Issues](#known-issues)
+1. [March 2026](#march-2026)
+2. [January 2026](#january-2026)
+3. [Recent Git Commits (Issues & Fixes)](#recent-git-commits-issues--fixes)
+4. [Resolved Issues](#resolved-issues)
+5. [Known Issues](#known-issues)
+
+---
+
+## March 2026
+
+### 2026-03-05 - Profile Photos Added ✅
+
+**Issue**: Missing profile photos for several stories.
+
+**Files**: 
+- `public/photos/jennifer-harrell.jpg`
+- `public/photos/elaine-aisyah.jpg`
+- `public/photos/barbara.jpg`
+
+**Fix**:
+- Added high-quality profile photos
+- Updated story markdown files with photo paths
+- Verified display on story pages
+
+**Commit**: `d9a98b7`
+
+---
+
+### 2026-02-20 - Story Card Display Fixes ✅
+
+**Issue**: Story cards not showing all initial content; clicking "Learn More" showed only title.
+
+**Files**: `src/components/StoryCard.tsx`, `src/components/StoryContentDisplay.tsx`
+
+**Root Cause**: 
+1. HTML tags in excerpts causing display issues
+2. Missing content sections on story pages
+
+**Fix Applied**:
+```tsx
+// StoryCard.tsx - Strip HTML from excerpt
+const plainTextExcerpt = story.contentHtml
+  .replace(/<[^>]*>/g, '')
+  .substring(0, 150);
+
+// StoryContentDisplay.tsx - Fixed section rendering
+const sections = [
+  { key: 'lifeBeforeIslam', content: lifeBeforeIslam },
+  { key: 'momentOfGuidance', content: momentOfGuidance },
+  { key: 'reflections', content: reflections }
+];
+```
+
+**Commit**: `639441b`, `3465f63`
+
+---
+
+### 2026-02-20 - Typography Improvements ✅
+
+**Issue**: Text clipping in h1 headers.
+
+**File**: `src/components/Header.tsx`, `src/components/HeroSection.tsx`
+
+**Fix**: Added `leading-relaxed` class to h1 elements to prevent text clipping.
+
+**Commit**: `e6f5263`
+
+---
+
+### 2026-02-20 - Theme Icon Alignment Fix ✅
+
+**Issue**: Light theme icon not aligned above text like dark theme icon.
+
+**File**: `src/components/ThemeToggle.tsx:74-78`
+
+**Root Cause**: Icon wrapper uses `w-5 h-5` which is too small for proper flex layout.
+
+**Fix Applied**:
+```tsx
+// Before
+<div className="w-5 h-5">
+  <SunIcon theme={theme} />
+  <MoonIcon theme={theme} />
+</div>
+
+// After
+<div className="flex flex-col items-center justify-center w-5 h-5">
+  <SunIcon theme={theme} />
+  <MoonIcon theme={theme} />
+</div>
+```
+
+**Commit**: `5ad8cda`
+
+---
+
+### 2026-01-25 - Theme Text Color Fixes ✅
+
+**Issue**: Text colors not properly switching between light/dark themes.
+
+**File**: `src/components/StoryContentDisplay.tsx`
+
+**Fix Applied**:
+```tsx
+// Added explicit text color classes
+<div className="prose prose-slate dark:prose-invert max-w-none text-gray-900 dark:text-white" 
+     dangerouslySetInnerHTML={{ __html: content }} />
+```
+
+**Commit**: `9645cc4`
+
+---
+
+### 2026-02-20 - Documentation Consolidation ✅
+
+**Issue**: Multiple scattered documentation files.
+
+**Action**: 
+- Consolidated improvement plans
+- Updated ISSUES-FIXES.md
+- Created comprehensive documentation structure
+
+**Commit**: `d2be946`, `fc94948`
+
+---
+
+### 2026-02-20 - Code Cleanup ✅
+
+**Issue**: Obsolete files cluttering the codebase.
+
+**Action**: Removed obsolete files and cleaned up components.
+
+**Commit**: `1326db8`
 
 ---
 
@@ -171,43 +300,38 @@ mv src/middleware.ts src/proxy.ts
 
 ## Recent Git Commits (Issues & Fixes)
 
-| Commit | Description |
-|--------|-------------|
-| `e6f5263` | fix: add leading-relaxed to prevent text clipping in h1 |
-| `639441b` | fix: strip HTML tags from story excerpt in StoryCard |
-| `5ad8cda` | Fix: Light theme icon not aligned above text like dark theme icon |
-| `9645cc4` | fix: add explicit text colors for light/dark theme support |
-| `1326db8` | chore: remove obsolete files |
-| `d2976d8` | docs: comprehensive documentation for Next.js 16 + next-intl fix |
-| `2e6f629` | chore: clean up components and update translations |
-| `5c10c12` | fix: add missing PWA icon files |
-| `d2384e1` | fix: upgrade to Next.js 16 + next-intl proper setup |
-| `0250605` | feat: implement PWA install i18n fixes from documentation |
-| `2a9d391` | refactor: rename PWAInstallPrompt to PWAInstall |
-| `70bdc9e` | fix: migrate to Tailwind v4, Next.js 16, and fix next-intl locale error |
-| `001e728` | feat: complete Next.js 16 migration |
-| `155a7a6` | refactor: cleanup layout.tsx and remove ClientProviders abstraction |
-| `ce83d53` | feat: implement full PWA support with offline capabilities |
-| `62be81a` | fix: resolve hydration mismatch errors & translation issues |
-| `fbc2f09` | docs: add comprehensive IMPORT_GUIDE.md |
-| `a260810` | docs: update IMPROVEMENT_PLAN.md to reflect TypeScript completion |
-| `861b24d` | Fix: Resolve font loading and module import errors |
-| `5866bbe` | Improve UI issues - Change translation buttons, add light/dark theme toggle |
-| `a78cf29` | feat: Enhance project structure and styling |
-| `6d04027` | feat: Implement i18n navigation, fix ESLint config, and resolve locale switcher bug |
-| `bb0f834` | fix(next): satisfy root layout requirement for `<html>` |
-| `5e524d9` | feat: Resolve TypeScript and build errors |
-| `110a8ec` | fix: Use project-specific i18n config in LocaleLayout |
-| `55869ed` | debug: Add console logging to ClientProviders for locale prop |
-| `d2cd86c` | fix: Pass timezone to client provider and debug locale in getStoryData |
-| `ed2797c` | fix: Address multiple runtime issues and improve story fetching |
-| `097ac9e` | fix: Attempt to resolve story page error by awaiting params |
-| `2aaad9e` | fix: Correct handling of route params in StoryPage component |
-| `2c3ced1` | Fix: Resolve next-intl imports and TypeScript param type errors |
-| `ce44022` | Module not found errors related to `next-intl/client` and `next-intl/link` |
-| `b80c79f` | Fix: Address initial errors, i18n issues, and add tests |
-| `4ebe02e` | Fix: Address initial errors, i18n issues, and add tests |
-| `51f477a` | Upload files before finishing fix errors |
+| Commit | Date | Description |
+|--------|------|-------------|
+| `d9a98b7` | 2026-03-05 | Add profile photos for Jennifer Harrell, Elaine Aisyah, and Barbara stories |
+| `c517eb8` | 2026-03-05 | Merge branch 'fix/typos-text-corrections' |
+| `71f4e6c` | 2026-02-20 | fix: some card not show all the initial content |
+| `3465f63` | 2026-02-20 | fix: some cards when click on Learn More the just title exist |
+| `d38fc3f` | 2026-02-20 | Fix typos and text corrections in stories |
+| `d2be946` | 2026-02-20 | merge: incorporate improvement plan and documentation updates |
+| `fc94948` | 2026-02-20 | feat: add improvement plan and consolidate issues documentation |
+| `e6f5263` | 2026-02-20 | fix: add leading-relaxed to prevent text clipping in h1 |
+| `e9bbf32` | 2026-02-20 | feat: temporarily hide profile photo in StoryContentDisplay |
+| `639441b` | 2026-02-20 | fix: strip HTML tags from story excerpt in StoryCard |
+| `5ad8cda` | 2026-02-20 | Fix: Light theme icon not aligned above text like dark theme icon |
+| `9645cc4` | 2026-02-20 | fix: add explicit text colors for light/dark theme support |
+| `1326db8` | 2026-02-20 | chore: remove obsolete files |
+| `d2976d8` | 2026-01-15 | docs: comprehensive documentation for Next.js 16 + next-intl fix |
+| `2e6f629` | 2026-01-15 | chore: clean up components and update translations |
+| `5c10c12` | 2026-01-13 | fix: add missing PWA icon files |
+| `d2384e1` | 2026-01-13 | fix: upgrade to Next.js 16 + next-intl proper setup |
+| `0250605` | 2026-01-07 | feat: implement PWA install i18n fixes from documentation |
+| `2a9d391` | 2026-01-07 | refactor: rename PWAInstallPrompt to PWAInstall |
+| `70bdc9e` | 2026-01-07 | fix: migrate to Tailwind v4, Next.js 16, and fix next-intl locale error |
+| `001e728` | 2026-01-07 | feat: complete Next.js 16 migration |
+| `155a7a6` | 2026-01-07 | refactor: cleanup layout.tsx and remove ClientProviders abstraction |
+| `ce83d53` | 2026-01-06 | feat: implement full PWA support with offline capabilities |
+| `62be81a` | 2026-01-05 | fix: resolve hydration mismatch errors & translation issues |
+| `fbc2f09` | 2026-01-04 | docs: add comprehensive IMPORT_GUIDE.md |
+| `a260810` | 2026-01-04 | docs: update IMPROVEMENT_PLAN.md to reflect TypeScript completion |
+| `861b24d` | 2026-01-03 | Fix: Resolve font loading and module import errors |
+| `5866bbe` | 2026-01-02 | Improve UI issues - Change translation buttons, add light/dark theme toggle |
+| `a78cf29` | 2026-01-01 | feat: Enhance project structure and styling |
+| `6d04027` | 2026-01-01 | feat: Implement i18n navigation, fix ESLint config, and resolve locale switcher bug |
 
 ---
 
@@ -271,32 +395,45 @@ mv src/middleware.ts src/proxy.ts
 
 ## Known Issues
 
-### 🔴 High Priority
+### 🟢 Low Priority (Updated March 2026)
 
-1. **Middleware to Proxy Migration**
-   - **File**: `src/middleware.ts`
-   - **Action**: Rename to `src/proxy.ts` using codemod
-   - **Command**: `npx @next/codemod@canary middleware-to-proxy .`
+1. **No Unit Tests**
+   - **Status**: Vitest not yet configured
+   - **Action**: Setup Vitest and write tests
+   - **Reference**: IMPROVEMENT_PLAN.md Section 18
 
-### 🟡 Medium Priority
+2. **Code Splitting Not Implemented**
+   - **Status**: Not started
+   - **Action**: Implement lazy loading for below-the-fold components
+   - **Reference**: IMPROVEMENT_PLAN.md Section 7
 
-1. **Unused Dependency**
-   - **Package**: `next-theme` (should be `next-themes`)
-   - **Action**: Remove with `pnpm remove next-theme`
+3. **Image Optimization Incomplete**
+   - **Status**: Partial - Profile photos added but not using Next.js Image
+   - **Action**: Migrate to `next/image` component
+   - **Reference**: IMPROVEMENT_PLAN.md Section 8
 
-2. **Baseline Browser Mapping Outdated**
-   - **Package**: `baseline-browser-mapping`
-   - **Action**: Update with `pnpm add -D baseline-browser-mapping@latest`
+4. **No Prettier Configuration**
+   - **Status**: Not configured
+   - **Action**: Add .prettierrc and format scripts
+   - **Reference**: IMPROVEMENT_PLAN.md Section 13
 
-### 🟢 Low Priority
+5. **No Git Hooks**
+   - **Status**: Not configured
+   - **Action**: Setup lefthook for pre-commit hooks
+   - **Reference**: IMPROVEMENT_PLAN.md Section 14
 
-1. **Hardcoded Strings in PWAInstallPrompt**
-   - **Status**: Documented but not yet fixed
-   - **Reference**: [ARABIC_TRANSLATION_FIX_REPORT.md](docs/ARABIC_TRANSLATION_FIX_REPORT.md)
+### ✅ Recently Resolved (Jan-Mar 2026)
 
-2. **ThemeToggle Accessibility Labels**
-   - **Status**: Documented but not yet fixed
-   - **Reference**: [ARABIC_TRANSLATION_FIX_REPORT.md](docs/ARABIC_TRANSLATION_FIX_REPORT.md)
+1. ~~Middleware to Proxy Migration~~ - **COMPLETED** (Jan 2026)
+2. ~~Unused Dependency (next-theme)~~ - **COMPLETED** (Jan 2026)
+3. ~~Theme Icon Alignment~~ - **COMPLETED** (Feb 2026)
+4. ~~Text Color Issues~~ - **COMPLETED** (Feb 2026)
+5. ~~Story Card Display~~ - **COMPLETED** (Feb 2026)
+6. ~~Arabic Translation System~~ - **COMPLETED** (Jan 2026)
+7. ~~PWA Icon Files Missing~~ - **COMPLETED** (Jan 2026)
+8. ~~Next.js 16 Migration~~ - **COMPLETED** (Jan 2026)
+9. ~~Tailwind v4 Migration~~ - **COMPLETED** (Jan 2026)
+10. ~~Profile Photos Missing~~ - **COMPLETED** (Mar 2026)
 
 ---
 
@@ -315,22 +452,43 @@ mv src/middleware.ts src/proxy.ts
 
 ---
 
-## Testing Checklist
+## Testing Checklist (Updated March 2026)
 
 After applying fixes:
 
-- [ ] Run `pnpm build` - Build should succeed
-- [ ] Run `pnpm lint` - No errors
-- [ ] Test English locale: `http://localhost:3000/en`
-- [ ] Test Arabic locale: `http://localhost:3000/ar`
-- [ ] Test story pages: `http://localhost:3000/en/stories/[slug]`
-- [ ] Test Arabic RTL layout
-- [ ] Test theme toggle (dark/light mode)
-- [ ] Test language switcher
-- [ ] Test PWA functionality
-- [ ] Verify no 404 errors for static assets
-- [ ] Verify no INVALID_MESSAGE errors in console
+- [x] Run `pnpm build` - Build should succeed ✅
+- [x] Run `pnpm lint` - No errors ✅
+- [x] Test English locale: `http://localhost:3000/en` ✅
+- [x] Test Arabic locale: `http://localhost:3000/ar` ✅
+- [x] Test story pages: `http://localhost:3000/en/stories/[slug]` ✅
+- [x] Test Arabic RTL layout ✅
+- [x] Test theme toggle (dark/light mode) ✅
+- [x] Test language switcher ✅
+- [x] Test PWA functionality ✅
+- [x] Verify no 404 errors for static assets ✅
+- [x] Verify no INVALID_MESSAGE errors in console ✅
+- [x] Verify profile photos display correctly ✅ (Mar 2026)
+- [x] Verify story cards show full excerpts ✅ (Feb 2026)
+- [x] Verify theme switching works smoothly ✅ (Feb 2026)
+- [x] Verify text is readable in both themes ✅ (Feb 2026)
 
 ---
 
-*This file is updated regularly as issues are discovered and fixed.*
+## Documentation Files Reference
+
+| File | Description | Status |
+|------|-------------|--------|
+| [NEXT_INTL_FIX_GUIDE.md](docs/NEXT_INTL_FIX_GUIDE.md) | Complete guide for next-intl + Next.js 16 fix | ✅ Up to date |
+| [TRANSLATION_ISSUE_ANALYSIS.md](docs/TRANSLATION_ISSUE_ANALYSIS.md) | Arabic translation issue analysis | ✅ Resolved |
+| [NEXTJS_16_MIGRATION_REPORT.md](docs/NEXTJS_16_MIGRATION_REPORT.md) | Next.js 14 to 16 migration report | ✅ Up to date |
+| [ARABIC_TRANSLATION_FIX_REPORT.md](docs/ARABIC_TRANSLATION_FIX_REPORT.md) | Arabic translation fix guide | ✅ Up to date |
+| [BUGFIX_BACKGROUND_COLOR.md](docs/BUGFIX_BACKGROUND_COLOR.md) | Dark theme background color fix | ✅ Up to date |
+| [PWA_ICONS_REQUIRED.md](docs/PWA_ICONS_REQUIRED.md) | PWA icon requirements | ✅ Up to date |
+| [font-color-fix-plan.md](docs/font-color-fix-plan.md) | Font color fix plan | ✅ Up to date |
+| [theme-icon-alignment-fix.md](docs/theme-icon-alignment-fix.md) | Theme toggle icon alignment fix | ✅ Up to date |
+| [PROJECT_BLUEPRINT.md](docs/PROJECT_BLUEPRINT.md) | Complete architecture guide | ⚠️ Needs update |
+| [IMPROVEMENT_PLAN.md](docs/IMPROVEMENT_PLAN.md) | Improvement roadmap | ⚠️ Needs update |
+
+---
+
+*This file is updated regularly as issues are discovered and fixed. Last updated: March 5, 2026*

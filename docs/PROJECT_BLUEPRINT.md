@@ -7,17 +7,18 @@ A Next.js 16 application showcasing inspiring stories of people who converted to
 - **Markdown-based content**: Stories stored as `.md` files with YAML frontmatter
 - **Static generation**: Pre-rendered pages for optimal performance
 - **PWA Support**: Installable web app with offline reading capabilities
-- **Modern stack**: App Router, TypeScript, Tailwind CSS, next-intl
+- **Modern stack**: Next.js 16, React 19, TypeScript, Tailwind CSS 4, next-intl
 - **Clean Architecture**: Separated parsing, business logic, and UI components
 - **Custom Hooks**: Reusable intersection observer hooks for animations
 - **Service Worker**: Intelligent caching for offline story reading
+- **Profile Photos**: Visual enhancement with profile images for stories
 
 ---
 
 ## Prerequisites
 
 - **Node.js**: 18+ (LTS recommended)
-- **Package Manager**: pnpm (v10.19.0+)
+- **Package Manager**: pnpm (v10.28.0+)
 - **Git**: Latest version
 
 ---
@@ -51,6 +52,11 @@ new-muslim-stories/
 ├── messages/              # i18n translations
 │   ├── en.json
 │   └── ar.json
+├── public/               # Static assets
+│   ├── photos/          # Story profile photos
+│   ├── icon-192x192.png # PWA icon (192x192)
+│   ├── icon-512x512.png # PWA icon (512x512)
+│   └── manifest.json    # PWA manifest
 ├── src/
 │   ├── app/              # Next.js App Router
 │   │   ├── [locale]/    # Dynamic locale routes
@@ -59,20 +65,30 @@ new-muslim-stories/
 │   │   │   └── stories/
 │   │   │       └── [slug]/
 │   │   │           └── page.tsx
+│   │   ├── offline/     # Offline fallback page
+│   │   │   └── page.tsx
 │   │   └── layout.tsx   # Root layout
 │   ├── components/       # Reusable UI components
 │   │   ├── ui/          # UI primitives
-│   │   │   └── Section.tsx
+│   │   │   ├── Section.tsx
+│   │   │   └── Icon.tsx
 │   │   ├── HeroSection.tsx
 │   │   ├── Header.tsx           # Page header component
 │   │   ├── Footer.tsx           # Page footer component
+│   │   ├── TopNav.tsx           # Top navigation with theme/language toggles
 │   │   ├── StoryCard.tsx        # Individual story card component
 │   │   ├── FeaturedStories.tsx
 │   │   ├── StoryOfTheDay.tsx
 │   │   ├── WhatsNext.tsx
 │   │   ├── WhoAreNewMuslims.tsx
 │   │   ├── HomePageClient.tsx
-│   │   └── ...
+│   │   ├── ProfileHeader.tsx    # Profile photo and info display
+│   │   ├── StoryContentDisplay.tsx # Full story content
+│   │   ├── ThemeToggle.tsx      # Dark/light mode toggle
+│   │   ├── LanguageSwitcher.tsx # EN/AR language switcher
+│   │   ├── PWAInstall.tsx       # PWA installation prompt
+│   │   ├── ServiceWorkerRegistration.tsx # SW registration
+│   │   └── Button.tsx           # Reusable button component
 │   ├── types/           # TypeScript type definitions
 │   │   ├── index.ts           # Barrel export
 │   │   ├── story.types.ts     # Story-related types
@@ -92,13 +108,23 @@ new-muslim-stories/
 │   ├── hooks/           # Custom React hooks
 │   │   ├── useIntersectionObserver.ts
 │   │   ├── useMultipleIntersectionObserver.ts
-│   │   └── useHasMounted.ts
-│   └── stories/         # Markdown story files
-│       ├── story-1.md
-│       └── story-1-ar.md
-├── middleware.ts         # i18n routing
-├── i18n.ts              # next-intl configuration
-└── next.config.mjs      # Next.js config
+│   │   ├── useHasMounted.ts
+│   │   └── useStorySections.ts
+│   ├── i18n/            # Internationalization configuration
+│   │   ├── routing.ts   # Central routing configuration
+│   │   └── request.ts   # Request configuration (renamed from i18n.ts)
+│   ├── navigation.ts    # next-intl navigation exports
+│   ├── stories/         # Markdown story files
+│   │   ├── story-1.md
+│   │   └── story-1-ar.md
+│   └── proxy.ts         # i18n middleware (Next.js 16 uses proxy.ts, not middleware.ts)
+├── messages/            # Translation files
+│   ├── en.json
+│   └── ar.json
+├── public/              # Static assets
+│   ├── sw.js           # Service worker for PWA
+│   └── manifest.json   # PWA manifest
+└── next.config.mjs     # Next.js config
 ```
 
 ---
@@ -1208,6 +1234,57 @@ return <section ref={sectionRef}>...</section>;
 ---
 
 ## Changelog
+
+### Version 2.10 - Profile Photos & UI Improvements (2026-03-05)
+
+**New Features:**
+- ✅ Added profile photos for Jennifer Harrell, Elaine Aisyah, and Barbara stories
+- ✅ Enhanced visual presentation of story cards
+- ✅ Improved story card text display and excerpt handling
+
+**Bug Fixes:**
+- ✅ Fixed story cards not showing all initial content
+- ✅ Fixed "Learn More" button showing only title on some cards
+- ✅ Fixed HTML tags appearing in story excerpts
+- ✅ Added `leading-relaxed` to prevent h1 text clipping
+- ✅ Improved theme icon alignment in header
+- ✅ Added explicit text colors for better light/dark theme support
+
+**Improvements:**
+- ✅ Stripped HTML tags from story excerpts in StoryCard component
+- ✅ Removed obsolete files from codebase
+- ✅ Enhanced component maintainability
+- ✅ Consolidated and updated documentation
+
+**Files Modified:**
+- `public/photos/jennifer-harrell.jpg` - NEW: Profile photo
+- `public/photos/elaine-aisyah.jpg` - NEW: Profile photo
+- `public/photos/barbara.jpg` - NEW: Profile photo
+- `src/components/StoryCard.tsx` - Strip HTML from excerpts
+- `src/components/StoryContentDisplay.tsx` - Fixed section rendering
+- `src/components/Header.tsx` - Added leading-relaxed
+- `src/components/HeroSection.tsx` - Typography improvements
+- `src/components/ThemeToggle.tsx` - Icon alignment fix
+- Multiple story markdown files - Added profile photo paths
+
+**Commit:** `d9a98b7`, `c517eb8`, `71f4e6c`, `3465f63`, `d38fc3f`, `e6f5263`, `639441b`, `5ad8cda`, `9645cc4`
+
+**Testing Results:**
+```bash
+✅ Profile photos display correctly on story pages
+✅ Story cards show full text excerpts (no HTML tags)
+✅ All theme colors work properly
+✅ Arabic and English locales working
+✅ Build succeeds with no errors
+```
+
+**Impact:**
+- 🎨 Enhanced visual storytelling with profile photos
+- 🐛 Fixed multiple UI/UX issues
+- 📝 Better text readability across themes
+- 🧹 Cleaner codebase with obsolete file removal
+
+---
 
 ### Version 2.9 - Next.js 16 + next-intl Complete Fix (2026-01-13)
 
