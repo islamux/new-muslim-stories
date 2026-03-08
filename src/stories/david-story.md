@@ -2,8 +2,9 @@
 title: "From Addiction to Faith: David's Story"
 author: "David"
 date: "2023-11-20"
-image: "https://source.unsplash.com/random/800x600?sig=73"
+image: "/images/david.jpg"
 language: "en"
+profilePhoto: "/images/david.jpg"
 ---
 
 David, an American revert, battled a severe addiction to alcohol and drugs. Although he identified as an atheist, his path to recovery led him to a 12-step program that required seeking help from a higher power. This was a turning point that opened his heart to the possibility of faith.

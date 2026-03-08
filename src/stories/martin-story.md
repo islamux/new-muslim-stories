@@ -2,8 +2,9 @@
 title: "A Journey of Self-Discovery: Martin's Story"
 author: "Martin"
 date: "2024-01-15"
-image: "https://source.unsplash.com/random/800x600?sig=34"
+image: "/images/martin_leeds.jpeg"
 language: "en"
+profilePhoto: "/images/martin_leeds.jpeg"
 ---
 
 ## My Life Before Islam

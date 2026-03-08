@@ -2,8 +2,9 @@
 title: "رحلة اكتشاف الذات: قصة مارتن"
 author: "مارتن"
 date: "2024-01-15"
-image: "https://source.unsplash.com/random/800x600?sig=385"
+image: "/images/martin_leeds.jpeg"
 language: "ar"
+profilePhoto: "/images/martin_leeds.jpeg"
 ---
 
 ## حياتي قبل الإسلام

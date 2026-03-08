@@ -1,21 +1,7 @@
----
-title: "A Bridge Between Faiths: Abdal Malik Rezeski's Story"
-author: "Abdal Malik Rezeski"
-date: "2019-09-18"
-image: "https://source.unsplash.com/random/800x600?sig=962"
-language: "en"
----
+Life Before Islam
+Raised in the suburbs of Strasbourg, France, Régis Fayette-Mikano (later known as Abdal Malik) lived a life torn between his artistic talent and the harsh realities of the streets. Despite his Catholic upbringing, he struggled with deep existential questions and a sense of alienation, searching for a truth that could offer peace amidst the chaos of a materialistic world.
+Moment of Guidance
+The turning point came when he discovered Islam. For him, it wasn’t just a change of faith but a "rational and spiritual awakening." He found in the simplicity of monotheism and the depths of Sufism the logical answers that other philosophies failed to provide. He famously remarked, "Islam is the first religion that made sense to me," marking his transition from the narrowness of extremism to the vastness of spiritual love.
+Reflections
+Abdal Malik’s journey teaches us that faith is not a form of isolation, but a bridge connecting a person to their Creator and their society. His story proves that true spirituality refines art and fosters a compassionate citizen, reaffirming that Islam is a universal message of peace that harmonizes with noble human values everywhere.
 
-Abdal Malik Rezeski, the son of a Jewish father and a Christian mother, grew up in a household with a rich and diverse religious background. However, he found that he couldn't fully connect with either of his parents' faiths.
-
-## A Search for Meaning
-
-Abdal Malik embarked on a personal journey to find a spiritual path that resonated with him. He explored different religions and philosophies, but he always felt that something was missing. He was looking for a faith that could provide him with a clear and logical understanding of God and the universe.
-
-## Finding a Home in Islam
-
-It was during this search that Abdal Malik discovered Islam. He was immediately drawn to the clarity and simplicity of its teachings. He famously said, "Islam is the first religion that made sense to me." He found that Islam provided him with a direct and personal relationship with God, without the need for intermediaries.
-
-## Reflections
-
-Abdal Malik's story is a powerful example of how Islam can bridge the gap between different faiths. It shows that Islam is not a new religion, but a continuation and culmination of the monotheistic traditions of Judaism and Christianity. His journey is an inspiration to all who are seeking a more direct and personal connection with God.

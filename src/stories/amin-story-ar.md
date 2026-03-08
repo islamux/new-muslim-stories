@@ -2,13 +2,13 @@
 title: "مسار أمين: رحلة هولندي اعتنق الإسلام"
 author: "أمين"
 date: "2021-11-20"
-image: "https://source.unsplash.com/random/800x600?sig=758"
+image: "/images/amin-holandy.jpeg"
 language: "ar"
 firstName: "أمين"
 age: 30
 country: "هولندا"
 previousReligion: "الإلحاد"
-profilePhoto: "https://source.unsplash.com/random/400x400?sig=677"
+profilePhoto: "/images/amin-holandy.jpeg"
 featured: false
 ---
 

@@ -2,8 +2,9 @@
 title: "من الشك إلى الإيمان: قصة كارين ميك"
 author: "كارين ميك"
 date: "2021-05-25"
-image: "https://source.unsplash.com/random/800x600?sig=127"
+image: "/images/karen_meek.jpeg"
 language: "ar"
+profilePhoto: "/images/karen_meek.jpeg"
 ---
 
 نشأت كارين ميك، البالغة من العمر 33 عامًا من لويزفيل، على نظرة متشككة للدين. كانت تعتبره "سخيفًا" ولم تكن تؤمن بالله. ومع ذلك، بدأ منظورها يتغير عندما تعرفت على الإسلام.
