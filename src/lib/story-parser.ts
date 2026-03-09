@@ -41,6 +41,7 @@ export async function parseStoryFile(fileName: string): Promise<StoryData> {
     country: string;
     previousReligion: string;
     profilePhoto: string;
+    image: string;
     featured: boolean;
     language: string;
   };
@@ -49,6 +50,7 @@ export async function parseStoryFile(fileName: string): Promise<StoryData> {
     slug,
     contentHtml,
     ...data,
+    image: data.image || '',
     language: data.language as Locale,
   };
 }

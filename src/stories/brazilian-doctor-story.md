@@ -1,13 +1,13 @@
 ---
 title: "The Brazilian Doctor: 15 Years of Study Before Embracing Islam"
 author: "Brazilian Doctor"
-image: "https://source.unsplash.com/random/800x600?sig=807"
+image: "/images/brazilian_doctor.png"
 language: "en"
 firstName: "Brazilian Doctor"
 age: null
 country: "Brazil"
 previousReligion: null
-profilePhoto: "https://source.unsplash.com/random/400x400?sig=365"
+profilePhoto: "/images/brazilian_doctor.png"
 featured: false
 date: null
 ---

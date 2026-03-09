@@ -2,13 +2,13 @@
 title: "Madeline's Journey: A Swedish Convert's Embrace of Islam"
 author: "Madeline"
 date: "2023-03-01"
-image: "https://source.unsplash.com/random/800x600?sig=64"
+image: "/images/madline.jpeg"
 language: "en"
 firstName: "Madeline"
 age: 25
 country: "Sweden"
 previousReligion: "Agnosticism"
-profilePhoto: "https://source.unsplash.com/random/400x400?sig=950"
+profilePhoto: "/images/madline.jpeg"
 featured: false
 ---
 
@@ -25,3 +25,5 @@ After a period of intense study and heartfelt reflection, Madeline made the deci
 ### A Life of Purpose
 
 Madeline's life has been transformed by her new faith. She actively participates in her local Muslim community, continues to deepen her knowledge of Islamic teachings, and strives to live a life guided by compassion, justice, and devotion. Her story is an inspiring example of how individuals from diverse backgrounds can find their spiritual home and a renewed sense of purpose through a sincere and intellectual pursuit of truth.
+
+[YouTube](https://www.youtube.com/watch?v=ERQ_uhqjnTU)

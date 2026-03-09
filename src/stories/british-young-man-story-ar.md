@@ -1,13 +1,13 @@
 ---
 title: "الشاب البريطاني الذي أدخل أمه في الإسلام قبل وفاتها"
 author: "الشاب البريطاني"
-image: "https://source.unsplash.com/random/800x600?sig=782"
+image: "/images/rahim-with-his-mother.png"
 language: "ar"
 firstName: "والدة رحيم جونغ"
 age: null
 country: "المملكة المتحدة"
 previousReligion: "المسيحية"
-profilePhoto: "https://source.unsplash.com/random/400x400?sig=91"
+profilePhoto: "/images/rahim-with-his-mother.png"
 featured: false
 date: null
 ---

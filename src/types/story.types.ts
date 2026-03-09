@@ -12,6 +12,7 @@ export interface StoryData {
   country: string;
   previousReligion: string;
   profilePhoto: string;
+  image: string;
   featured: boolean;
   language: Locale;
   contentHtml: string;

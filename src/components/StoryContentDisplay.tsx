@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { useStorySections } from '@/hooks/useStorySections';
 import ProfileHeader from './ProfileHeader';
 import Button from './Button';
@@ -35,6 +36,17 @@ export default function StoryContentDisplay({ story }: StoryContentDisplayProps)
 
   return (
     <article className="bg-gray-50 dark:bg-gray-900 rounded-lg shadow-md p-8">
+      {story.image && (
+        <div className="relative w-full h-64 mb-6 rounded-lg overflow-hidden">
+          <Image
+            src={story.image}
+            alt={story.firstName}
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+      )}
       <div className="flex justify-between items-start">
         <ProfileHeader story={story} />
         <Button

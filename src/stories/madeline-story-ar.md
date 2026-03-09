@@ -2,13 +2,13 @@
 title: "رحلة مادلين: سويدية اعتنقت الإسلام"
 author: "مادلين"
 date: "2023-03-01"
-image: "https://source.unsplash.com/random/800x600?sig=850"
+image: "/images/madline.jpeg"
 language: "ar"
 firstName: "مادلين"
 age: 25
 country: "السويد"
 previousReligion: "اللاأدرية"
-profilePhoto: "https://source.unsplash.com/random/400x400?sig=528"
+profilePhoto: "/images/madline.jpeg"
 featured: false
 ---
 
@@ -25,3 +25,5 @@ featured: false
 ### حياة ذات هدف
 
 لقد تحولت حياة مادلين بفضل إيمانها الجديد. تشارك بنشاط في مجتمعها المسلم المحلي، وتواصل تعميق معرفتها بالتعاليم الإسلامية، وتسعى جاهدة لعيش حياة تسترشد بالرحمة والعدالة والتفاني. قصتها هي مثال ملهم لكيفية عثور الأفراد من خلفيات متنوعة على موطنهم الروحي وشعور متجدد بالهدف من خلال سعي صادق وفكري للحقيقة.
+
+[يوتيوب](https://www.youtube.com/watch?v=ERQ_uhqjnTU)
