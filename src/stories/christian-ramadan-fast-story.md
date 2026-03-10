@@ -1,13 +1,13 @@
 ---
 title: "The Christian Who Tried Fasting Ramadan and Embraced Islam"
 author: "Christian"
-image: "https://source.unsplash.com/random/800x600?sig=89"
+image: "/images/fasting.png"
 language: "en"
 firstName: "Christian"
 age: null
 country: null
 previousReligion: "Christianity"
-profilePhoto: "https://source.unsplash.com/random/400x400?sig=806"
+profilePhoto: "/images/fasting.png"
 featured: false
 date: null
 ---

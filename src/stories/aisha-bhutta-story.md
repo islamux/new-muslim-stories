@@ -2,8 +2,9 @@
 title: "A Christian's Journey to Islam: Aisha Bhutta's Story"
 author: "Aisha Bhutta (formerly Debbie Rogers)"
 date: "2018-07-22"
-image: "/images/stories/aisha-bhutta.jpg"
-profilePhoto: "/images/stories/aisha-bhutta.jpg"
+image: "/images/ayisha.jpeg"
+profilePhoto: "/images/ayisha.jpeg"
+firstName: "Aisha Bhutta"
 language: "en"
 ---
 

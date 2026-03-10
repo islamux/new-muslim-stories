@@ -2,8 +2,8 @@
 title: "من الموسيقى إلى الإيمان: قصة رحيم جونغ"
 author: "رحيم جونغ"
 date: "2014-07-01"
-image: "/images/stories/rahim-jung.jpg"
-profilePhoto: "/images/stories/rahim-jung.jpg"
+image: "/images/jung.png"
+profilePhoto: "/images/jung.png"
 language: "ar"
 ---
 
@@ -20,3 +20,5 @@ language: "ar"
 ### تأملات
 
 قصة رحيم هي شهادة قوية على القوة التحويلية للقرآن. إنها توضح كيف يمكن لبضع آيات أن تغير حياة الشخص وتقوده إلى طريق الإيمان والهدف. رحلته من موسيقي ناجح إلى مسلم متدين هي مصدر إلهام للجميع.
+
+[يوتيوب](https://www.youtube.com/watch?v=Ns5t5sDI3ec)

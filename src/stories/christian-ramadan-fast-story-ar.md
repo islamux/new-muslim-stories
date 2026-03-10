@@ -1,13 +1,13 @@
 ---
 title: "المسيحي الذي جرب صيام رمضان واعتنق الإسلام"
 author: "مسيحي"
-image: "https://source.unsplash.com/random/800x600?sig=788"
+image: "/images/fasting.png"
 language: "ar"
 firstName: "مسيحي"
 age: null
 country: null
 previousReligion: "المسيحية"
-profilePhoto: "https://source.unsplash.com/random/400x400?sig=568"
+profilePhoto: "/images/fasting.png"
 featured: false
 date: null
 ---

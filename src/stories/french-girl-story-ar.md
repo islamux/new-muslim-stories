@@ -1,13 +1,13 @@
 ---
 title: "الفتاة الفرنسية التي أبكت الشيخ فهد"
 author: "الفتاة الفرنسية"
-image: "https://source.unsplash.com/random/800x600?sig=884"
+image: "/images/barbara.png"
 language: "ar"
 firstName: "الفتاة الفرنسية"
 age: null
 country: "فرنسا"
 previousReligion: null
-profilePhoto: "https://source.unsplash.com/random/400x400?sig=533"
+profilePhoto: "/images/barbara.png"
 featured: false
 date: null
 ---

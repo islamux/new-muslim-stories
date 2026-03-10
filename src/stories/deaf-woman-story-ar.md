@@ -1,13 +1,13 @@
 ---
 title: "المرأة الصماء التي أبكت الشيخ فهد الكندري"
 author: "المرأة الصماء"
-image: "https://source.unsplash.com/random/800x600?sig=861"
+image: "/images/repika.jpeg"
 language: "ar"
 firstName: "المرأة الصماء"
 age: null
 country: null
 previousReligion: null
-profilePhoto: "https://source.unsplash.com/random/400x400?sig=142"
+profilePhoto: "/images/repika.jpeg"
 featured: false
 date: null
 ---

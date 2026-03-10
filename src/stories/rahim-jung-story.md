@@ -2,8 +2,8 @@
 title: "From Music to Faith: The Story of Rahim Jung"
 author: "Rahim Jung"
 date: "2014-07-01"
-image: "/images/stories/rahim-jung.jpg"
-profilePhoto: "/images/stories/rahim-jung.jpg"
+image: "/images/jung.png"
+profilePhoto: "/images/jung.png"
 language: "en"
 ---
 
@@ -20,3 +20,5 @@ Rahim has since become a media personality and an Islam Channel TV presenter, ho
 ### Reflections
 
 Rahim's story is a powerful testament to the transformative power of the Quran. It shows how a few verses can change a person's life and lead them to a path of faith and purpose. His journey from a successful musician to a dedicated Muslim is an inspiration to all.
+
+[YouTube](https://www.youtube.com/watch?v=Ns5t5sDI3ec)

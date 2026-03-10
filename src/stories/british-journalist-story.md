@@ -1,13 +1,13 @@
 ---
 title: "The British Journalist Who Traveled to Palestine and Embraced Islam"
 author: "British Journalist"
-image: "/images/stories/lauren-booth.jpg"
+image: "/images/Laurin.png"
 language: "en"
 firstName: "British Journalist"
 age: null
 country: "United Kingdom"
 previousReligion: null
-profilePhoto: "/images/stories/lauren-booth.jpg"
+profilePhoto: "/images/Laurin.png"
 featured: false
 date: null
 ---

@@ -1,13 +1,13 @@
 ---
 title: "The French Girl Who Moved Sheikh Fahad to Tears"
 author: "French Girl"
-image: "https://source.unsplash.com/random/800x600?sig=869"
+image: "/images/barbara.png"
 language: "en"
 firstName: "French Girl"
 age: null
 country: "France"
 previousReligion: null
-profilePhoto: "https://source.unsplash.com/random/400x400?sig=639"
+profilePhoto: "/images/barbara.png"
 featured: false
 date: null
 ---

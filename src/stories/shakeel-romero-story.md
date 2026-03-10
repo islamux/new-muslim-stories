@@ -2,13 +2,13 @@
 title: "Shakeel Romero: A Journey to Islam in London"
 author: "Shakeel Romero"
 date: "2022-09-01"
-image: "/images/stories/shakeel-romero.jpg"
+image: "/images/shakeel.png"
 language: "en"
 firstName: "Shakeel"
 age: 28
 country: "United Kingdom"
 previousReligion: "Christianity"
-profilePhoto: "/images/stories/shakeel-romero.jpg"
+profilePhoto: "/images/shakeel.png"
 featured: false
 ---
 
