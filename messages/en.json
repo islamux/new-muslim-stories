@@ -34,6 +34,7 @@
   },
   "Common": {
     "filterByCountry": "Filter by Country",
+    "filterAll": "All Countries",
     "filterByPreviousReligion": "Filter by Previous Religion",
     "searchStories": "Search stories...",
     "storyOfTheDay": "Story of the Day",

@@ -34,6 +34,7 @@
   },
   "Common": {
     "filterByCountry": "تصفية حسب البلد",
+    "filterAll": "جميع البلدان",
     "filterByPreviousReligion": "تصفية حسب الديانة السابقة",
     "searchStories": "ابحث عن القصص...",
     "storyOfTheDay": "قصة اليوم",
