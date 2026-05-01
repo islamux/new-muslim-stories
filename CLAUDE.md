@@ -11,7 +11,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `pnpm build` - Build production application
 - `pnpm start` - Start production server after build
 - `pnpm lint` - Run ESLint for code quality
-- `pnpm test` - Run unit tests (configured with Jest)
+- `pnpm test` - Run unit tests (not yet configured)
 
 **Story Files**:
 - Stories are stored in `src/stories/` as Markdown files
@@ -91,7 +91,7 @@ messages/
 - Locale is set via URL segment `/[locale]/`
 - Default locale: `en`
 - RTL support: Arabic pages use `dir="rtl"` in `src/app/[locale]/layout.tsx:18`
-- Timezone: Set to `'Asia/Aden'` in `src/i18n.ts:18`
+- Timezone: Set to `'Asia/Aden'` in `src/i18n/request.ts`
 
 **Story Data Structure** (from `src/lib/stories.ts:9-20`):
 ```typescript

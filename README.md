@@ -41,7 +41,7 @@ This web application, built with Next.js and TypeScript, focuses on showcasing s
 
 *   **Project Structure:** Project built with reusable components.
 *   **Testing:** Unit and UI tests using Jest and React Testing Library.
-*   **Data Fetching:** Separation of data fetching logic using `getStaticProps` or `getServerSideProps` as needed.
+*   **Data Fetching:** App Router data fetching with `async` components and `generateStaticParams`.
 
 ## ✨ Suggested Additions
 
@@ -82,6 +82,9 @@ pnpm lint      # Run ESLint
 
 ```
 new-muslim-stories/
+├── command-center-mcp/    # MCP server + CLI for project management
+├── command-center-tui/    # Terminal UI dashboard (Node.js/blessed)
+├── docs/                  # Documentation (SETUP_COMMAND_CENTER.md, etc.)
 ├── messages/              # i18n translations (en.json, ar.json)
 ├── public/               # Static assets (photos, icons, manifest)
 │   ├── photos/          # Story profile photos
@@ -111,6 +114,8 @@ new-muslim-stories/
 │   │   ├── routing.ts    # Central routing configuration
 │   │   └── request.ts    # Request configuration
 │   └── proxy.ts          # i18n middleware (Next.js 16)
+├── .mcp.json              # MCP server configuration
+└── project-tracker.json   # Command Center project tracking
 ```
 
 ## Learn More
@@ -203,3 +208,4 @@ For detailed project documentation, see:
 
 - [PROJECT_BLUEPRINT.md](docs/PROJECT_BLUEPRINT.md) - Complete architecture guide
 - [NEXT_INTL_FIX_GUIDE.md](docs/NEXT_INTL_FIX_GUIDE.md) - Next.js 16 + next-intl setup guide
+- [SETUP_COMMAND_CENTER.md](docs/SETUP_COMMAND_CENTER.md) - Command Center setup guide

@@ -24,7 +24,7 @@ This repository hosts a Next.js 14 application for "New Muslim Stories", featuri
 - **Framework:** Next.js 14 (App Router)
 - **Language:** TypeScript (Strict mode)
 - **Styling:** Tailwind CSS, Framer Motion
-- **i18n:** `next-intl` (en/ar)
+- **i18n:** `next-intl` (en/ar) with Next.js 16 `src/i18n/` structure
 - **CMS:** Markdown files in `src/stories/` with YAML frontmatter
 
 ### Formatting & Syntax
