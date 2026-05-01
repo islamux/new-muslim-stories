@@ -1,8 +1,8 @@
 'use client';
 
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import type { ProfileHeaderProps } from '@/types';
+import StoryImage from '@/components/ui/StoryImage';
 
 export default function ProfileHeader({ story }: ProfileHeaderProps) {
   const t = useTranslations('Common');
@@ -10,13 +10,13 @@ export default function ProfileHeader({ story }: ProfileHeaderProps) {
   return (
     <div className="flex items-center mb-6">
       {story.profilePhoto && (
-        <Image
-          src={story.profilePhoto}
-          alt={story.firstName}
-          width={80}
-          height={80}
-          className="rounded-full me-4 object-cover"
-        />
+        <div className="relative w-20 h-20 me-4 rounded-full overflow-hidden flex-shrink-0">
+          <StoryImage
+            src={story.profilePhoto}
+            alt={story.firstName}
+            sizes="80px"
+          />
+        </div>
       )}
       <div>
         <p className="text-xl font-semibold text-gold-600">{story.firstName}</p>

@@ -69,3 +69,12 @@ export interface ProfileHeaderProps {
 export interface StoryOfTheDayProps {
   story: StoryData;
 }
+
+// Story image component props
+export interface StoryImageProps {
+  src: string;
+  alt: string;
+  className?: string;
+  priority?: boolean;
+  sizes?: string;
+}

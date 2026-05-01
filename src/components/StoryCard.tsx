@@ -1,9 +1,9 @@
 'use client';
 
 import { Link } from '@/navigation';
-import Image from 'next/image';
 import type { StoryCardProps } from '@/types';
 import { useTranslations } from 'next-intl';
+import StoryImage from '@/components/ui/StoryImage';
 
 export default function StoryCard({ story }: StoryCardProps) {
   const commonT = useTranslations('Common');
@@ -15,11 +15,10 @@ export default function StoryCard({ story }: StoryCardProps) {
     >
       {story.profilePhoto && (
         <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
-          <Image
+          <StoryImage
             src={story.profilePhoto}
             alt={story.firstName}
-            fill
-            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
       )}

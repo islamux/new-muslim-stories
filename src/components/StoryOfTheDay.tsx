@@ -3,15 +3,24 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/navigation';
 import type { StoryOfTheDayProps } from '@/types';
+import StoryImage from '@/components/ui/StoryImage';
 
 export default function StoryOfTheDay({ story }: StoryOfTheDayProps) {
   const commonT = useTranslations('Common');
 
-  // Create excerpt from contentHtml (first 150 characters)
   const excerpt = story.contentHtml.replace(/<[^>]*>/g, '').substring(0, 150) + '...';
 
   return (
     <div className="bg-beige-100 dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-in-out">
+      {story.profilePhoto && (
+        <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
+          <StoryImage
+            src={story.profilePhoto}
+            alt={story.firstName}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        </div>
+      )}
       <h3 className="font-heading text-xl text-gray-800 dark:text-beige-50 mb-3">
         {story.title}
       </h3>
