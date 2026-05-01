@@ -1,0 +1,9 @@
+{
+  "command-center": {
+    "command": "node",
+    "args": ["/media/islamux/Variety/JavaScriptProjects/new-muslim-stories/command-center-mcp/dist/index.js"],
+    "env": {
+      "PROJECT_ROOT": "/media/islamux/Variety/JavaScriptProjects/new-muslim-stories"
+    }
+  }
+}

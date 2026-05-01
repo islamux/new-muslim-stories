@@ -1,3 +1,7 @@
+packages:
+  - '.'
+  - 'command-center-mcp'
+  - 'command-center-tui'
 ignoredBuiltDependencies:
   - sharp
   - unrs-resolver

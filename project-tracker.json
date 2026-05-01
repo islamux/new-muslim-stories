@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "project": {
+    "name": "New Muslim Stories",
+    "start_date": "2026-01-01",
+    "target_date": "2026-06-30",
+    "current_week": 1,
+    "schedule_status": "on_track",
+    "overall_progress": 0
+  },
+  "milestones": [],
+  "agents": [],
+  "agent_log": [],
+  "schedule": {
+    "phases": []
+  }
+}

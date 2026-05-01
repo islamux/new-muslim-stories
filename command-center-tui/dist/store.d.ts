@@ -1,0 +1,20 @@
+import type { TrackerState, TUIState, TabId } from './types.js';
+export declare const state: TUIState;
+export type RenderFn = () => void;
+export declare function onRender(fn: RenderFn): void;
+export declare function readTrackerFromDisk(): TrackerState | null;
+export declare function initTracker(): void;
+export declare function scheduleWriteBack(tracker: TrackerState): void;
+export declare function startWatcher(watcherModule: typeof import('chokidar')): void;
+export declare function switchTab(tab: TabId): void;
+export declare function selectMilestone(index: number): void;
+export declare function refreshTracker(): void;
+export declare function toggleTheme(): void;
+export declare function selectCurrentWeek(): number;
+export declare function selectCurrentPhase(): string;
+export declare function selectTaskCounts(): {
+    total: number;
+    done: number;
+    inProgress: number;
+    blocked: number;
+};
