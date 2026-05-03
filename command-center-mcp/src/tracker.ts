@@ -1,5 +1,5 @@
 import { writeFileSync, readFileSync, existsSync } from 'fs';
-import { join } from 'path';
+import { join, dirname } from 'path';
 
 export interface ProjectMeta {
   name: string;
@@ -95,8 +95,22 @@ export interface TrackerState {
 }
 
 function getTrackerPath(): string {
-  const projectRoot = process.env.PROJECT_ROOT || process.cwd();
-  return join(projectRoot, 'project-tracker.json');
+  // If PROJECT_ROOT is set and tracker exists there, use it
+  if (process.env.PROJECT_ROOT) {
+    const envPath = join(process.env.PROJECT_ROOT, 'project-tracker.json');
+    if (existsSync(envPath)) return envPath;
+  }
+  
+  // Walk up from cwd() to find project-tracker.json
+  let dir = process.cwd();
+  while (dir !== '/') {
+    const trackerPath = join(dir, 'project-tracker.json');
+    if (existsSync(trackerPath)) return trackerPath;
+    dir = dirname(dir);
+  }
+  
+  // Fallback to cwd() if not found
+  return join(process.cwd(), 'project-tracker.json');
 }
 
 export function readTracker(): TrackerState {
