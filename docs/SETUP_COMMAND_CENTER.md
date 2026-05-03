@@ -71,7 +71,7 @@ Create `$TARGET/.mcp.json`:
 
 ## Step 5: Add CLI Alias
 
-Add to `.bashrc` or run per session:
+Add to `~/.bash_aliases` (or `~/dotfiles/bash/.bash_aliases` if using dotfiles):
 
 ```bash
 alias cc="node /absolute/path/to/new-project/command-center-mcp/dist/cli.js"
