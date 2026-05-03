@@ -10,8 +10,8 @@
 ## Step 1: Copy Command Center Directories
 
 ```bash
-# From the salam project (source)
-SOURCE=/media/islamux/Variety/Flutter_Projects/salam
+# From the new-muslim-stories project (source)
+SOURCE=/media/islamux/Variety/JavaScriptProjects/new-muslim-stories
 TARGET=/path/to/new-project
 
 cp -r $SOURCE/command-center-mcp $TARGET/
@@ -62,22 +62,22 @@ Create `$TARGET/.mcp.json`:
 {
   "command-center": {
     "command": "node",
-    "args": ["/absolute/path/to/new-project/command-center-mcp/dist/index.js"],
-    "env": {
-      "PROJECT_ROOT": "/absolute/path/to/new-project"
-    }
+    "args": ["/absolute/path/to/new-project/command-center-mcp/dist/index.js"]
   }
 }
 ```
+
+> **Note:** `PROJECT_ROOT` is no longer required. The CLI auto-detects the project root by walking up from the current directory to find `project-tracker.json`.
 
 ## Step 5: Add CLI Alias
 
 Add to `.bashrc` or run per session:
 
 ```bash
-export PROJECT_ROOT=/path/to/new-project
-alias cc="node $PROJECT_ROOT/command-center-mcp/dist/cli.js"
+alias cc="node /absolute/path/to/new-project/command-center-mcp/dist/cli.js"
 ```
+
+> **Note:** No `PROJECT_ROOT` env var needed. Works from any subdirectory of the project.
 
 ## Step 6: Verify
 
@@ -103,7 +103,7 @@ cc start-task m1_001
 ## TUI Dashboard
 
 ```bash
-cd $TARGET/command-center-tui && PROJECT_ROOT=$TARGET pnpm dev
+cd $TARGET/command-center-tui && pnpm dev
 ```
 
 Keys: `1-4` tabs | `q` quit | `r` refresh | `t` theme | `[` `]` milestones
