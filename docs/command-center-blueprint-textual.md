@@ -1,4 +1,17 @@
-# Command Center Blueprint - Textual TUI Edition
+# ⚠️ DEPRECATED — Command Center Blueprint - Textual TUI Edition
+
+> **This document is outdated.** It describes a Python/Textual-based TUI that was never implemented.
+> The actual implementation uses **Node.js + blessed** for the TUI and lives in `command-center-tui/`.
+> This file is kept for historical reference only.
+>
+> For the current architecture, see:
+> - [`COMMAND_CENTER_AUDIT.md`](./COMMAND_CENTER_AUDIT.md) — Audit and roadmap
+> - [`AGENTS.md`](../AGENTS.md) — Section 3: Command Center reference
+> - [`SETUP_COMMAND_CENTER.md`](./SETUP_COMMAND_CENTER.md) — Setup guide
+
+---
+
+## Original Blueprint (Historical)
 
 > A complete build specification for an AI-agent-powered project command center with Textual TUI.
 > Feed this document to any capable coding agent (Claude Code, Codex, Cursor, etc.)

@@ -4,14 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Development Commands
 
-**Package Manager**: pnpm (version 10.19.0+)
+**Package Manager**: pnpm (version 10.28.0+)
 
 **Core Commands**:
 - `pnpm dev` - Start development server at http://localhost:3000
 - `pnpm build` - Build production application
 - `pnpm start` - Start production server after build
 - `pnpm lint` - Run ESLint for code quality
-- `pnpm test` - Run unit tests (not yet configured)
 
 **Story Files**:
 - Stories are stored in `src/stories/` as Markdown files
@@ -22,52 +21,72 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Architecture Overview
 
-**Framework**: Next.js 14 with App Router and TypeScript
+**Framework**: Next.js 16 with App Router, TypeScript, and React 19
 
 **Key Features**:
-- **Internationalization (i18n)**: Built with `next-intl` supporting English (en) and Arabic (ar)
-  - Middleware: `src/middleware.ts` handles locale routing
-  - Config: `src/i18n.ts` defines locale settings and message loading
+- **Internationalization (i18n)**: Built with `next-intl` v4 supporting English (en) and Arabic (ar)
+  - Proxy: `src/proxy.ts` handles locale routing (Next.js 16 `proxy.ts` convention)
+  - Config: `src/i18n/routing.ts` and `src/i18n/request.ts`
   - Messages: `messages/{locale}.json` contains translation strings
-- **Content Management**: Markdown-based story system using `gray-matter` and `remark`
-  - Story data loader: `src/lib/stories.ts`
-  - Stories directory: `src/stories/`
-- **Styling**: Tailwind CSS with custom design system
+- **Content Management**: Markdown-based story system using `gray-matter`, `remark`, and `remark-html`
+  - Story parsing: `src/lib/stories.ts`, `src/lib/story-parser.ts`, `src/lib/story-service.ts`
+  - Stories directory: `src/stories/` (~69 stories x 2 languages)
+- **Styling**: Tailwind CSS v4 with `@tailwindcss/postcss`
 - **Animations**: Framer Motion and React Scroll Parallax (via `ParallaxProvider` in `ClientProviders.tsx`)
 - **Themes**: Dark/Light mode support with `next-themes`
 - **Fonts**: Inter and Montserrat via `@fontsource`
+- **PWA**: Service worker, web manifest, install prompt
+- **Custom Hooks**: `src/hooks/` (useIntersectionObserver, useMultipleIntersectionObserver, useHasMounted, useStorySections)
 
 ## Directory Structure
 
 ```
 src/
 ├── app/                      # Next.js App Router pages
-│   ├── [locale]/            # Dynamic locale routes (en/ar)
-│   │   ├── layout.tsx       # Root layout with ClientProviders
-│   │   ├── page.tsx         # Homepage
+│   ├── layout.tsx            # Root HTML layout
+│   ├── [locale]/             # Dynamic locale routes (en/ar)
+│   │   ├── layout.tsx        # Locale layout with ClientProviders
+│   │   ├── page.tsx          # Homepage
 │   │   └── stories/
 │   │       └── [slug]/
-│   │           └── page.tsx # Individual story pages
-│   └── layout.tsx           # Root HTML layout
-├── components/              # React components
+│   │           └── page.tsx  # Individual story pages
+│   └── offline/              # PWA offline fallback page
+├── components/               # React components
 │   ├── Button.tsx
-│   ├── ClientProviders.tsx  # NextIntl, Parallax, Theme providers
+│   ├── ClientProviders.tsx   # NextIntl, Parallax, Theme providers
 │   ├── FeaturedStories.tsx
+│   ├── Footer.tsx
+│   ├── Header.tsx
 │   ├── HeroSection.tsx
 │   ├── HomePageClient.tsx
 │   ├── LanguageSwitcher.tsx
+│   ├── ProfileHeader.tsx
+│   ├── PWAInstall.tsx
+│   ├── ServiceWorkerRegistration.tsx
+│   ├── StoryCard.tsx
 │   ├── StoryContentDisplay.tsx
 │   ├── StoryOfTheDay.tsx
 │   ├── ThemeToggle.tsx
+│   ├── TopNav.tsx
 │   ├── WhatsNext.tsx
 │   ├── WhoAreNewMuslims.tsx
 │   └── ui/
-│       └── Section.tsx
+│       ├── Section.tsx       # UI primitive with animation support
+│       └── Icon.tsx
+├── hooks/                    # Custom React hooks
+│   ├── useIntersectionObserver.ts
+│   ├── useMultipleIntersectionObserver.ts
+│   ├── useHasMounted.ts
+│   └── useStorySections.ts
 ├── lib/
-│   └── stories.ts           # Story data fetching utilities
-├── middleware.ts            # i18n middleware (routes: /, /en, /ar)
-├── i18n.ts                  # next-intl configuration
-└── stories/                 # Markdown story files (*.md and *-ar.md)
+│   ├── stories.ts            # Story data fetching utilities
+│   ├── story-parser.ts       # Markdown parsing logic
+│   └── story-service.ts      # Story service layer
+├── i18n/
+│   ├── routing.ts            # Central locale routing configuration
+│   └── request.ts            # Request configuration (timezone: Asia/Aden)
+├── proxy.ts                  # i18n proxy/middleware (Next.js 16)
+└── stories/                  # Markdown story files (*.md and *-ar.md)
 ```
 
 **Translation Files**:
@@ -80,20 +99,21 @@ messages/
 ## Key Configuration Files
 
 - **next.config.mjs**: Next.js config with `next-intl` plugin
-- **tailwind.config.ts**: Tailwind CSS configuration
-- **tsconfig.json**: TypeScript configuration (strict mode enabled)
-- **.eslintrc.json**: ESLint extends Next.js core web vitals + TypeScript rules
-- **middleware.ts**: Handles locale-based routing (matches `/`, `/en/:path*`, `/ar/:path*`)
+- **postcss.config.mjs**: PostCSS with `@tailwindcss/postcss`
+- **tsconfig.json**: TypeScript configuration (strict mode enabled, `@/*` path alias to `src/`)
+- **eslint.config.mjs**: ESLint flat config with TypeScript, React, and Next.js plugins
+- **proxy.ts**: Handles locale-based routing (matches `/`, `/en/:path*`, `/ar/:path*`)
 
 ## Important Implementation Details
 
 **Locale Handling**:
 - Locale is set via URL segment `/[locale]/`
 - Default locale: `en`
-- RTL support: Arabic pages use `dir="rtl"` in `src/app/[locale]/layout.tsx:18`
+- RTL support: Arabic pages use `dir="rtl"` in `src/app/[locale]/layout.tsx`
 - Timezone: Set to `'Asia/Aden'` in `src/i18n/request.ts`
+- `setRequestLocale()` must be called in all layouts and pages before using `getMessages()` or `useTranslations()`
 
-**Story Data Structure** (from `src/lib/stories.ts:9-20`):
+**Story Data Structure**:
 ```typescript
 interface StoryData {
   slug: string;
@@ -120,14 +140,14 @@ interface StoryData {
 - ThemeProvider: Dark/light mode toggle
 
 **ESLint Configuration**:
-- Extends: `next/core-web-vitals` and `next/typescript`
-- Config file: `.eslintrc.json`
+- Flat config (`eslint.config.mjs`) with typescript-eslint, eslint-plugin-react, eslint-plugin-jsx-a11y, eslint-plugin-import, eslint-config-next
+- Next.js 16 uses the flat config format
 
 **TypeScript Interface Patterns**:
-- Component props use named interfaces (e.g., `RootLayoutProps` in `src/app/layout.tsx:9`)
+- Component props use named interfaces (e.g., `RootLayoutProps`, `LocaleLayoutProps`)
 - Layout components define explicit props interfaces for clarity and reusability
-- Interface naming convention: `{ComponentName}Props` (e.g., `LocaleLayoutProps`, `RootLayoutProps`)
-- Benefits: Better IDE support, self-documenting code, and clear component contracts
+- Interface naming convention: `{ComponentName}Props`
+- Use `import type` for type-only imports
 
 ## Story Content Format
 
@@ -145,11 +165,16 @@ language: "en"  # or "ar"
 
 ## Package Manager Notes
 
-- **pnpm** is configured as the package manager (version 10.19.0+)
+- **pnpm** is configured as the package manager (version 10.28.0)
 - Always use `pnpm` commands instead of `npm` or `yarn`
 - Lockfile: `pnpm-lock.yaml`
 
-## Recent Changes Context
+## Command Center
 
-Current branch: `feat/ui-improvement`
-- Recent commits include UI improvements, translation button changes, theme toggle implementation, i18n navigation fixes, font loading/module import error fixes, RootLayoutProps interface addition for better TypeScript type safety, Header/Footer component extraction for improved code reusability, and StoryCard component extraction for better component composition.
+This project includes a Command Center for AI-assisted project management:
+- **MCP Server**: `command-center-mcp/` — 24 MCP tools for task/milestone/agent management
+- **TUI Dashboard**: `command-center-tui/` — Terminal UI (Node.js/blessed) with 4 views
+- **CLI**: `cc` shell function (auto-detects project from cwd)
+- **TUI**: `ccui` shell function (auto-detects project from cwd)
+- **Tracker**: `project-tracker.json` — single source of truth
+- See `docs/SETUP_COMMAND_CENTER.md` for setup in new projects

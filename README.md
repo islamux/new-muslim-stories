@@ -29,26 +29,27 @@ This web application, built with Next.js and TypeScript, focuses on showcasing s
     *   Framer Motion for animating elements on scroll.
     *   Calm color gradients (colors like light green, beige, gold, sky blue).
 
-## 🧩 Application Features
+## ✨ Features
 
-*   **Story Filtering:** Ability to filter stories by country or previous religious background.
-*   **Search:** Search box to find stories based on keywords.
-*   **Social Sharing:** Share buttons for stories on social media.
-*   **"Story of the Day":** A featured story displayed automatically each day.
-*   **"What's Next?":** Section providing links to learn more about Islam or connect with Islamic centers.
+✅ **Implemented**:
+- Multi-language support (English/Arabic with full RTL)
+- Markdown-based story content management (~69+ stories × 2 languages)
+- PWA with offline support and install prompt
+- Dark/Light theme toggle
+- Profile photos for stories
+- Story filtering and search
+- Story of the Day (auto-rotating featured story)
+- "What's Next?" section (links to learn more about Islam)
+- Responsive design (mobile, tablet, desktop)
+- Static site generation
+- Parallax scrolling and Framer Motion animations
+- Command Center for AI-assisted project management (MCP server + TUI dashboard)
 
-## 🧪 Development and Testing
-
-*   **Project Structure:** Project built with reusable components.
-*   **Testing:** Unit and UI tests using Jest and React Testing Library.
-*   **Data Fetching:** App Router data fetching with `async` components and `generateStaticParams`.
-
-## ✨ Suggested Additions
-
-*   **Dark Mode:** Support for a dark theme.
-*   **Admin Interface:** Simple administrative interface for adding new stories.
-*   **Media Integration:** Ability to add introductory videos or audio recordings with stories.
-*   **Simple Analytics:** Basic statistics (number of stories, represented countries, etc.).
+🚧 **Planned**:
+- Code splitting optimization
+- Image optimization with next/image
+- Storybook documentation
+- Analytics integration
 
 ## Getting Started
 
@@ -84,7 +85,7 @@ pnpm lint      # Run ESLint
 new-muslim-stories/
 ├── command-center-mcp/    # MCP server + CLI for project management
 ├── command-center-tui/    # Terminal UI dashboard (Node.js/blessed)
-├── docs/                  # Documentation (SETUP_COMMAND_CENTER.md, etc.)
+├── docs/                  # Documentation (plans, audits, guides)
 ├── messages/              # i18n translations (en.json, ar.json)
 ├── public/               # Static assets (photos, icons, manifest)
 │   ├── photos/          # Story profile photos
@@ -92,30 +93,47 @@ new-muslim-stories/
 │   └── icon-512x512.png # PWA icon
 ├── src/
 │   ├── app/              # Next.js App Router pages
+│   │   ├── layout.tsx    # Root HTML layout
 │   │   ├── [locale]/    # Dynamic locale routes (en/ar)
-│   │   └── offline/     # Offline fallback page
+│   │   │   ├── layout.tsx
+│   │   │   ├── page.tsx
+│   │   │   └── stories/[slug]/page.tsx
+│   │   └── offline/     # PWA offline fallback page
 │   ├── components/       # React components
 │   │   ├── ui/          # UI primitives (Section, Icon)
-│   │   ├── HeroSection.tsx
+│   │   ├── Header.tsx
+│   │   ├── Footer.tsx
 │   │   ├── TopNav.tsx
 │   │   ├── LanguageSwitcher.tsx
 │   │   ├── ThemeToggle.tsx
-│   │   └── ...
+│   │   ├── HeroSection.tsx
+│   │   ├── FeaturedStories.tsx
+│   │   ├── StoryCard.tsx
+│   │   ├── StoryContentDisplay.tsx
+│   │   ├── ProfileHeader.tsx
+│   │   ├── StoryOfTheDay.tsx
+│   │   ├── WhoAreNewMuslims.tsx
+│   │   ├── WhatsNext.tsx
+│   │   ├── HomePageClient.tsx
+│   │   ├── PWAInstall.tsx
+│   │   └── ServiceWorkerRegistration.tsx
+│   ├── hooks/            # Custom React hooks
+│   │   ├── useIntersectionObserver.ts
+│   │   ├── useMultipleIntersectionObserver.ts
+│   │   ├── useHasMounted.ts
+│   │   └── useStorySections.ts
 │   ├── lib/              # Core business logic & utilities
 │   │   ├── stories.ts
 │   │   ├── story-parser.ts
 │   │   └── story-service.ts
-│   ├── hooks/            # Custom React hooks
-│   │   ├── useIntersectionObserver.ts
-│   │   ├── useMultipleIntersectionObserver.ts
-│   │   └── useHasMounted.ts
-│   ├── stories/          # Markdown story files (~20+ stories)
+│   ├── stories/          # Markdown story files (~69 x 2 languages)
 │   ├── i18n/             # Internationalization configuration
-│   │   ├── routing.ts    # Central routing configuration
-│   │   └── request.ts    # Request configuration
-│   └── proxy.ts          # i18n middleware (Next.js 16)
+│   │   ├── routing.ts
+│   │   └── request.ts
+│   └── proxy.ts          # i18n proxy (Next.js 16)
 ├── .mcp.json              # MCP server configuration
-└── project-tracker.json   # Command Center project tracking
+├── project-tracker.json   # Command Center project tracking
+└── eslint.config.mjs      # ESLint flat config
 ```
 
 ## Learn More
@@ -206,6 +224,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 For detailed project documentation, see:
 
-- [PROJECT_BLUEPRINT.md](docs/PROJECT_BLUEPRINT.md) - Complete architecture guide
+- [PROJECT_BLUEPRINT.md](docs/PROJECT_BLUEPRINT.md) - Original architecture guide
 - [NEXT_INTL_FIX_GUIDE.md](docs/NEXT_INTL_FIX_GUIDE.md) - Next.js 16 + next-intl setup guide
 - [SETUP_COMMAND_CENTER.md](docs/SETUP_COMMAND_CENTER.md) - Command Center setup guide
+- [COMMAND_CENTER_AUDIT.md](docs/COMMAND_CENTER_AUDIT.md) - Command Center audit and roadmap
+- [AGENTS.md](AGENTS.md) - Agent guide with full project reference

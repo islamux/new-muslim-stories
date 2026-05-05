@@ -10,13 +10,12 @@
 ## Step 1: Copy Command Center Directories
 
 ```bash
-# From the new-muslim-stories project (source)
-SOURCE=/media/islamux/Variety/JavaScriptProjects/new-muslim-stories
+# From the source project
+SOURCE=/path/to/source-project
 TARGET=/path/to/new-project
 
 cp -r $SOURCE/command-center-mcp $TARGET/
 cp -r $SOURCE/command-center-tui $TARGET/
-cp $SOURCE/docs/workflow.md $TARGET/docs/
 
 # Remove old builds (will rebuild in step 3)
 rm -rf $TARGET/command-center-mcp/node_modules $TARGET/command-center-mcp/dist $TARGET/command-center-mcp/pnpm-lock.yaml
@@ -56,7 +55,7 @@ cd $TARGET/command-center-tui && pnpm install && pnpm build
 
 ## Step 4: Create .mcp.json
 
-Create `$TARGET/.mcp.json`:
+Create `$TARGET/.mcp.json` with the **absolute path** to your MCP server:
 
 ```json
 {
@@ -67,21 +66,51 @@ Create `$TARGET/.mcp.json`:
 }
 ```
 
-> **Note:** `PROJECT_ROOT` is no longer required. The CLI auto-detects the project root by walking up from the current directory to find `project-tracker.json`.
+> **Note:** The `.mcp.json` file requires an absolute path for MCP mode (used by AI agents). The CLI `cc` does NOT need this — it auto-detects the project.
 
-## Step 5: Add CLI Alias
+## Step 5: Add Auto-Detecting Shell Functions
 
-Add to `~/.bash_aliases` (or `~/dotfiles/bash/.bash_aliases` if using dotfiles):
+Add these functions to `~/.bash_aliases` (or your shell's config):
 
 ```bash
-alias cc="node /absolute/path/to/new-project/command-center-mcp/dist/cli.js"
+# Command Center CLI — auto-detects project from cwd
+cc() {
+  local dir=$(pwd)
+  while [ "$dir" != "/" ]; do
+    if [ -f "$dir/command-center-mcp/dist/cli.js" ]; then
+      node "$dir/command-center-mcp/dist/cli.js" "$@"
+      return
+    fi
+    dir=$(dirname "$dir")
+  done
+  echo "Error: Command Center not found in any parent directory" >&2
+  return 1
+}
+
+# Command Center TUI — auto-detects project from cwd
+ccui() {
+  local dir=$(pwd)
+  while [ "$dir" != "/" ]; do
+    if [ -f "$dir/command-center-tui/dist/index.js" ]; then
+      node "$dir/command-center-tui/dist/index.js"
+      return
+    fi
+    dir=$(dirname "$dir")
+  done
+  echo "Error: Command Center TUI not found in any parent directory" >&2
+  return 1
+}
 ```
 
-> **Note:** No `PROJECT_ROOT` env var needed. Works from any subdirectory of the project.
+> **Key benefit:** These functions work from any subdirectory of any project. No hardcoded paths, no `PROJECT_ROOT` env var. Works with multiple projects seamlessly.
 
 ## Step 6: Verify
 
 ```bash
+# Navigate into your project
+cd $TARGET
+
+# Test CLI auto-detection
 cc get-project-status
 ```
 
@@ -102,8 +131,22 @@ cc start-task m1_001
 
 ## TUI Dashboard
 
+Run from anywhere inside the project:
+
 ```bash
-cd $TARGET/command-center-tui && pnpm dev
+ccui
 ```
 
-Keys: `1-4` tabs | `q` quit | `r` refresh | `t` theme | `[` `]` milestones
+Keys: `1-4` tabs | `q` quit | `r` refresh | `t` theme | `[`/`]` milestones | `h`/`l` calendar navigation
+
+## How Auto-Detection Works
+
+Both `cc` and `ccui` walk up the directory tree from `cwd` looking for:
+- `cc`: nearest `command-center-mcp/dist/cli.js`
+- `ccui`: nearest `command-center-tui/dist/index.js`
+
+This means:
+- Works from any subdirectory (`src/`, `components/`, etc.)
+- Works with multiple projects on the same machine
+- No environment variables or hardcoded paths needed
+- Simply copy `command-center-mcp/` and `command-center-tui/` into any project
