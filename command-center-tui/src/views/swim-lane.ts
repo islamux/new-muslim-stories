@@ -40,26 +40,26 @@ export function createSwimLaneView(parent: blessed.Widgets.BoxElement): blessed.
     weekHeader += `W${String(w).padStart(2, ' ')}    `
     dateHeader += `${dateStr}  `
   }
-  lines.push(`{fg:#9B9BAA}${weekHeader}{/}`)
-  lines.push(`{fg:#9B9BAA}${dateHeader}{/}`)
+  lines.push(`{#9B9BAA-fg}${weekHeader}{/}`)
+  lines.push(`{#9B9BAA-fg}${dateHeader}{/}`)
   lines.push('')
 
   // Phase bands
   for (const phase of tracker.schedule.phases) {
     const startPos = 10 + (phase.start_week - 1) * WEEK_W
     const span = (phase.end_week - phase.start_week + 1) * WEEK_W
-    lines.push(`{bg:#1a1a2e fg:#9B9BAA}${' '.repeat(startPos)}${'─'.repeat(span)} ${phase.title}{/}`)
+    lines.push(`{#1a1a2e-bg}{#9B9BAA-fg}${' '.repeat(startPos)}${'─'.repeat(span)} ${phase.title}{/}`)
   }
 
   // NOW marker
   const nowPos = 10 + (currentWeek - 1) * WEEK_W + WEEK_W / 2
-  const nowLine = ' '.repeat(Math.floor(nowPos)) + '{fg:#585CF0}│{/}'
-  lines.push(nowLine + `  {fg:#585CF0}NOW{/}`)
+  const nowLine = ' '.repeat(Math.floor(nowPos)) + '{#585CF0-fg}│{/}'
+  lines.push(nowLine + `  {#585CF0-fg}NOW{/}`)
   lines.push('')
 
   // Swim lanes
   if (domains.length === 0) {
-    lines.push('{fg:#9B9BAA}  Milestones will appear here after hydration{/}')
+    lines.push('{#9B9BAA-fg}  Milestones will appear here after hydration{/}')
   }
 
   for (const domain of domains) {
@@ -76,12 +76,12 @@ export function createSwimLaneView(parent: blessed.Widgets.BoxElement): blessed.
       const pos = (ms.week - 1) * WEEK_W
       const node = `[${done}/${total}]`
       const drift = ms.drift_days !== 0
-        ? ` {fg:${ms.drift_days > 0 ? '#ef4444' : '#22c55e'}}${ms.drift_days > 0 ? '+' : ''}${ms.drift_days}d{/}`
+        ? ` {${ms.drift_days > 0 ? '#ef4444' : '#22c55e'}-fg}${ms.drift_days > 0 ? '+' : ''}${ms.drift_days}d{/}`
         : ''
       laneContent += ' '.repeat(Math.max(0, pos - laneContent.length)) + `{bold}${node}{/}${drift}`
     }
 
-    lines.push(`{fg:#f59e0b}  ${domain.padEnd(8)}{/}${laneContent}`)
+    lines.push(`{#f59e0b-fg}  ${domain.padEnd(8)}{/}${laneContent}`)
     lines.push('')
   }
 
@@ -89,7 +89,7 @@ export function createSwimLaneView(parent: blessed.Widgets.BoxElement): blessed.
   const keyMilestones = tracker.milestones.filter(m => m.is_key_milestone)
   for (const km of keyMilestones) {
     const pos = (km.week - 1) * WEEK_W + 10
-    lines.push(' '.repeat(pos) + `{fg:#585CF0}◆{/} ${km.key_milestone_label ?? km.title}`)
+    lines.push(' '.repeat(pos) + `{#585CF0-fg}◆{/} ${km.key_milestone_label ?? km.title}`)
   }
 
   blessed.text({

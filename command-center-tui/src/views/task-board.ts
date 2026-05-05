@@ -70,8 +70,8 @@ function renderContextBar(parent: blessed.Widgets.BlessedElement, milestone: Mil
   const idx = state.selectedMilestoneIndex
   const max = milestones.length - 1
 
-  const navL = idx > 0 ? '{fg:#585CF0}[{/} ' : '  '
-  const navR = idx < max ? ' {fg:#585CF0}]{/}' : '  '
+  const navL = idx > 0 ? '{#585CF0-fg}[{/} ' : '  '
+  const navR = idx < max ? ' {#585CF0-fg}]{/}' : '  '
   const info = `{bold}[${done}/${total}]{/}  ${milestone.domain} · W${milestone.week} · {bold}${milestone.title}{/}`
 
   blessed.box({
@@ -92,7 +92,7 @@ function renderFilterBar(parent: blessed.Widgets.BlessedElement, totalCount: num
 
   const parts = filters.map(f => {
     const isActive = activeFilter === f.type
-    const tag = isActive ? `{bold}{fg:#585CF0}[${f.key}:${f.label}]{/}` : `{fg:#9B9BAA}[${f.key}:${f.label}]{/}`
+    const tag = isActive ? `{bold}{#585CF0-fg}[${f.key}:${f.label}]{/}` : `{#9B9BAA-fg}[${f.key}:${f.label}]{/}`
     return tag
   })
 
@@ -130,10 +130,10 @@ function renderKanbanColumns(parent: blessed.Widgets.BlessedElement, milestone: 
     }
 
     const items = colTasks.map(t => {
-      const prio = `{fg:${col.color}}${t.priority}{/}`
-      const assignee = t.assignee ? ` {fg:#585CF0}@${t.assignee}{/}` : ''
+      const prio = `{${col.color}-fg}${t.priority}{/}`
+      const assignee = t.assignee ? ` {#585CF0-fg}@${t.assignee}{/}` : ''
       const blocked = t.status === 'blocked' && t.blocked_reason
-        ? `\n  {fg:#ef4444}⊘ ${t.blocked_reason}{/}` : ''
+        ? `\n  {#ef4444-fg}⊘ ${t.blocked_reason}{/}` : ''
       return `${prio} ${t.label}${assignee}${blocked}`
     })
 
@@ -234,9 +234,9 @@ function openDetailModal(parent: blessed.Widgets.BlessedElement, task: Subtask, 
   const lines: string[] = []
   lines.push(`{bold}${task.label}{/}`)
   lines.push('')
-  lines.push(`  Status: {fg:${statusColor(task.status)}}${task.status}{/}   Priority: ${task.priority}   Mode: ${task.execution_mode}`)
-  if (task.assignee) lines.push(`  Assignee: {fg:#585CF0}${task.assignee}{/}`)
-  if (task.blocked_reason) lines.push(`  Blocked: {fg:#ef4444}${task.blocked_reason}{/}`)
+  lines.push(`  Status: {${statusColor(task.status)}-fg}${task.status}{/}   Priority: ${task.priority}   Mode: ${task.execution_mode}`)
+  if (task.assignee) lines.push(`  Assignee: {#585CF0-fg}${task.assignee}{/}`)
+  if (task.blocked_reason) lines.push(`  Blocked: {#ef4444-fg}${task.blocked_reason}{/}`)
   lines.push('')
 
   if (task.acceptance_criteria.length > 0) {
@@ -265,7 +265,7 @@ function openDetailModal(parent: blessed.Widgets.BlessedElement, task: Subtask, 
   blessed.box({
     parent: detailModal,
     bottom: 0, left: 0, right: 0, height: 1,
-    content: ' {fg:#9B9BAA}[s:Status] [p:Priority] [ESC:Close]{/}',
+    content: ' {#9B9BAA-fg}[s:Status] [p:Priority] [ESC:Close]{/}',
     style: { bg: COLORS.border.hex },
     tags: true,
   })

@@ -12,8 +12,9 @@ const TABS: { id: TabId; label: string; key: string }[] = [
 export function createTabBar(screen: blessed.Widgets.Screen, activeTab: TabId): blessed.Widgets.BoxElement {
   const parts = TABS.map(t => {
     const isActive = t.id === activeTab
-    const tag = isActive ? 'fg:white bg:#585CF0 bold' : 'fg:#9B9BAA'
-    return `{${tag}} [${t.key}] ${t.label} {/}`
+    return isActive
+      ? `{white-fg}{#585CF0-bg}{bold} [${t.key}] ${t.label} {/}`
+      : `{#9B9BAA-fg} [${t.key}] ${t.label} {/}`
   })
 
   const bar = blessed.box({

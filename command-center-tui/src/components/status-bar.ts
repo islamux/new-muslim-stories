@@ -30,8 +30,8 @@ export function updateStatusBar(bar: blessed.Widgets.BoxElement): void {
 
   const scheduleStatus = state.tracker?.project.schedule_status ?? 'on_track'
   const scheduleColor = scheduleStatus === 'behind' ? COLORS.behind.hex : COLORS.onTrack.hex
-  const syncTag = state.synced ? '{fg:#22c55e}● Sync{/}' : '{fg:#ef4444}● Desync{/}'
-  const scheduleTag = `{fg:${scheduleColor}}${scheduleStatus.toUpperCase()}{/}`
+  const syncTag = state.synced ? '{#22c55e-fg}● Sync{/}' : '{#ef4444-fg}● Desync{/}'
+  const scheduleTag = `{${scheduleColor}-fg}${scheduleStatus.toUpperCase()}{/}`
 
   const left = ` WEEK ${week}${phase ? ` · ${phase}` : ''}`
   const center = `${counts.done}/${counts.total} (${pct}%)`

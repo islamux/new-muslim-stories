@@ -40,8 +40,8 @@ function renderConnectedAgents(parent, agents) {
     lines.push('{bold}  CONNECTED AGENTS{/}');
     lines.push('');
     if (agents.length === 0) {
-        lines.push('{fg:#9B9BAA}  No agents registered.{/}');
-        lines.push('{fg:#9B9BAA}  Agents register via MCP.{/}');
+        lines.push('{#9B9BAA-fg}  No agents registered.{/}');
+        lines.push('{#9B9BAA-fg}  Agents register via MCP.{/}');
     }
     else {
         const now = Date.now();
@@ -51,8 +51,8 @@ function renderConnectedAgents(parent, agents) {
         };
         for (const agent of [...grouped.orchestrators, ...grouped.others]) {
             const isActive = agent.last_action_at && (now - new Date(agent.last_action_at).getTime()) < 30 * 60 * 1000;
-            const dot = isActive ? '{fg:#22c55e}●{/}' : '{fg:#9B9BAA}○{/}';
-            const statusText = isActive ? '{fg:#22c55e}ACTIVE{/}' : '{fg:#9B9BAA}IDLE{/}';
+            const dot = isActive ? '{#22c55e-fg}●{/}' : '{#9B9BAA-fg}○{/}';
+            const statusText = isActive ? '{#22c55e-fg}ACTIVE{/}' : '{#9B9BAA-fg}IDLE{/}';
             const ago = agent.last_action_at ? timeAgo(new Date(agent.last_action_at)) : 'never';
             const perms = agent.permissions.map(p => `{bold}[${p.toUpperCase()}]{/}`).join(' ');
             lines.push(`  ${dot} {bold}${agent.name}{/}  ${statusText} ${ago}`);
@@ -72,7 +72,7 @@ function renderConnectedAgents(parent, agents) {
 function renderSharedState(parent, agentCount, milestoneCount, logCount) {
     const top = parent.children.length > 0 ? parent.children[0].height + 1 : 10;
     const synced = state.synced;
-    const syncTag = synced ? '{fg:#22c55e}● Active{/}' : '{fg:#ef4444}● Inactive{/}';
+    const syncTag = synced ? '{#22c55e-fg}● Active{/}' : '{#ef4444-fg}● Inactive{/}';
     const counts = selectTaskCounts();
     const week = selectCurrentWeek();
     const phase = selectCurrentPhase();
@@ -101,7 +101,7 @@ function renderActivityFeed(parent, log, agents) {
     lines.push('{bold}  ACTIVITY FEED{/}');
     lines.push('');
     if (log.length === 0) {
-        lines.push('{fg:#9B9BAA}  No activity recorded yet{/}');
+        lines.push('{#9B9BAA-fg}  No activity recorded yet{/}');
     }
     else {
         const sorted = [...log].sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
@@ -118,12 +118,12 @@ function renderActivityFeed(parent, log, agents) {
             const time = date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
             const agent = agents.find(a => a.id === entry.agent_id);
             const agentName = agent?.name ?? entry.agent_id;
-            const tags = entry.tags.length > 0 ? ` {fg:#8286FF}[${entry.tags.join(',')}]{/}` : '';
-            lines.push(`  {fg:#585CF0}${agentName}{/} · ${entry.action}: ${entry.description}${tags}  {fg:#9B9BAA}${time}{/}`);
+            const tags = entry.tags.length > 0 ? ` {#8286FF-fg}[${entry.tags.join(',')}]{/}` : '';
+            lines.push(`  {#585CF0-fg}${agentName}{/} · ${entry.action}: ${entry.description}${tags}  {#9B9BAA-fg}${time}{/}`);
         }
         if (sorted.length > 30) {
             lines.push('');
-            lines.push('{fg:#9B9BAA}  ... and ' + (sorted.length - 30) + ' more entries{/}');
+            lines.push('{#9B9BAA-fg}  ... and ' + (sorted.length - 30) + ' more entries{/}');
         }
     }
     blessed.text({

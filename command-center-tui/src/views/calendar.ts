@@ -44,7 +44,7 @@ export function createCalendarView(parent: blessed.Widgets.BoxElement): blessed.
     return d >= weekDays[0] && d <= weekDays[6]
   })
 
-  const headerText = `  ${viewWeekOffset !== 0 ? '{fg:#585CF0}[h:Prev]{/}  ' : ''}Week ${weekStartStr} – ${weekEndStr} · ${weekCompleted.length} completed  ${viewWeekOffset !== 0 ? '{fg:#585CF0}[l:Next]{/}  ' : ''}  {fg:#585CF0}[t:Today]{/}`
+  const headerText = `  ${viewWeekOffset !== 0 ? '{#585CF0-fg}[h:Prev]{/}  ' : ''}Week ${weekStartStr} – ${weekEndStr} · ${weekCompleted.length} completed  ${viewWeekOffset !== 0 ? '{#585CF0-fg}[l:Next]{/}  ' : ''}  {#585CF0-fg}[t:Today]{/}`
 
   blessed.box({
     parent: container,
@@ -79,7 +79,7 @@ export function createCalendarView(parent: blessed.Widgets.BoxElement): blessed.
     if (dayTasks.length === 0) {
       blessed.text({
         parent: colBox, top: 'center', left: 'center', width: 'shrink',
-        content: isToday ? '{fg:#FFFFFF}—{/}' : '{fg:#1a1a2e}—{/}',
+        content: isToday ? '{#FFFFFF-fg}—{/}' : '{#1a1a2e-fg}—{/}',
         tags: true,
         style: { fg: COLORS.muted.hex },
       })
@@ -89,7 +89,7 @@ export function createCalendarView(parent: blessed.Widgets.BoxElement): blessed.
     const items = dayTasks.map(t => {
       const milestone = tracker.milestones.find(m => m.subtasks.includes(t))
       const domain = milestone?.domain ?? ''
-      return `{fg:#22c55e}✓{/} ${truncate(t.label, colWidth - 5)}\n{fg:#9B9BAA}  ${domain}{/}`
+      return `{#22c55e-fg}✓{/} ${truncate(t.label, colWidth - 5)}\n{#9B9BAA-fg}  ${domain}{/}`
     })
 
     blessed.text({
