@@ -2,13 +2,13 @@
 title: "رحلة البريطاني: قصة عمر مع الإسلام"
 author: "عمر"
 date: "2020-01-01"
-image: "/images/omer.png"
+image: "/images/omer.webp"
 language: "ar"
 firstName: "عمر"
 age: null
 country: "المملكة المتحدة"
 previousReligion: "المسيحية"
-profilePhoto: "/images/omer.png"
+profilePhoto: "/images/omer.webp"
 featured: false
 ---
 

@@ -2,13 +2,13 @@
 title: "Amin's Path: A Dutch Convert's Journey to Islam"
 author: "Amin"
 date: "2021-11-20"
-image: "/images/amin-holandy.jpeg"
+image: "/images/amin-holandy.webp"
 language: "en"
 firstName: "Amin"
 age: 30
 country: "Netherlands"
 previousReligion: "Atheism"
-profilePhoto: "/images/amin-holandy.jpeg"
+profilePhoto: "/images/amin-holandy.webp"
 featured: false
 ---
 

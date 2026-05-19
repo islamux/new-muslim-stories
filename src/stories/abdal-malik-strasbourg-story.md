@@ -2,9 +2,9 @@
 title: "From Extremism to Spiritual Love: Abdal Malik's Journey"
 author: "Abdal Malik (Régis Fayette-Mikano)"
 date: "2024-01-15"
-image: "/images/abdul-malik.jpeg"
+image: "/images/abdul-malik.webp"
 language: "en"
-profilePhoto: "/images/abdul-malik.jpeg"
+profilePhoto: "/images/abdul-malik.webp"
 ---
 
 ## Life Before Islam

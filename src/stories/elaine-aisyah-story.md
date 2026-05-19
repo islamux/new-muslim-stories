@@ -2,8 +2,8 @@
 title: "A Journey of Questioning: Elaine Aisyah's Story"
 author: "Elaine Aisyah"
 date: "2022-08-10"
-image: "/images/stories/elaine-aisyah.jpg"
-profilePhoto: "/images/stories/elaine-aisyah.jpg"
+image: "/images/stories/elaine-aisyah.webp"
+profilePhoto: "/images/stories/elaine-aisyah.webp"
 language: "en"
 firstName: "Elaine"
 age: 30

@@ -2,13 +2,13 @@
 title: "رحلة مجاهد إلى الإسلام"
 author: "مجاهد"
 date: "2026-03-13"
-image: "/images/mujahid.png"
+image: "/images/mujahid.webp"
 language: "ar"
 firstName: "مجاهد"
 age: null
 country: "الولايات المتحدة"
 previousReligion: "المسيحية"
-profilePhoto: "/images/mujahid.png"
+profilePhoto: "/images/mujahid.webp"
 featured: false
 ---
 

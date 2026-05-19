@@ -2,13 +2,13 @@
 title: "رحلة إلى الإسلام: قصة بلال"
 author: "بلال (كان يُدعى جريجوري)"
 date: "2020-01-01"
-image: "/images/bilal.png"
+image: "/images/bilal.webp"
 language: "ar"
 firstName: "بلال"
 age: null
 country: "بلجيكا"
 previousReligion: "المسيحية"
-profilePhoto: "/images/bilal.png"
+profilePhoto: "/images/bilal.webp"
 featured: false
 ---
 

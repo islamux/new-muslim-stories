@@ -2,13 +2,13 @@
 title: "Architecture of Faith: Akram's Journey to Islam"
 author: "Akram (formerly Mark Andrew)"
 date: "1990-01-01"
-image: "/images/akram.png"
+image: "/images/akram.webp"
 language: "en"
 firstName: "Akram"
 age: null
 country: "United Kingdom"
 previousReligion: "Christianity"
-profilePhoto: "/images/akram.png"
+profilePhoto: "/images/akram.webp"
 featured: false
 ---
 

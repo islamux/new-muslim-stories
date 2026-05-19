@@ -2,13 +2,13 @@
 title: "From Atheism to Faith: Khaled's Journey"
 author: "Dr. Khaled Suleiman"
 date: "2020-01-01"
-image: "/images/simon.png"
+image: "/images/simon.webp"
 language: "en"
 firstName: "Khaled"
 age: null
 country: "Canada"
 previousReligion: "Atheism"
-profilePhoto: "/images/simon.png"
+profilePhoto: "/images/simon.webp"
 featured: false
 ---
 

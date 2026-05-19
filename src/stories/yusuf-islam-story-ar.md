@@ -2,9 +2,9 @@
 title: "رحلة موسيقي: قصة يوسف إسلام"
 author: "يوسف إسلام (كات ستيفنز)"
 date: "1977-12-23"
-image: "/images/Yusuf_Islam.jpg"
+image: "/images/Yusuf_Islam.webp"
 language: "ar"
-profilePhoto: "/images/Yusuf_Islam.jpg"
+profilePhoto: "/images/Yusuf_Islam.webp"
 ---
 
 ## حياتي قبل الإسلام

@@ -18,7 +18,7 @@ export default function StoryCard({ story }: StoryCardProps) {
           <StoryImage
             src={story.profilePhoto}
             alt={story.firstName}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes="96px"
           />
         </div>
       )}

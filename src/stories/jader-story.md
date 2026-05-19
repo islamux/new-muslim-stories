@@ -2,13 +2,13 @@
 title: "Jader's Journey to Islam"
 author: "Jader"
 date: "2026-03-13"
-image: "/images/jihad.png"
+image: "/images/jihad.webp"
 language: "en"
 firstName: "Jader"
 age: 31
 country: "Brazil"
 previousReligion: "Islam (non-practicing)"
-profilePhoto: "/images/jihad.png"
+profilePhoto: "/images/jihad.webp"
 featured: false
 ---
 

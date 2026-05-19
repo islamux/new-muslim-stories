@@ -2,13 +2,13 @@
 title: "A Quest for Truth: Ibrahim's Journey to Islam"
 author: "Muhammad Ibrahim (formerly Reese Byford)"
 date: "2020-01-01"
-image: "/images/ibrahim.png"
+image: "/images/ibrahim.webp"
 language: "en"
 firstName: "Muhammad Ibrahim"
 age: null
 country: "United Kingdom"
 previousReligion: "None"
-profilePhoto: "/images/ibrahim.png"
+profilePhoto: "/images/ibrahim.webp"
 featured: false
 ---
 

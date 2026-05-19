@@ -1,13 +1,13 @@
 ---
 title: "The Christian Young Man Who Declared His Islam Before His Mother on TV"
 author: "Christian Young Man"
-image: "/images/his-mother.png"
+image: "/images/his-mother.webp"
 language: "en"
 firstName: "Christian Young Man"
 age: null
 country: null
 previousReligion: "Christianity"
-profilePhoto: "/images/his-mother.png"
+profilePhoto: "/images/his-mother.webp"
 featured: false
 date: null
 ---

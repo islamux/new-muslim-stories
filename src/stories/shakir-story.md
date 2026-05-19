@@ -2,13 +2,13 @@
 title: "Shakir's Journey to Islam"
 author: "Shakir"
 date: "2026-03-13"
-image: "/images/shaker_france.png"
+image: "/images/shaker_france.webp"
 language: "en"
 firstName: "Shakir"
 age: null
 country: "France"
 previousReligion: "None"
-profilePhoto: "/images/shaker_france.png"
+profilePhoto: "/images/shaker_france.webp"
 featured: false
 ---
 

@@ -2,13 +2,13 @@
 title: "رحلة جادير إلى الإسلام"
 author: "جادير"
 date: "2026-03-13"
-image: "/images/jihad.png"
+image: "/images/jihad.webp"
 language: "ar"
 firstName: "جادير"
 age: 31
 country: "البرازيل"
 previousReligion: "الإسلام (غير ملتزم)"
-profilePhoto: "/images/jihad.png"
+profilePhoto: "/images/jihad.webp"
 featured: false
 ---
 

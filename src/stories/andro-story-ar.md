@@ -2,9 +2,9 @@
 title: "من لندن العلمانية إلى الإسلام: قصة أندر"
 author: "أندر"
 date: "2020-01-01"
-image: "/images/andro.png"
+image: "/images/andro.webp"
 language: "ar"
-profilePhoto: "/images/andro.png"
+profilePhoto: "/images/andro.webp"
 ---
 
 ## حياتي قبل الإسلام

@@ -1,13 +1,13 @@
 ---
 title: "The Brazilian Taxi Driver's Journey to Islam"
 author: "Brazilian Taxi Driver"
-image: "/images/driver.png"
+image: "/images/driver.webp"
 language: "en"
 firstName: "Brazilian Taxi Driver"
 age: null
 country: "Brazil"
 previousReligion: null
-profilePhoto: "/images/driver.png"
+profilePhoto: "/images/driver.webp"
 featured: false
 date: null
 ---

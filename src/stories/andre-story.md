@@ -2,13 +2,13 @@
 title: "André's Journey to Islam"
 author: "André"
 date: "2026-03-13"
-image: "/images/andre.png"
+image: "/images/andre.webp"
 language: "en"
 firstName: "André"
 age: 38
 country: "Brazil"
 previousReligion: "Christianity"
-profilePhoto: "/images/andre.png"
+profilePhoto: "/images/andre.webp"
 featured: false
 ---
 

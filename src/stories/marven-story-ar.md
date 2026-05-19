@@ -2,13 +2,13 @@
 title: "من工程师 إلى المسلم: قصة مارفن"
 author: "مارفن"
 date: "2020-01-01"
-image: "/images/marven.png"
+image: "/images/marven.webp"
 language: "ar"
 firstName: "مارفن"
 age: null
 country: "المملكة المتحدة"
 previousReligion: "لا دين"
-profilePhoto: "/images/marven.png"
+profilePhoto: "/images/marven.webp"
 featured: false
 ---
 

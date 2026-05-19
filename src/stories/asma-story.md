@@ -2,13 +2,13 @@
 title: "Asma's Journey to Islam"
 author: "Asma (formerly Esme/Mascha)"
 date: "2026-03-13"
-image: "/images/asma_holand.png"
+image: "/images/asma_holand.webp"
 language: "en"
 firstName: "Asma"
 age: null
 country: "Netherlands"
 previousReligion: "Catholicism"
-profilePhoto: "/images/asma_holand.png"
+profilePhoto: "/images/asma_holand.webp"
 featured: false
 ---
 

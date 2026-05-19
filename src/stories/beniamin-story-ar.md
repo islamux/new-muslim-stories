@@ -2,13 +2,13 @@
 title: "رحلة عبد الحق إلى الإسلام"
 author: "عبد الحق (المعروف سابقاً باسم بنجامين)"
 date: "2026-03-13"
-image: "/images/beniamin.png"
+image: "/images/beniamin.webp"
 language: "ar"
 firstName: "عبد الحق"
 age: null
 country: "السويد"
 previousReligion: "المسيحية"
-profilePhoto: "/images/beniamin.png"
+profilePhoto: "/images/beniamin.webp"
 featured: false
 ---
 

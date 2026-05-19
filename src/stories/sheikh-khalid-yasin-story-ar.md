@@ -2,13 +2,13 @@
 title: "الشيخ خالد ياسين: من الجذور المسيحية إلى الدعوة الإسلامية"
 author: "الشيخ خالد ياسين"
 date: "2024-01-15"
-image: "/images/stories/khalid-yasin.jpeg"
+image: "/images/stories/khalid-yasin.webp"
 language: "ar"
 firstName: "خالد"
 age: 78
 country: "الولايات المتحدة"
 previousReligion: "المسيحية"
-profilePhoto: "/images/stories/khalid-yasin.jpeg"
+profilePhoto: "/images/stories/khalid-yasin.webp"
 featured: false
 ---
 

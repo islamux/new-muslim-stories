@@ -2,13 +2,13 @@
 title: "رحلة شاكر إلى الإسلام"
 author: "شاكر"
 date: "2026-03-13"
-image: "/images/shaker_france.png"
+image: "/images/shaker_france.webp"
 language: "ar"
 firstName: "شاكر"
 age: null
 country: "فرنسا"
 previousReligion: "لا دين"
-profilePhoto: "/images/shaker_france.png"
+profilePhoto: "/images/shaker_france.webp"
 featured: false
 ---
 

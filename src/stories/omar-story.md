@@ -2,13 +2,13 @@
 title: "A British Revert's Journey: Omar's Story"
 author: "Omar"
 date: "2020-01-01"
-image: "/images/omer.png"
+image: "/images/omer.webp"
 language: "en"
 firstName: "Omar"
 age: null
 country: "United Kingdom"
 previousReligion: "Christianity"
-profilePhoto: "/images/omer.png"
+profilePhoto: "/images/omer.webp"
 featured: false
 ---
 

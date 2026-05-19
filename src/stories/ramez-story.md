@@ -2,13 +2,13 @@
 title: "A Turkish Cypriot Revert: Ramez's Journey"
 author: "Ramez (Ramis)"
 date: "2020-01-01"
-image: "/images/ramez.png"
+image: "/images/ramez.webp"
 language: "en"
 firstName: "Ramis"
 age: null
 country: "United Kingdom"
 previousReligion: "Islam (non-practicing)"
-profilePhoto: "/images/ramez.png"
+profilePhoto: "/images/ramez.webp"
 featured: false
 ---
 

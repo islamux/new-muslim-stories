@@ -2,13 +2,13 @@
 title: "From Engineer to Muslim: Marvin's Journey"
 author: "Marvin"
 date: "2020-01-01"
-image: "/images/marven.png"
+image: "/images/marven.webp"
 language: "en"
 firstName: "Marvin"
 age: null
 country: "United Kingdom"
 previousReligion: "None"
-profilePhoto: "/images/marven.png"
+profilePhoto: "/images/marven.webp"
 featured: false
 ---
 

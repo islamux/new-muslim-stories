@@ -2,13 +2,13 @@
 title: "Malcolm X: A Journey from Darkness to Light"
 author: "Malcolm X"
 date: "1964-02-21"
-image: "/images/stories/malcolm-x.jpg"
+image: "/images/stories/malcolm-x.webp"
 language: "en"
 firstName: "Malcolm"
 age: 39
 country: "USA"
 previousReligion: "Nation of Islam"
-profilePhoto: "/images/stories/malcolm-x.jpg"
+profilePhoto: "/images/stories/malcolm-x.webp"
 featured: false
 ---
 

@@ -1,13 +1,13 @@
 ---
 title: "Eddie's Conversion: The Famous American Broadcaster's Journey to Islam"
 author: "Eddie"
-image: "/images/stories/eddie-redzovic.jpeg"
+image: "/images/stories/eddie-redzovic.webp"
 language: "en"
 firstName: "Eddie"
 age: null
 country: "USA"
 previousReligion: null
-profilePhoto: "/images/stories/eddie-redzovic.jpeg"
+profilePhoto: "/images/stories/eddie-redzovic.webp"
 featured: false
 date: null
 ---

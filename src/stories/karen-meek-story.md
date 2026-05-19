@@ -2,9 +2,9 @@
 title: "From Skepticism to Belief: Karen Meek's Story"
 author: "Karen Meek"
 date: "2021-05-25"
-image: "/images/karen_meek.jpeg"
+image: "/images/karen_meek.webp"
 language: "en"
-profilePhoto: "/images/karen_meek.jpeg"
+profilePhoto: "/images/karen_meek.webp"
 ---
 
 Karen Meek, a 33-year-old from Lewisville, grew up with a skeptical view of religion. She considered it "ridiculous" and didn't believe in God. However, her perspective began to change when she encountered Islam.

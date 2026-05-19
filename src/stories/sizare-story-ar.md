@@ -2,13 +2,13 @@
 title: "رحلة سيزر إلى الإسلام"
 author: "سيزر (سيسار)"
 date: "2026-03-13"
-image: "/images/sizar.png"
+image: "/images/sizar.webp"
 language: "ar"
 firstName: "سيزر"
 age: 41
 country: "البرازيل"
 previousReligion: "المسيحية"
-profilePhoto: "/images/sizar.png"
+profilePhoto: "/images/sizar.webp"
 featured: false
 ---
 

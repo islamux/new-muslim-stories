@@ -2,13 +2,13 @@
 title: "الأعظم: محمد علي والتعرف على الإسلام"
 author: "محمد علي"
 date: "1964-02-26"
-image: "/images/stories/muhammad-ali.jpg"
+image: "/images/stories/muhammad-ali.webp"
 language: "ar"
 firstName: "محمد"
 age: 22
 country: "الولايات المتحدة"
 previousReligion: "المسيحية"
-profilePhoto: "/images/stories/muhammad-ali.jpg"
+profilePhoto: "/images/stories/muhammad-ali.webp"
 featured: false
 ---
 

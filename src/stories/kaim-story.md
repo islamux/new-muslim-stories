@@ -2,13 +2,13 @@
 title: "Kaim's Journey to Islam"
 author: "Kaim"
 date: "2026-03-13"
-image: "/images/yama_moto.png"
+image: "/images/yama_moto.webp"
 language: "en"
 firstName: "Kaim"
 age: null
 country: "Japan"
 previousReligion: "None"
-profilePhoto: "/images/yama_moto.png"
+profilePhoto: "/images/yama_moto.webp"
 featured: false
 ---
 

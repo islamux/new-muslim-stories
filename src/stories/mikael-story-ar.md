@@ -2,9 +2,9 @@
 title: "من الكاثوليكية إلى الإسلام: قصة ميكائيل"
 author: "ميكائيل"
 date: "2020-01-01"
-image: "/images/mikael.png"
+image: "/images/mikael.webp"
 language: "ar"
-profilePhoto: "/images/mikael.png"
+profilePhoto: "/images/mikael.webp"
 ---
 
 ## حياتي قبل الإسلام

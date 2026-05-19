@@ -2,13 +2,13 @@
 title: "عودة المحامي: قصة أنطونيو مع الإسلام"
 author: "أنطونيو غارسيا"
 date: "1991-01-01"
-image: "/images/antonio.png"
+image: "/images/antonio.webp"
 language: "ar"
 firstName: "أنطونيو"
 age: null
 country: "إسبانيا"
 previousReligion: "لا دين"
-profilePhoto: "/images/antonio.png"
+profilePhoto: "/images/antonio.webp"
 featured: false
 ---
 

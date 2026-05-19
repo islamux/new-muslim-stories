@@ -2,13 +2,13 @@
 title: "من الظلمات إلى النور: قصة مارك مع الإسلام"
 author: "مارك (الآن عبد العزيز)"
 date: "2020-01-01"
-image: "/images/mark.png"
+image: "/images/mark.webp"
 language: "ar"
 firstName: "مارك"
 age: null
 country: "فرنسا"
 previousReligion: "المسيحية"
-profilePhoto: "/images/mark.png"
+profilePhoto: "/images/mark.webp"
 featured: false
 ---
 

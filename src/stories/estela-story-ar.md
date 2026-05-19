@@ -2,13 +2,13 @@
 title: "من الأكاديميا إلى الإيمان: قصة استيلا مع الإسلام"
 author: "استيلا (الآن مريم)"
 date: "2004-01-01"
-image: "/images/stilla.png"
+image: "/images/stilla.webp"
 language: "ar"
 firstName: "استيلا"
 age: null
 country: "إسبانيا"
 previousReligion: "لا دين"
-profilePhoto: "/images/stilla.png"
+profilePhoto: "/images/stilla.webp"
 featured: false
 ---
 

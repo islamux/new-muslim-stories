@@ -2,13 +2,13 @@
 title: "Mahdi's Journey to Islam"
 author: "Mahdi (formerly known as Matthieu)"
 date: "2026-03-13"
-image: "/images/mahdi.png"
+image: "/images/mahdi.webp"
 language: "en"
 firstName: "Mahdi"
 age: null
 country: "Belgium"
 previousReligion: "Christianity"
-profilePhoto: "/images/mahdi.png"
+profilePhoto: "/images/mahdi.webp"
 featured: false
 ---
 

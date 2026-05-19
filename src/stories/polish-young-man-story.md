@@ -1,13 +1,13 @@
 ---
 title: "The Polish Young Man Who Embraced Islam Due to a Sign from God"
 author: "Polish Young Man"
-image: "/images/taha.jpeg"
+image: "/images/taha.webp"
 language: "en"
 firstName: "Polish Young Man"
 age: null
 country: "Poland"
 previousReligion: null
-profilePhoto: "/images/taha.jpeg"
+profilePhoto: "/images/taha.webp"
 featured: false
 date: null
 ---

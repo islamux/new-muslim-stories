@@ -1,8 +1,8 @@
 ---
 title: "رحلة جوليا: من رائدة أعمال ملحدة إلى مسلمة"
 author: "جوليا رنا"
-image: "/images/julia_Rana.png"
-profilePhoto: "/images/julia_Rana.png"
+image: "/images/julia_Rana.webp"
+profilePhoto: "/images/julia_Rana.webp"
 firstName: "جوليا"
 language: "ar"
 ---

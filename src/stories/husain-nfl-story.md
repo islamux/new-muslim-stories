@@ -2,13 +2,13 @@
 title: "Husain's Journey to Islam"
 author: "Husain"
 date: "2026-03-13"
-image: "/images/nfl_usa.png"
+image: "/images/nfl_usa.webp"
 language: "en"
 firstName: "Husain"
 age: null
 country: "United States"
 previousReligion: "Islam (non-practicing)"
-profilePhoto: "/images/nfl_usa.png"
+profilePhoto: "/images/nfl_usa.webp"
 featured: false
 ---
 

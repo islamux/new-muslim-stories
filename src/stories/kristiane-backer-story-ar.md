@@ -2,13 +2,13 @@
 title: "من إم تي في إلى مكة: قصة كريستيان باكر"
 author: "كريستيان باكر"
 date: "1995-01-01"
-image: "/images/stories/kristiane-backer.jpg"
+image: "/images/stories/kristiane-backer.webp"
 language: "ar"
 firstName: "كريستيان"
 age: 30
 country: "ألمانيا"
 previousReligion: "المسيحية"
-profilePhoto: "/images/stories/kristiane-backer.jpg"
+profilePhoto: "/images/stories/kristiane-backer.webp"
 featured: false
 ---
 

@@ -2,13 +2,13 @@
 title: "From Darkness to Light: Mark's Journey to Islam"
 author: "Mark (now Abdul Aziz)"
 date: "2020-01-01"
-image: "/images/mark.png"
+image: "/images/mark.webp"
 language: "en"
 firstName: "Mark"
 age: null
 country: "France"
 previousReligion: "Christianity"
-profilePhoto: "/images/mark.png"
+profilePhoto: "/images/mark.webp"
 featured: false
 ---
 

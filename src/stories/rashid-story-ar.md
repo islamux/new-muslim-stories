@@ -2,13 +2,13 @@
 title: "رحلة رشيد: إسباني اعتنق الإسلام"
 author: "رشيد"
 date: "2020-05-10"
-image: "/images/rashid.jpeg"
+image: "/images/rashid.webp"
 language: "ar"
 firstName: "رشيد"
 age: 35
 country: "إسبانيا"
 previousReligion: "الكاثوليكية"
-profilePhoto: "/images/rashid.jpeg"
+profilePhoto: "/images/rashid.webp"
 featured: false
 ---
 

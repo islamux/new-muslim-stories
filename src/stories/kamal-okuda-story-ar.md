@@ -2,13 +2,13 @@
 title: "رحلة البروفيسور كمال أكودا إلى الإسلام"
 author: "كمال أكودا"
 date: "2026-03-13"
-image: "/images/okodo.png"
+image: "/images/okodo.webp"
 language: "ar"
 firstName: "كمال"
 age: null
 country: "اليابان"
 previousReligion: "لا دين (ملحد)"
-profilePhoto: "/images/okodo.png"
+profilePhoto: "/images/okodo.webp"
 featured: false
 ---
 

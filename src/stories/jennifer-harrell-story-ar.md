@@ -2,8 +2,8 @@
 title: "رحلة وزير إلى الإسلام: قصة جينيفر هاريل"
 author: "جينيفر هاريل"
 date: "2020-03-12"
-image: "/images/stories/jennifer-harrell.jpeg"
-profilePhoto: "/images/stories/jennifer-harrell.jpeg"
+image: "/images/stories/jennifer-harrell.webp"
+profilePhoto: "/images/stories/jennifer-harrell.webp"
 language: "ar"
 firstName: "جينيفر"
 age: 26

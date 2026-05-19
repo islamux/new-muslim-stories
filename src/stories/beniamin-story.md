@@ -2,13 +2,13 @@
 title: "Abdul Haq's Journey to Islam"
 author: "Abdul Haq (formerly Benjamin)"
 date: "2026-03-13"
-image: "/images/beniamin.png"
+image: "/images/beniamin.webp"
 language: "en"
 firstName: "Abdul Haq"
 age: null
 country: "Sweden"
 previousReligion: "Christianity"
-profilePhoto: "/images/beniamin.png"
+profilePhoto: "/images/beniamin.webp"
 featured: false
 ---
 

@@ -2,13 +2,13 @@
 title: "الهندي التركي القبرصي: قصة رمس مع الإسلام"
 author: "رامز (رمس)"
 date: "2020-01-01"
-image: "/images/ramez.png"
+image: "/images/ramez.webp"
 language: "ar"
 firstName: "رامز"
 age: null
 country: "المملكة المتحدة"
 previousReligion: "الإسلام (غير ممارس)"
-profilePhoto: "/images/ramez.png"
+profilePhoto: "/images/ramez.webp"
 featured: false
 ---
 

@@ -2,13 +2,13 @@
 title: "رحلة قيم إلى الإسلام"
 author: "قيم"
 date: "2026-03-13"
-image: "/images/yama_moto.png"
+image: "/images/yama_moto.webp"
 language: "ar"
 firstName: "قيم"
 age: null
 country: "اليابان"
 previousReligion: "لا دين"
-profilePhoto: "/images/yama_moto.png"
+profilePhoto: "/images/yama_moto.webp"
 featured: false
 ---
 

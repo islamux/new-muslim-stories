@@ -2,13 +2,13 @@
 title: "A Journey to Islam: Bilal's Story"
 author: "Bilal (formerly Gregory)"
 date: "2020-01-01"
-image: "/images/bilal.png"
+image: "/images/bilal.webp"
 language: "en"
 firstName: "Bilal"
 age: null
 country: "Belgium"
 previousReligion: "Christianity"
-profilePhoto: "/images/bilal.png"
+profilePhoto: "/images/bilal.webp"
 featured: false
 ---
 

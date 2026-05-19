@@ -1,13 +1,13 @@
 ---
 title: "The Deaf Woman Who Moved Sheikh Fahad Al-Kandari to Tears"
 author: "Deaf Woman"
-image: "/images/repika.jpeg"
+image: "/images/repika.webp"
 language: "en"
 firstName: "Deaf Woman"
 age: null
 country: null
 previousReligion: null
-profilePhoto: "/images/repika.jpeg"
+profilePhoto: "/images/repika.webp"
 featured: false
 date: null
 ---

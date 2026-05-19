@@ -2,8 +2,8 @@
 title: "رحلة مسيحية إلى الإسلام: قصة عائشة بوتا"
 author: "عائشة بوتا (ديبي روجرز سابقًا)"
 date: "2018-07-22"
-image: "/images/ayisha.jpeg"
-profilePhoto: "/images/ayisha.jpeg"
+image: "/images/ayisha.webp"
+profilePhoto: "/images/ayisha.webp"
 firstName: "عائشة بوتا"
 language: "ar"
 ---

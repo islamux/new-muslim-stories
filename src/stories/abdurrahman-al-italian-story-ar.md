@@ -2,13 +2,13 @@
 title: "عبدالرحمن الإيطالي: من الإلحاد إلى الإسلام في المالديف"
 author: "عبدالرحمن الإيطالي"
 date: "2024-01-20"
-image: "/images/stories/abdurahman-italie.jpeg"
+image: "/images/stories/abdurahman-italie.webp"
 language: "ar"
 firstName: "عبدالرحمن"
 age: 45
 country: "إيطاليا"
 previousReligion: "الإلحاد"
-profilePhoto: "/images/stories/abdurahman-italie.jpeg"
+profilePhoto: "/images/stories/abdurahman-italie.webp"
 featured: false
 ---
 

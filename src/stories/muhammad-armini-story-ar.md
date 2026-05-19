@@ -2,13 +2,13 @@
 title: "رحلة محمد إلى الإسلام"
 author: "محمد"
 date: "2026-03-13"
-image: "/images/mohammad_armini.png"
+image: "/images/mohammad_armini.webp"
 language: "ar"
 firstName: "محمد"
 age: null
 country: "أرمينيا"
 previousReligion: "المسيحية"
-profilePhoto: "/images/mohammad_armini.png"
+profilePhoto: "/images/mohammad_armini.webp"
 featured: false
 ---
 

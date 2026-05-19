@@ -2,13 +2,13 @@
 title: "Professor Kamal Okuda's Journey to Islam"
 author: "Kamal Okuda"
 date: "2026-03-13"
-image: "/images/okodo.png"
+image: "/images/okodo.webp"
 language: "en"
 firstName: "Kamal"
 age: null
 country: "Japan"
 previousReligion: "None (Atheist)"
-profilePhoto: "/images/okodo.png"
+profilePhoto: "/images/okodo.webp"
 featured: false
 ---
 

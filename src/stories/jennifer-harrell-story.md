@@ -2,8 +2,8 @@
 title: "A Minister's Journey to Islam: Jennifer Harrell's Story"
 author: "Jennifer Harrell"
 date: "2020-03-12"
-image: "/images/stories/jennifer-harrell.jpeg"
-profilePhoto: "/images/stories/jennifer-harrell.jpeg"
+image: "/images/stories/jennifer-harrell.webp"
+profilePhoto: "/images/stories/jennifer-harrell.webp"
 language: "en"
 firstName: "Jennifer"
 age: 26

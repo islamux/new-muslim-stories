@@ -2,13 +2,13 @@
 title: "Muhammad's Journey to Islam"
 author: "Muhammad"
 date: "2026-03-13"
-image: "/images/mohammad_armini.png"
+image: "/images/mohammad_armini.webp"
 language: "en"
 firstName: "Muhammad"
 age: null
 country: "Armenia"
 previousReligion: "Christianity"
-profilePhoto: "/images/mohammad_armini.png"
+profilePhoto: "/images/mohammad_armini.webp"
 featured: false
 ---
 

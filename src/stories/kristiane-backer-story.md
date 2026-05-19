@@ -2,13 +2,13 @@
 title: "From MTV to Mecca: Kristiane Backer's Journey to Islam"
 author: "Kristiane Backer"
 date: "1995-01-01"
-image: "/images/stories/kristiane-backer.jpg"
+image: "/images/stories/kristiane-backer.webp"
 language: "en"
 firstName: "Kristiane"
 age: 30
 country: "Germany"
 previousReligion: "Christianity"
-profilePhoto: "/images/stories/kristiane-backer.jpg"
+profilePhoto: "/images/stories/kristiane-backer.webp"
 featured: false
 ---
 
