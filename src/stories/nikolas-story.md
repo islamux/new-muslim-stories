@@ -2,13 +2,13 @@
 title: "From Addiction to Light: Nikola's Journey to Islam"
 author: "Nicola (now Abdullah)"
 date: "2020-01-01"
-image: "/images/nikolas.png"
+image: "/images/nikolas.webp"
 language: "en"
 firstName: "Nicola"
 age: null
 country: "France"
 previousReligion: "None"
-profilePhoto: "/images/nikolas.png"
+profilePhoto: "/images/nikolas.webp"
 featured: false
 ---
 

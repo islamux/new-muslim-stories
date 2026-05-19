@@ -1,13 +1,13 @@
 ---
 title: "الفتاة الفرنسية التي أبكت الشيخ فهد"
 author: "الفتاة الفرنسية"
-image: "/images/barbara.png"
+image: "/images/barbara.webp"
 language: "ar"
 firstName: "الفتاة الفرنسية"
 age: null
 country: "فرنسا"
 previousReligion: null
-profilePhoto: "/images/barbara.png"
+profilePhoto: "/images/barbara.webp"
 featured: false
 date: null
 ---

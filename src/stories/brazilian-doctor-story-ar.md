@@ -1,13 +1,13 @@
 ---
 title: "الدكتورة البرازيلية: 15 عامًا من الدراسة قبل اعتناق الإسلام"
 author: "الدكتورة البرازيلية"
-image: "/images/brazilian_doctor.png"
+image: "/images/brazilian_doctor.webp"
 language: "ar"
 firstName: "الدكتورة البرازيلية"
 age: null
 country: "البرازيل"
 previousReligion: null
-profilePhoto: "/images/brazilian_doctor.png"
+profilePhoto: "/images/brazilian_doctor.webp"
 featured: false
 date: null
 ---

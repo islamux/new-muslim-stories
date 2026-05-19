@@ -2,13 +2,13 @@
 title: "From Christianity to Islam: Abdur-Raheem Green's Journey"
 author: "Abdur-Raheem Green"
 date: "1988-01-01"
-image: "/images/stories/abdur-raheem-green.jpg"
+image: "/images/stories/abdur-raheem-green.webp"
 language: "en"
 firstName: "Abdur-Raheem"
 age: 24
 country: "United Kingdom"
 previousReligion: "Buddhism"
-profilePhoto: "/images/stories/abdur-raheem-green.jpg"
+profilePhoto: "/images/stories/abdur-raheem-green.webp"
 featured: false
 ---
 

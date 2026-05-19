@@ -2,13 +2,13 @@
 title: "بحث عن الحقيقة: قصة إبراهيم مع الإسلام"
 author: "محمد إبراهيم (ريس بايفورد سابقاً)"
 date: "2020-01-01"
-image: "/images/ibrahim.png"
+image: "/images/ibrahim.webp"
 language: "ar"
 firstName: "محمد إبراهيم"
 age: null
 country: "المملكة المتحدة"
 previousReligion: "لا دين"
-profilePhoto: "/images/ibrahim.png"
+profilePhoto: "/images/ibrahim.webp"
 featured: false
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: "الشرطي البريطاني الذي يقرأ القرآن بالتجويد"
 author: "الشرطي البريطاني"
-image: "/images/police.png"
+image: "/images/police.webp"
 language: "ar"
 firstName: "دانيال"
-profilePhoto: "/images/police.png"
+profilePhoto: "/images/police.webp"
 featured: false
 date: null
 ---

@@ -2,13 +2,13 @@
 title: "César's Journey to Islam"
 author: "César (Sizare)"
 date: "2026-03-13"
-image: "/images/sizar.png"
+image: "/images/sizar.webp"
 language: "en"
 firstName: "César"
 age: 41
 country: "Brazil"
 previousReligion: "Christianity"
-profilePhoto: "/images/sizar.png"
+profilePhoto: "/images/sizar.webp"
 featured: false
 ---
 

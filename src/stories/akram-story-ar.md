@@ -2,13 +2,13 @@
 title: "هندسة الإيمان: قصة أكرم مع الإسلام"
 author: "أكرم (formerly مارك أندرو)"
 date: "1990-01-01"
-image: "/images/akram.png"
+image: "/images/akram.webp"
 language: "ar"
 firstName: "أكرم"
 age: null
 country: "المملكة المتحدة"
 previousReligion: "المسيحية"
-profilePhoto: "/images/akram.png"
+profilePhoto: "/images/akram.webp"
 featured: false
 ---
 

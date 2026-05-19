@@ -2,13 +2,13 @@
 title: "طريق العالم: قصة القاسم مع الإسلام"
 author: "القاسم (كان يُعرف بأدريان)"
 date: "2005-01-01"
-image: "/images/qasem.png"
+image: "/images/qasem.webp"
 language: "ar"
 firstName: "القاسم"
 age: null
 country: "إسبانيا"
 previousReligion: "لا دين"
-profilePhoto: "/images/qasem.png"
+profilePhoto: "/images/qasem.webp"
 featured: false
 ---
 

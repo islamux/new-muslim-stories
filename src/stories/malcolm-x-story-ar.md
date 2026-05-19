@@ -2,13 +2,13 @@
 title: "مالكوم إكس: رحلة من الظلام إلى النور"
 author: "مالكوم إكس"
 date: "1964-02-21"
-image: "/images/stories/malcolm-x.jpg"
+image: "/images/stories/malcolm-x.webp"
 language: "ar"
 firstName: "مالكوم"
 age: 39
 country: "الولايات المتحدة"
 previousReligion: "أمة الإسلام"
-profilePhoto: "/images/stories/malcolm-x.jpg"
+profilePhoto: "/images/stories/malcolm-x.webp"
 featured: false
 ---
 

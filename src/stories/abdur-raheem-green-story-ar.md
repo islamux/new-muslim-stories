@@ -2,13 +2,13 @@
 title: "من المسيحية إلى الإسلام: قصة عبد الرحيم غرين"
 author: "عبد الرحيم غرين"
 date: "1988-01-01"
-image: "/images/stories/abdur-raheem-green.jpg"
+image: "/images/stories/abdur-raheem-green.webp"
 language: "ar"
 firstName: "عبد الرحيم"
 age: 24
 country: "المملكة المتحدة"
 previousReligion: "البوذية"
-profilePhoto: "/images/stories/abdur-raheem-green.jpg"
+profilePhoto: "/images/stories/abdur-raheem-green.webp"
 featured: false
 ---
 

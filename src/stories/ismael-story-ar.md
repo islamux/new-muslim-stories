@@ -2,9 +2,9 @@
 title: "من الموسيقى إلى الإسلام: قصة إسماعيل"
 author: "إسماعيل (كان يُعرف بلوي)"
 date: "2020-01-01"
-image: "/images/ismael.png"
+image: "/images/ismael.webp"
 language: "ar"
-profilePhoto: "/images/ismael.png"
+profilePhoto: "/images/ismael.webp"
 ---
 
 ## حياتي قبل الإسلام

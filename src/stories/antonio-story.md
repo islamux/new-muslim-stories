@@ -2,13 +2,13 @@
 title: "A Lawyer's Return: Antonio's Journey to Islam"
 author: "Antonio García"
 date: "1991-01-01"
-image: "/images/antonio.png"
+image: "/images/antonio.webp"
 language: "en"
 firstName: "Antonio"
 age: null
 country: "Spain"
 previousReligion: "None"
-profilePhoto: "/images/antonio.png"
+profilePhoto: "/images/antonio.webp"
 featured: false
 ---
 

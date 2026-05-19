@@ -1,13 +1,13 @@
 ---
 title: "قوة لويس: بطل رفع الأثقال البرازيلي يعتنق الإسلام"
 author: "لويس"
-image: "/images/luise.jpeg"
+image: "/images/luise.webp"
 language: "ar"
 firstName: "لويس"
 age: null
 country: "البرازيل"
 previousReligion: null
-profilePhoto: "/images/luise.jpeg"
+profilePhoto: "/images/luise.webp"
 featured: false
 date: null
 ---

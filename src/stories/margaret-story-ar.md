@@ -2,13 +2,13 @@
 title: "أمومة وصلابة: قصة مارجريت مع الإسلام"
 author: "مارجريت"
 date: "1975-01-01"
-image: "/images/margret.png"
+image: "/images/margret.webp"
 language: "ar"
 firstName: "مارجريت"
 age: null
 country: "المملكة المتحدة"
 previousReligion: "المسيحية"
-profilePhoto: "/images/margret.png"
+profilePhoto: "/images/margret.webp"
 featured: false
 ---
 

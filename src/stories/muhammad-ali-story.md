@@ -2,13 +2,13 @@
 title: "The Greatest: Muhammad Ali's Journey to Islam"
 author: "Muhammad Ali"
 date: "1964-02-26"
-image: "/images/stories/muhammad-ali.jpg"
+image: "/images/stories/muhammad-ali.webp"
 language: "en"
 firstName: "Muhammad"
 age: 22
 country: "USA"
 previousReligion: "Christianity"
-profilePhoto: "/images/stories/muhammad-ali.jpg"
+profilePhoto: "/images/stories/muhammad-ali.webp"
 featured: false
 ---
 

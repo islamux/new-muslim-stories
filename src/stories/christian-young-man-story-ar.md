@@ -1,13 +1,13 @@
 ---
 title: "الشاب المسيحي الذي أعلن إسلامه أمام أمه على التلفاز"
 author: "الشاب المسيحي"
-image: "/images/his-mother.png"
+image: "/images/his-mother.webp"
 language: "ar"
 firstName: "الشاب المسيحي"
 age: null
 country: null
 previousReligion: "المسيحية"
-profilePhoto: "/images/his-mother.png"
+profilePhoto: "/images/his-mother.webp"
 featured: false
 date: null
 ---

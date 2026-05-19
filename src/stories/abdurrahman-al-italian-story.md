@@ -2,13 +2,13 @@
 title: "Abdurrahman Al-Italian: From Atheism to Islam in the Maldives"
 author: "Abdurrahman Al-Italian"
 date: "2024-01-20"
-image: "/images/stories/abdurahman-italie.jpeg"
+image: "/images/stories/abdurahman-italie.webp"
 language: "en"
 firstName: "Abdurrahman"
 age: 45
 country: "Italy"
 previousReligion: "Atheism"
-profilePhoto: "/images/stories/abdurahman-italie.jpeg"
+profilePhoto: "/images/stories/abdurahman-italie.webp"
 featured: false
 ---
 

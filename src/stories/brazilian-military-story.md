@@ -1,13 +1,13 @@
 ---
 title: "The Brazilian Military Man's Journey to Islam"
 author: "Brazilian Military"
-image: "/images/braziilan-soldiier.png"
+image: "/images/braziilan-soldiier.webp"
 language: "en"
 firstName: "Brazilian Military"
 age: null
 country: "Brazil"
 previousReligion: null
-profilePhoto: "/images/braziilan-soldiier.png"
+profilePhoto: "/images/braziilan-soldiier.webp"
 featured: false
 date: null
 ---

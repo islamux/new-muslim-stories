@@ -1,13 +1,13 @@
 ---
 title: "رحلة العسكري البرازيلي إلى الإسلام"
 author: "العسكري البرازيلي"
-image: "/images/braziilan-soldiier.png"
+image: "/images/braziilan-soldiier.webp"
 language: "ar"
 firstName: "العسكري البرازيلي"
 age: null
 country: "البرازيل"
 previousReligion: null
-profilePhoto: "/images/braziilan-soldiier.png"
+profilePhoto: "/images/braziilan-soldiier.webp"
 featured: false
 date: null
 ---

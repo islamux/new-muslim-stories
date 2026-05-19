@@ -2,13 +2,13 @@
 title: "من الإلحاد إلى الإيمان: قصة خالد"
 author: "الدكتور خالد سليمان"
 date: "2020-01-01"
-image: "/images/simon.png"
+image: "/images/simon.webp"
 language: "ar"
 firstName: "خالد"
 age: null
 country: "كندا"
 previousReligion: "الإلحاد"
-profilePhoto: "/images/simon.png"
+profilePhoto: "/images/simon.webp"
 featured: false
 ---
 

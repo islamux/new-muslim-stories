@@ -1,13 +1,13 @@
 ---
 title: "الشاب البولندي الذي اعتنق الإسلام بسبب علامة من الله"
 author: "الشاب البولندي"
-image: "/images/taha.jpeg"
+image: "/images/taha.webp"
 language: "ar"
 firstName: "الشاب البولندي"
 age: null
 country: "بولندا"
 previousReligion: null
-profilePhoto: "/images/taha.jpeg"
+profilePhoto: "/images/taha.webp"
 featured: false
 date: null
 ---

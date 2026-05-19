@@ -1,13 +1,13 @@
 ---
 title: "القسيس المبشر السابق الذي اعتنق الإسلام"
 author: "يوسف إستس"
-image: "/images/stories/yusuf-estes.jpg"
+image: "/images/stories/yusuf-estes.webp"
 language: "ar"
 firstName: "يوسف إستس"
 age: null
 country: "الولايات المتحدة الأمريكية"
 previousReligion: "المسيحية"
-profilePhoto: "/images/stories/yusuf-estes.jpg"
+profilePhoto: "/images/stories/yusuf-estes.webp"
 featured: false
 date: "2007-11-08"
 ---

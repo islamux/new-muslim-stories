@@ -1,13 +1,13 @@
 ---
 title: "Hamza's Conversion: Embracing Islam Due to an Influential Verse"
 author: "Hamza"
-image: "/images/hamza.png"
+image: "/images/hamza.webp"
 language: "en"
 firstName: "Hamza"
 age: null
 country: null
 previousReligion: "Christianity"
-profilePhoto: "/images/hamza.png"
+profilePhoto: "/images/hamza.webp"
 featured: false
 date: "2014-01-01"
 ---

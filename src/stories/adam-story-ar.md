@@ -2,13 +2,13 @@
 title: "الإرث اليمني: قصة آدم مع الإسلام"
 author: "آدم"
 date: "2020-01-01"
-image: "/images/adam.png"
+image: "/images/adam.webp"
 language: "ar"
 firstName: "آدم"
 age: null
 country: "المملكة المتحدة"
 previousReligion: "المسيحية"
-profilePhoto: "/images/adam.png"
+profilePhoto: "/images/adam.webp"
 featured: false
 ---
 

@@ -2,13 +2,13 @@
 title: "رحلة أسما إلى الإسلام"
 author: "أسما (المعروفة سابقاً بإيسمي/ماشا)"
 date: "2026-03-13"
-image: "/images/asma_holand.png"
+image: "/images/asma_holand.webp"
 language: "ar"
 firstName: "أسما"
 age: null
 country: "هولندا"
 previousReligion: "الكاثوليكية"
-profilePhoto: "/images/asma_holand.png"
+profilePhoto: "/images/asma_holand.webp"
 featured: false
 ---
 

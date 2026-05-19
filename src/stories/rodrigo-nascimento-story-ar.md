@@ -2,9 +2,9 @@
 title: "قوة رودريغو: بطل الوزن الثقيل البرازيلي يعتنق الإسلام"
 author: "رودريغو ناسيمنتو"
 date: "2023-01-01"
-image: "/images/Rodrigo.jpeg"
+image: "/images/Rodrigo.webp"
 language: "ar"
-profilePhoto: "/images/Rodrigo.jpeg"
+profilePhoto: "/images/Rodrigo.webp"
 ---
 
 ## حياته قبل الإسلام

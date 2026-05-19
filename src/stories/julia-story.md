@@ -1,8 +1,8 @@
 ---
 title: "Julia's Journey: From Atheist Entrepreneur to Muslim"
 author: "Julia Rana"
-image: "/images/julia_Rana.png"
-profilePhoto: "/images/julia_Rana.png"
+image: "/images/julia_Rana.webp"
+profilePhoto: "/images/julia_Rana.webp"
 firstName: "Julia"
 language: "en"
 ---

@@ -2,13 +2,13 @@
 title: "A Mother's Resilience: Margaret's Journey to Islam"
 author: "Margaret"
 date: "1975-01-01"
-image: "/images/margret.png"
+image: "/images/margret.webp"
 language: "en"
 firstName: "Margaret"
 age: null
 country: "United Kingdom"
 previousReligion: "Christianity"
-profilePhoto: "/images/margret.png"
+profilePhoto: "/images/margret.webp"
 featured: false
 ---
 

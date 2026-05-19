@@ -2,13 +2,13 @@
 title: "رحلة أندريه إلى الإسلام"
 author: "أندريه"
 date: "2026-03-13"
-image: "/images/andre.png"
+image: "/images/andre.webp"
 language: "ar"
 firstName: "أندريه"
 age: 38
 country: "البرازيل"
 previousReligion: "المسيحية"
-profilePhoto: "/images/andre.png"
+profilePhoto: "/images/andre.webp"
 featured: false
 ---
 

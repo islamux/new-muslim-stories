@@ -2,9 +2,9 @@
 title: "From Music to Islam: Ismail's Journey"
 author: "Ismail (formerly Louie)"
 date: "2020-01-01"
-image: "/images/ismael.png"
+image: "/images/ismael.webp"
 language: "en"
-profilePhoto: "/images/ismael.png"
+profilePhoto: "/images/ismael.webp"
 ---
 
 ## My Life Before Islam

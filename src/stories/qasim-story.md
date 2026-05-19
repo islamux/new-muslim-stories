@@ -2,13 +2,13 @@
 title: "The Scholar's Path: Qasim's Journey to Islam"
 author: "Qasim (formerly Adrian)"
 date: "2005-01-01"
-image: "/images/qasem.png"
+image: "/images/qasem.webp"
 language: "en"
 firstName: "Qasim"
 age: null
 country: "Spain"
 previousReligion: "None"
-profilePhoto: "/images/qasem.png"
+profilePhoto: "/images/qasem.webp"
 featured: false
 ---
 

@@ -71,6 +71,7 @@ This repository hosts a Next.js 16 application for "New Muslim Stories", featuri
   const t = useTranslations('HomePage');
   // Usage: {t('title')}
   ```
+- **Server Component Pattern:** Any `page.tsx` is always a server component. It fetches data/imports server-only functions and passes them as props to a client component which handles interactivity and UI rendering.
 
 ### CSS & Styling
 - Use Tailwind CSS utility classes (v4 with `@tailwindcss/postcss`).
@@ -244,6 +245,21 @@ Terminal UI dashboard for visualizing project status. Run: `ccui` or `cd command
 ### Setup Guide
 
 See `docs/SETUP_COMMAND_CENTER.md` for full setup instructions in new projects.
+
+### Workflow Rules
+
+- **Project tracker reflection:** When starting any subtask, reflect it immediately in the project tracker — use BACKLOG to move milestones from backlog → active and set task status (in_progress, blocked, etc.) at the moment you begin. When the subtask is finished, update the tracker again to reflect the final state (review, done, etc.). Never batch updates — reflect on start AND on finish, each at the right moment.
+
+### GitHub Flow
+
+```
+1. git add <files>
+2. git commit -m "<message>"
+3. git push -u origin <branch>
+4. Create PR (gh pr create)
+5. Accept/merge PR
+6. git checkout main && git pull
+```
 
 ## 4. Agent & Prompt Configurations
 

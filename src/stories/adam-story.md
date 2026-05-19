@@ -2,13 +2,13 @@
 title: "A Yemeni Heritage: Adam's Journey to Islam"
 author: "Adam"
 date: "2020-01-01"
-image: "/images/adam.png"
+image: "/images/adam.webp"
 language: "en"
 firstName: "Adam"
 age: null
 country: "United Kingdom"
 previousReligion: "Christianity"
-profilePhoto: "/images/adam.png"
+profilePhoto: "/images/adam.webp"
 featured: false
 ---
 

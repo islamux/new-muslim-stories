@@ -2,13 +2,13 @@
 title: "From Academia to Faith: Estela's Journey to Islam"
 author: "Estela (now Mariam)"
 date: "2004-01-01"
-image: "/images/stilla.png"
+image: "/images/stilla.webp"
 language: "en"
 firstName: "Estela"
 age: null
 country: "Spain"
 previousReligion: "None"
-profilePhoto: "/images/stilla.png"
+profilePhoto: "/images/stilla.webp"
 featured: false
 ---
 

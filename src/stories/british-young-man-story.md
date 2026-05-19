@@ -1,13 +1,13 @@
 ---
 title: "The British Young Man Who Led His Mother to Islam Before Her Passing"
 author: "British Young Man"
-image: "/images/rahim-with-his-mother.png"
+image: "/images/rahim-with-his-mother.webp"
 language: "en"
 firstName: "Rahim Jung's Mother"
 age: null
 country: "United Kingdom"
 previousReligion: "Christianity"
-profilePhoto: "/images/rahim-with-his-mother.png"
+profilePhoto: "/images/rahim-with-his-mother.webp"
 featured: false
 date: null
 ---

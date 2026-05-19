@@ -2,9 +2,9 @@
 title: "From Catholicism to Islam: Mikael's Journey"
 author: "Mikael"
 date: "2020-01-01"
-image: "/images/mikael.png"
+image: "/images/mikael.webp"
 language: "en"
-profilePhoto: "/images/mikael.png"
+profilePhoto: "/images/mikael.webp"
 ---
 
 ## My Life Before Islam

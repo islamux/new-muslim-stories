@@ -2,13 +2,13 @@
 title: "Sheikh Khalid Yasin: From Catholic Roots to Islamic Dawah"
 author: "Sheikh Khalid Yasin"
 date: "2024-01-15"
-image: "/images/stories/khalid-yasin.jpeg"
+image: "/images/stories/khalid-yasin.webp"
 language: "en"
 firstName: "Khalid"
 age: 78
 country: "United States"
 previousReligion: "Christianity"
-profilePhoto: "/images/stories/khalid-yasin.jpeg"
+profilePhoto: "/images/stories/khalid-yasin.webp"
 featured: false
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: "The British Police Officer Who Recites Quran with Tajweed"
 author: "British Police Officer"
-image: "/images/police.png"
+image: "/images/police.webp"
 language: "en"
 firstName: "Daniel"
-profilePhoto: "/images/police.png"
+profilePhoto: "/images/police.webp"
 featured: false
 date: null
 ---

@@ -2,13 +2,13 @@
 title: "من الإدمان إلى النور: قصة نيكولا مع الإسلام"
 author: "نيكولا (الآن عبد الله)"
 date: "2020-01-01"
-image: "/images/nikolas.png"
+image: "/images/nikolas.webp"
 language: "ar"
 firstName: "نيكولا"
 age: null
 country: "فرنسا"
 previousReligion: "لا دين"
-profilePhoto: "/images/nikolas.png"
+profilePhoto: "/images/nikolas.webp"
 featured: false
 ---
 

@@ -2,8 +2,8 @@
 title: "رحلة تساؤل: قصة إيلين عائشة"
 author: "إيلين عائشة"
 date: "2022-08-10"
-image: "/images/stories/elaine-aisyah.jpg"
-profilePhoto: "/images/stories/elaine-aisyah.jpg"
+image: "/images/stories/elaine-aisyah.webp"
+profilePhoto: "/images/stories/elaine-aisyah.webp"
 language: "ar"
 firstName: "إيلين"
 age: 30

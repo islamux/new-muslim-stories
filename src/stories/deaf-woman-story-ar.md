@@ -1,13 +1,13 @@
 ---
 title: "المرأة الصماء التي أبكت الشيخ فهد الكندري"
 author: "المرأة الصماء"
-image: "/images/repika.jpeg"
+image: "/images/repika.webp"
 language: "ar"
 firstName: "المرأة الصماء"
 age: null
 country: null
 previousReligion: null
-profilePhoto: "/images/repika.jpeg"
+profilePhoto: "/images/repika.webp"
 featured: false
 date: null
 ---

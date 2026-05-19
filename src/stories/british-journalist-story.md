@@ -1,13 +1,13 @@
 ---
 title: "The British Journalist Who Traveled to Palestine and Embraced Islam"
 author: "British Journalist"
-image: "/images/Laurin.png"
+image: "/images/Laurin.webp"
 language: "en"
 firstName: "British Journalist"
 age: null
 country: "United Kingdom"
 previousReligion: null
-profilePhoto: "/images/Laurin.png"
+profilePhoto: "/images/Laurin.webp"
 featured: false
 date: null
 ---

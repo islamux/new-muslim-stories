@@ -2,13 +2,13 @@
 title: "Mujahid's Journey to Islam"
 author: "Mujahid"
 date: "2026-03-13"
-image: "/images/mujahid.png"
+image: "/images/mujahid.webp"
 language: "en"
 firstName: "Mujahid"
 age: null
 country: "United States"
 previousReligion: "Christianity"
-profilePhoto: "/images/mujahid.png"
+profilePhoto: "/images/mujahid.webp"
 featured: false
 ---
 

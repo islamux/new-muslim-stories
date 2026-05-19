@@ -2,13 +2,13 @@
 title: "رحلة مهدي إلى الإسلام"
 author: "مهدي (المعروف سابقاً باسم ماتيو)"
 date: "2026-03-13"
-image: "/images/mahdi.png"
+image: "/images/mahdi.webp"
 language: "ar"
 firstName: "مهدي"
 age: null
 country: "بلجيكا"
 previousReligion: "المسيحية"
-profilePhoto: "/images/mahdi.png"
+profilePhoto: "/images/mahdi.webp"
 featured: false
 ---
 

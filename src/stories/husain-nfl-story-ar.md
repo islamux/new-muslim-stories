@@ -2,13 +2,13 @@
 title: "رحلة حسين إلى الإسلام"
 author: "حسين"
 date: "2026-03-13"
-image: "/images/nfl_usa.png"
+image: "/images/nfl_usa.webp"
 language: "ar"
 firstName: "حسين"
 age: null
 country: "الولايات المتحدة"
 previousReligion: "الإسلام (غير ملتزم)"
-profilePhoto: "/images/nfl_usa.png"
+profilePhoto: "/images/nfl_usa.webp"
 featured: false
 ---
 

@@ -1,4 +1,6 @@
 packages:
   - '.'
+  - 'command-center'
+  - 'command-center/packages/*'
   - 'command-center-mcp'
   - 'command-center-tui'
