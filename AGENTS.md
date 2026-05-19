@@ -2,6 +2,10 @@
 
 This repository hosts a Next.js 16 application for "New Muslim Stories", featuring internationalization (English/Arabic), Markdown-based content management, a modern UI with Tailwind CSS v4, and a project Command Center (MCP server + TUI dashboard).
 
+## Required Skill
+
+**Tracked Development:** You MUST use the `tracked-development` skill (`.opencode/skills/tracked-development/SKILL.md`) when working on any task. It enforces immediate tracker updates on start AND finish.
+
 ## 1. Build, Lint, and Test Commands
 
 **Package Manager:** `pnpm` (v10.28.0)
