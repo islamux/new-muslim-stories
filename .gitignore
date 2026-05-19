@@ -1,3 +1,11 @@
 node_modules/
 .next/
-.vercel
+*.tsbuildinfo
+dist/
+.env
+.env.local
+.project-tracker.json
+command-center/node_modules/
+command-center/packages/*/dist/
+.cc-backups/
+.vercel/
