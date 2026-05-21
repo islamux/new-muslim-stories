@@ -15,16 +15,10 @@ export default function StoryCard({ story }: StoryCardProps) {
     >
       {story.profilePhoto && (
         <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
-          <StoryImage
-            src={story.profilePhoto}
-            alt={story.firstName}
-            sizes="96px"
-          />
+          <StoryImage src={story.profilePhoto} alt={story.firstName} sizes="96px" />
         </div>
       )}
-      <h3 className="font-heading text-xl text-gray-800 dark:text-beige-50 mb-3">
-        {story.title}
-      </h3>
+      <h3 className="font-heading text-xl text-gray-800 dark:text-beige-50 mb-3">{story.title}</h3>
       <p className="font-sans text-gray-700 dark:text-gray-300 mb-4">
         {story.contentHtml.replace(/<[^>]*>/g, '').substring(0, 150)}...
       </p>

@@ -3,6 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
+import { sanitizeHtmlServer } from '@/lib/sanitize';
 import type { StoryData, Locale } from '@/types';
 
 const storiesDirectory = path.join(process.cwd(), 'src/stories');
@@ -12,9 +13,7 @@ const storiesDirectory = path.join(process.cwd(), 'src/stories');
  */
 function extractSlug(fileName: string): string {
   const isArabic = fileName.endsWith('-ar.md');
-  return isArabic
-    ? fileName.replace(/-ar\.md$/, '')
-    : fileName.replace(/\.md$/, '');
+  return isArabic ? fileName.replace(/-ar\.md$/, '') : fileName.replace(/\.md$/, '');
 }
 
 /**
@@ -31,7 +30,8 @@ export async function parseStoryFile(fileName: string): Promise<StoryData> {
 
   // Use remark to convert markdown into HTML string
   const processedContent = await remark().use(html).process(matterResult.content);
-  const contentHtml = processedContent.toString();
+  const rawHtml = processedContent.toString();
+  const contentHtml = await sanitizeHtmlServer(rawHtml);
 
   // Combine the data with the slug and contentHtml
   const data = matterResult.data as {

@@ -1,5 +1,6 @@
 'use client';
 
+import { useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import { useStorySections } from '@/hooks/useStorySections';
@@ -8,17 +9,32 @@ import Button from './Button';
 import StoryImage from '@/components/ui/StoryImage';
 import type { StoryContentDisplayProps } from '@/types';
 
+function sanitizeHtml(html: string): string {
+  if (typeof window === 'undefined') return html;
+  const temp = document.createElement('div');
+  temp.innerHTML = html;
+  const scripts = temp.querySelectorAll('script, iframe, object, embed');
+  scripts.forEach((el) => el.remove());
+  return temp.innerHTML;
+}
+
 interface StorySectionProps {
   title: string;
   content: string;
 }
 
-const StorySection = ({ title, content }: StorySectionProps) => (
-  <section className="my-8">
-    <h2 className="text-2xl font-semibold text-green-700 mb-4">{title}</h2>
-    <div className="prose prose-slate dark:prose-invert max-w-none text-gray-900 dark:text-white" dangerouslySetInnerHTML={{ __html: content }} />
-  </section>
-);
+const StorySection = ({ title, content }: StorySectionProps) => {
+  const sanitized = useMemo(() => sanitizeHtml(content), [content]);
+  return (
+    <section className="my-8">
+      <h2 className="text-2xl font-semibold text-green-700 mb-4">{title}</h2>
+      <div
+        className="prose prose-slate dark:prose-invert max-w-none text-gray-900 dark:text-white"
+        dangerouslySetInnerHTML={{ __html: sanitized }}
+      />
+    </section>
+  );
+};
 
 export default function StoryContentDisplay({ story }: StoryContentDisplayProps) {
   const t = useTranslations('Story');

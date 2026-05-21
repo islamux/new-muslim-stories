@@ -9,7 +9,7 @@ export interface IconProps extends SVGProps<SVGSVGElement> {
 
 export default function Icon({ name, className = '', ...props }: IconProps) {
   const baseClasses = 'flex-shrink-0 ' + className;
-  
+
   const icons = {
     check: (
       <svg
@@ -20,12 +20,7 @@ export default function Icon({ name, className = '', ...props }: IconProps) {
         xmlns="http://www.w3.org/2000/svg"
         {...props}
       >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M5 13l4 4L19 7"
-        />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
       </svg>
     ),
     close: (
@@ -61,8 +56,8 @@ export default function Icon({ name, className = '', ...props }: IconProps) {
           d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
         />
       </svg>
-    )
+    ),
   };
-  
+
   return icons[name] || null;
 }

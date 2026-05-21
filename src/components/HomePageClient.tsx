@@ -1,19 +1,47 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import type { HomePageClientProps } from '@/types';
 import TopNav from '@/components/TopNav';
 import HeroSection from '@/components/HeroSection';
 import Header from '@/components/Header';
-import FeaturedStories from '@/components/FeaturedStories';
-import WhoAreNewMuslims from '@/components/WhoAreNewMuslims';
-import StoryOfTheDay from '@/components/StoryOfTheDay';
-import WhatsNext from '@/components/WhatsNext';
 import Footer from '@/components/Footer';
 import { useTranslations } from 'next-intl';
 import Section from '@/components/ui/Section';
 
+const FeaturedStories = dynamic(() => import('@/components/FeaturedStories'), {
+  ssr: true,
+  loading: () => (
+    <Section className="my-12">
+      <div className="h-64 animate-pulse bg-gray-200 dark:bg-gray-700 rounded-lg" />
+    </Section>
+  ),
+});
+
+const WhoAreNewMuslims = dynamic(() => import('@/components/WhoAreNewMuslims'), {
+  ssr: true,
+  loading: () => (
+    <Section className="my-12">
+      <div className="h-48 animate-pulse bg-gray-200 dark:bg-gray-700 rounded-lg" />
+    </Section>
+  ),
+});
+
+const StoryOfTheDay = dynamic(() => import('@/components/StoryOfTheDay'), {
+  ssr: true,
+  loading: () => <div className="h-64 animate-pulse bg-gray-200 dark:bg-gray-700 rounded-xl" />,
+});
+
+const WhatsNext = dynamic(() => import('@/components/WhatsNext'), {
+  ssr: true,
+  loading: () => (
+    <Section className="my-12">
+      <div className="h-48 animate-pulse bg-gray-200 dark:bg-gray-700 rounded-lg" />
+    </Section>
+  ),
+});
+
 export default function HomePageClient({ stories }: HomePageClientProps) {
-  const t = useTranslations('Index');
   const commonT = useTranslations('Common');
 
   // Get the first story for "Story of the Day"

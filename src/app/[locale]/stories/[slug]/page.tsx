@@ -14,7 +14,6 @@ export default async function StoryPage({
   params: Promise<{ slug: string; locale: Locale }>;
 }) {
   const { slug, locale } = await params;
-  const story = await getStoryData(slug, locale)
+  const story = await getStoryData(slug, locale);
   return <StoryContentDisplay story={story} />;
 }
-

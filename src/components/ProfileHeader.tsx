@@ -11,11 +11,7 @@ export default function ProfileHeader({ story }: ProfileHeaderProps) {
     <div className="flex items-center mb-6">
       {story.profilePhoto && (
         <div className="relative w-20 h-20 me-4 rounded-full overflow-hidden flex-shrink-0">
-          <StoryImage
-            src={story.profilePhoto}
-            alt={story.firstName}
-            sizes="80px"
-          />
+          <StoryImage src={story.profilePhoto} alt={story.firstName} sizes="80px" />
         </div>
       )}
       <div>

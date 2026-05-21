@@ -31,7 +31,8 @@ export default function OfflinePage() {
 
         {/* Description */}
         <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-          Don&apos;t worry! You can still read your cached stories. Check your internet connection and try again.
+          Don&apos;t worry! You can still read your cached stories. Check your internet connection
+          and try again.
         </p>
 
         {/* Cached Stories Section */}
@@ -40,7 +41,8 @@ export default function OfflinePage() {
             Available Offline
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
-            Stories you&apos;ve previously viewed are available for reading without an internet connection.
+            Stories you&apos;ve previously viewed are available for reading without an internet
+            connection.
           </p>
           <div className="flex items-center justify-center text-green-600 dark:text-green-500">
             <svg

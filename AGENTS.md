@@ -6,6 +6,8 @@ This repository hosts a Next.js 16 application for "New Muslim Stories", featuri
 
 **Tracked Development:** You MUST use the `tracked-development` skill (`.opencode/skills/tracked-development/SKILL.md`) when working on any task. It enforces immediate tracker updates on start AND finish.
 
+**Branching:** Start each task on a fresh git branch before making changes. Use a lowercase kebab-case branch name with a descriptive prefix, such as `audit-production-audit` or `fix-arabic-translation`.
+
 ## 1. Build, Lint, and Test Commands
 
 **Package Manager:** `pnpm` (v10.28.0)
@@ -252,16 +254,16 @@ See `docs/SETUP_COMMAND_CENTER.md` for full setup instructions in new projects.
 
 ### Workflow Rules
 
-- **Project tracker reflection:** When starting any subtask, reflect it immediately in the project tracker — use BACKLOG to move milestones from backlog → active and set task status (in_progress, blocked, etc.) at the moment you begin. When the subtask is finished, update the tracker again to reflect the final state (review, done, etc.). Never batch updates — reflect on start AND on finish, each at the right moment.
+- **Project tracker reflection:** When starting any subtask, reflect it immediately in the project tracker — use BACKLOG to move milestones from backlog → active and set subtask status (in_progress, blocked, etc.) at the moment you begin. When the subtask is finished, update the tracker again to reflect the final state (review, done, etc.). Never batch updates — reflect on start AND on finish, each at the right moment.
 
 ### GitHub Flow
 
 ```
 1. git add <files>
 2. git commit -m "<message>"
-3. git push -u origin <branch>
+3. git push -u origin <current-branch>
 4. Create PR (gh pr create)
-5. Accept/merge PR
+5. Accept/merge PR (do NOT delete branch)
 6. git checkout main && git pull
 ```
 

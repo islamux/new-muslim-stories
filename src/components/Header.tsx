@@ -1,6 +1,6 @@
 'use client';
 
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { useHasMounted } from '@/hooks/useHasMounted';
 
 export default function Header() {

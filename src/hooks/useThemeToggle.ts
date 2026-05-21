@@ -1,7 +1,7 @@
 'use client';
-import { useTheme } from "next-themes";
-import { useTranslations } from "next-intl";
-import { useHasMounted } from "./useHasMounted";
+import { useTheme } from 'next-themes';
+import { useTranslations } from 'next-intl';
+import { useHasMounted } from './useHasMounted';
 
 interface UseThemeToggleReturn {
   theme: string | undefined;
@@ -12,7 +12,7 @@ interface UseThemeToggleReturn {
 
 export function UseThemeToggle(): UseThemeToggleReturn {
   const { theme, setTheme } = useTheme();
-  const t = useTranslations("Common");
+  const t = useTranslations('Common');
   const mounted = useHasMounted();
 
   const toggleTheme = () => {
@@ -23,7 +23,6 @@ export function UseThemeToggle(): UseThemeToggleReturn {
     theme,
     toggleTheme,
     mounted,
-    t
+    t,
   };
 }
-
