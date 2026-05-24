@@ -11,12 +11,10 @@ export class StoryService {
   static async getSortedStoriesData(locale: string): Promise<StoryData[]> {
     const fileNames = getStoryFileNames();
 
-    const allStoriesData = await Promise.all(
-      fileNames.map((fileName) => parseStoryFile(fileName))
-    );
+    const allStoriesData = await Promise.all(fileNames.map((fileName) => parseStoryFile(fileName)));
 
     // Filter stories by locale
-    const filteredStories = allStoriesData.filter(story => story.language === locale);
+    const filteredStories = allStoriesData.filter((story) => story.language === locale);
 
     // Sort stories by title alphabetically
     return filteredStories.sort((a, b) => a.title.localeCompare(b.title));
@@ -32,8 +30,10 @@ export class StoryService {
       return await parseStoryFile(fileName);
     } catch (error) {
       const fileNames = getStoryFileNames();
-    const availableStories = fileNames.map(fileName => fileName.replace('.md', ''));
-    throw new Error(`Story with slug '${slug}' not found. Available stories: ${availableStories.join(', ')}`);
+      const availableStories = fileNames.map((fileName) => fileName.replace('.md', ''));
+      throw new Error(
+        `Story with slug '${slug}' not found. Available stories: ${availableStories.join(', ')}`,
+      );
     }
   }
 
@@ -61,9 +61,7 @@ export class StoryService {
   static async getFeaturedStories(locale: string, limit: number = 6): Promise<StoryData[]> {
     const allStories = await this.getSortedStoriesData(locale);
 
-    return allStories
-      .filter(story => story.featured)
-      .slice(0, limit);
+    return allStories.filter((story) => story.featured).slice(0, limit);
   }
 
   /**
@@ -72,9 +70,7 @@ export class StoryService {
   static async getStoriesByCountry(locale: string, country: string): Promise<StoryData[]> {
     const allStories = await this.getSortedStoriesData(locale);
 
-    return allStories.filter(story =>
-      story.country.toLowerCase() === country.toLowerCase()
-    );
+    return allStories.filter((story) => story.country.toLowerCase() === country.toLowerCase());
   }
 
   /**
@@ -82,7 +78,7 @@ export class StoryService {
    */
   static async getAllCountries(locale: string): Promise<string[]> {
     const allStories = await this.getSortedStoriesData(locale);
-    const countries = new Set(allStories.map(story => story.country));
+    const countries = new Set(allStories.map((story) => story.country));
 
     return Array.from(countries).sort();
   }

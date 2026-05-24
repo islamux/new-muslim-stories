@@ -9,3 +9,4 @@ command-center/node_modules/
 command-center/packages/*/dist/
 .cc-backups/
 .vercel/
+.antigravitycli/

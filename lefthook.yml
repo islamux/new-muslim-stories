@@ -1,0 +1,24 @@
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      run: pnpm lint -- --max-warnings 0
+      stage_fixed: true
+    format:
+      run: pnpm format:check
+      stage_fixed: true
+    type-check:
+      run: pnpm exec tsc --noEmit
+
+commit-msg:
+  commands:
+    commitlint:
+      run: echo "Commit message: {1}" | grep -qE "^(feat|fix|chore|docs|style|refactor|perf|test|build|ci|revert)(\(.+\))?: .{1,}$"
+
+pre-push:
+  parallel: true
+  commands:
+    build:
+      run: pnpm build
+    type-check:
+      run: pnpm exec tsc --noEmit

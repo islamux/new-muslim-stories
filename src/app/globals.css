@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @config "../../tailwind.config.ts";
 
 @import '@fontsource/inter';
@@ -19,18 +19,14 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 249, 250, 251; /* gray-50 */
-    --background-start-rgb: 3, 7, 18;    /* gray-950 */
-    --background-end-rgb: 17, 24, 39;    /* gray-900 */
+    --background-start-rgb: 3, 7, 18; /* gray-950 */
+    --background-end-rgb: 17, 24, 39; /* gray-900 */
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
     rgb(var(--background-start-rgb));
 }
 
@@ -41,7 +37,12 @@ body {
   body {
     @apply font-sans text-gray-900 dark:text-gray-50 antialiased;
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading font-bold; /* Use font-heading and keep bold */
   }
   a {
@@ -54,7 +55,9 @@ body {
 .section-animate {
   opacity: 0;
   transform: translateY(20px); /* You can adjust the translate value */
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s ease-out;
 }
 
 .section-animate.is-visible {

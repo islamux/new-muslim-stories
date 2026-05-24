@@ -17,7 +17,7 @@ interface BeforeInstallPromptEvent extends Event {
 const PWA_FEATURES = [
   { key: 'featureOffline', icon: 'offline' },
   { key: 'featureFast', icon: 'speed' },
-  { key: 'featureHome', icon: 'home' }
+  { key: 'featureHome', icon: 'home' },
 ];
 
 export default function PWAInstall() {

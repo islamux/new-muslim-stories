@@ -5,7 +5,6 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/navigation';
 import Section from '@/components/ui/Section';
 
-
 export default function WhatsNext() {
   const t = useTranslations('Index');
 

@@ -3,7 +3,7 @@
 
 import { useState, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
-import type { FeaturedStoriesProps, StoryData } from '@/types';
+import type { FeaturedStoriesProps } from '@/types';
 import Section from '@/components/ui/Section';
 import StoryCard from '@/components/StoryCard';
 

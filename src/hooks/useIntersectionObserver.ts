@@ -1,4 +1,4 @@
-import { useEffect, RefObject } from 'react';
+import { useEffect } from 'react';
 import type { UseIntersectionObserver } from '@/types/hook.types';
 
 /**
@@ -7,24 +7,21 @@ import type { UseIntersectionObserver } from '@/types/hook.types';
  */
 export const useIntersectionObserver: UseIntersectionObserver = (
   elementRef,
-  options = { rootMargin: '0px', threshold: 0.1 }
+  options = { rootMargin: '0px', threshold: 0.1 },
 ) => {
   useEffect(() => {
     const element = elementRef.current;
 
     if (!element) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      options
-    );
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
 
     observer.observe(element);
 

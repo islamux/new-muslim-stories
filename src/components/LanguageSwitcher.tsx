@@ -28,9 +28,10 @@ export default function LanguageSwitcher() {
           className={`
             relative px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ease-in-out
             flex items-center gap-2 min-w-[100px] justify-center
-            ${locale === lang.code
-              ? 'bg-green-600 text-white shadow-sm'
-              : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+            ${
+              locale === lang.code
+                ? 'bg-green-600 text-white shadow-sm'
+                : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
             }
             ${locale === lang.code ? 'cursor-default' : 'cursor-pointer'}
             disabled:cursor-default

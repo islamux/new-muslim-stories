@@ -11,8 +11,9 @@ interface IconProps {
 
 const SunIcon = ({ theme }: IconProps) => (
   <svg
-    className={`w-5 h-5 text-yellow-500 transition-all duration-200 ${theme === 'light' ? 'opacity-100 rotate-0' : 'opacity-0 rotate-90'
-      }`}
+    className={`w-5 h-5 text-yellow-500 transition-all duration-200 ${
+      theme === 'light' ? 'opacity-100 rotate-0' : 'opacity-0 rotate-90'
+    }`}
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
@@ -29,8 +30,9 @@ const SunIcon = ({ theme }: IconProps) => (
 
 const MoonIcon = ({ theme }: IconProps) => (
   <svg
-    className={`w-5 h-5 text-blue-400 transition-all duration-200 ${theme === 'dark' ? 'opacity-100 rotate-0' : 'opacity-0 rotate-90'
-      }`}
+    className={`w-5 h-5 text-blue-400 transition-all duration-200 ${
+      theme === 'dark' ? 'opacity-100 rotate-0' : 'opacity-0 rotate-90'
+    }`}
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
@@ -45,7 +47,7 @@ const MoonIcon = ({ theme }: IconProps) => (
   </svg>
 );
 
-// --- 
+// ---
 export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   const t = useTranslations('Common');
@@ -58,24 +60,20 @@ export default function ThemeToggle() {
   // Prevent hydration mismatch by not rendering until mounted
   if (!mounted) {
     return (
-      <Button
-        disabled
-        className='hover:bg-gray-200 dark:hover:bg-gray-700'
-      >
+      <Button disabled className="hover:bg-gray-200 dark:hover:bg-gray-700">
         {t('theme')}
       </Button>
     );
   }
   return (
-    <Button
-      onClick={toggleTheme}
-      className='hover:bg-gray-200 dark:hover:bg-gray-700'
-    >
+    <Button onClick={toggleTheme} className="hover:bg-gray-200 dark:hover:bg-gray-700">
       <div className="flex flex-col items-center justify-center w-5 h-5">
         <SunIcon theme={theme} />
         <MoonIcon theme={theme} />
       </div>
-      <span className="ml-2">{theme === 'light' ? t('dark') : t('light')} {t('theme')}</span>
+      <span className="ml-2">
+        {theme === 'light' ? t('dark') : t('light')} {t('theme')}
+      </span>
     </Button>
   );
 }

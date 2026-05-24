@@ -7,7 +7,7 @@ import type { UseMultipleIntersectionObserver, RefItem } from '@/types/hook.type
  */
 export const useMultipleIntersectionObserver: UseMultipleIntersectionObserver = (
   refs,
-  options = { rootMargin: '0px', threshold: 0.1 }
+  options = { rootMargin: '0px', threshold: 0.1 },
 ) => {
   useEffect(() => {
     // Filter out null refs
@@ -15,17 +15,14 @@ export const useMultipleIntersectionObserver: UseMultipleIntersectionObserver = 
 
     if (validRefs.length === 0) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      options
-    );
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
 
     // Observe all valid elements
     validRefs.forEach((refItem) => {
