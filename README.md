@@ -36,7 +36,7 @@ This web application, built with Next.js and TypeScript, focuses on showcasing s
 - Markdown-based story content management (~69+ stories × 2 languages)
 - PWA with offline support and install prompt
 - Dark/Light theme toggle
-- Profile photos for stories
+- Optimized profile photos (WebP/AVIF via next/image)
 - Story filtering and search
 - Story of the Day (auto-rotating featured story)
 - "What's Next?" section (links to learn more about Islam)
@@ -44,19 +44,19 @@ This web application, built with Next.js and TypeScript, focuses on showcasing s
 - Static site generation
 - Parallax scrolling and Framer Motion animations
 - Command Center for AI-assisted project management (MCP server + TUI dashboard)
+- Plausible Analytics integration
 
 🚧 **Planned**:
 - Code splitting optimization
-- Image optimization with next/image
 - Storybook documentation
-- Analytics integration
+- Unit/integration test coverage
 
 ## Getting Started
 
 ### Prerequisites
 
 - **Node.js**: 18+ (LTS recommended)
-- **Package Manager**: pnpm (v10.28.0+)
+- **Package Manager**: pnpm (v11.2.2+)
 
 ### Installation
 
@@ -77,22 +77,25 @@ pnpm dev       # Start development server
 pnpm build     # Build for production
 pnpm start     # Start production server
 pnpm lint      # Run ESLint
+pnpm format    # Format code with Prettier
+pnpm _cc <cmd> # Run Command Center CLI (e.g., `pnpm _cc get-project-status`)
 ```
 
 ### Project Structure
 
 ```
 new-muslim-stories/
-├── command-center-mcp/    # MCP server + CLI for project management
-├── command-center-tui/    # Terminal UI dashboard (Node.js/blessed)
-├── docs/                  # Documentation (plans, audits, guides)
-├── messages/              # i18n translations (en.json, ar.json)
-├── public/               # Static assets (photos, icons, manifest)
-│   ├── photos/          # Story profile photos
-│   ├── icon-192x192.png # PWA icon
-│   └── icon-512x512.png # PWA icon
+├── command-center/        # Project management (MCP server + CLI + TUI dashboard)
+│   └── packages/
+│       ├── mcp/          # MCP server for AI agent coordination
+│       └── tui/          # Terminal UI dashboard (Node.js/blessed)
+├── docs/                 # Documentation (plans, audits, guides)
+├── messages/             # i18n translations (en.json, ar.json)
+├── public/               # Static assets (photos, icons, manifest, sw.js)
+├── scripts/              # Utility scripts (image optimization, etc.)
 ├── src/
 │   ├── app/              # Next.js App Router pages
+│   │   ├── globals.css   # Global Tailwind styles
 │   │   ├── layout.tsx    # Root HTML layout
 │   │   ├── [locale]/    # Dynamic locale routes (en/ar)
 │   │   │   ├── layout.tsx
@@ -100,50 +103,31 @@ new-muslim-stories/
 │   │   │   └── stories/[slug]/page.tsx
 │   │   └── offline/     # PWA offline fallback page
 │   ├── components/       # React components
-│   │   ├── ui/          # UI primitives (Section, Icon)
-│   │   ├── Header.tsx
-│   │   ├── Footer.tsx
-│   │   ├── TopNav.tsx
-│   │   ├── LanguageSwitcher.tsx
-│   │   ├── ThemeToggle.tsx
-│   │   ├── HeroSection.tsx
-│   │   ├── FeaturedStories.tsx
-│   │   ├── StoryCard.tsx
-│   │   ├── StoryContentDisplay.tsx
-│   │   ├── ProfileHeader.tsx
-│   │   ├── StoryOfTheDay.tsx
-│   │   ├── WhoAreNewMuslims.tsx
-│   │   ├── WhatsNext.tsx
-│   │   ├── HomePageClient.tsx
-│   │   ├── PWAInstall.tsx
-│   │   └── ServiceWorkerRegistration.tsx
+│   │   ├── ui/          # UI primitives (Section, Button)
+│   │   ├── Header.tsx, Footer.tsx, TopNav.tsx
+│   │   ├── LanguageSwitcher.tsx, ThemeToggle.tsx
+│   │   ├── HeroSection.tsx, FeaturedStories.tsx, StoryCard.tsx
+│   │   ├── StoryContentDisplay.tsx, ProfileHeader.tsx
+│   │   ├── StoryOfTheDay.tsx, WhoAreNewMuslims.tsx, WhatsNext.tsx
+│   │   ├── HomePageClient.tsx, PWAInstall.tsx, ServiceWorkerRegistration.tsx
+│   │   └── PlausibleAnalytics.tsx
 │   ├── hooks/            # Custom React hooks
 │   │   ├── useIntersectionObserver.ts
 │   │   ├── useMultipleIntersectionObserver.ts
 │   │   ├── useHasMounted.ts
 │   │   └── useStorySections.ts
 │   ├── lib/              # Core business logic & utilities
-│   │   ├── stories.ts
-│   │   ├── story-parser.ts
-│   │   └── story-service.ts
-│   ├── stories/          # Markdown story files (~69 x 2 languages)
+│   │   ├── stories.ts, story-parser.ts, story-service.ts
+│   ├── stories/          # Markdown story files (~69 × 2 languages)
 │   ├── i18n/             # Internationalization configuration
-│   │   ├── routing.ts
-│   │   └── request.ts
-│   └── proxy.ts          # i18n proxy (Next.js 16)
+│   │   ├── routing.ts, request.ts
+│   └── proxy.ts          # i18n middleware (Next.js 16 proxy)
 ├── .mcp.json              # MCP server configuration
 ├── project-tracker.json   # Command Center project tracking
+├── PROJECT_MAP.md         # High-level project overview
+├── pnpm-workspace.yaml    # pnpm workspace config (command-center)
 └── eslint.config.mjs      # ESLint flat config
 ```
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
 ## Internationalization (i18n)
 
@@ -186,46 +170,16 @@ For detailed troubleshooting, see [`docs/NEXT_INTL_FIX_GUIDE.md`](docs/NEXT_INTL
 
 ## Learn More
 
-To learn more about the technologies used:
-
 - [Next.js Documentation](https://nextjs.org/docs) - Next.js 16 features and API
 - [React Documentation](https://react.dev/) - React 19 features
 - [next-intl Documentation](https://next-intl.dev/docs) - Internationalization
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs) - Tailwind v4
-- [TypeScript Documentation](https://www.typescriptlang.org/docs)
-
-## Current Features
-
-✅ **Implemented**:
-- Multi-language support (English/Arabic with RTL)
-- Markdown-based story content management
-- PWA with offline support
-- Dark/Light theme toggle
-- Profile photos for stories
-- Story filtering and search
-- Responsive design
-- Static site generation
-- Service worker caching
-
-🚧 **Planned**:
-- Unit testing with Vitest
-- Code splitting optimization
-- Image optimization with next/image
-- Storybook documentation
-- Analytics integration
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
 ## Documentation
 
 For detailed project documentation, see:
 
-- [PROJECT_BLUEPRINT.md](docs/PROJECT_BLUEPRINT.md) - Original architecture guide
-- [NEXT_INTL_FIX_GUIDE.md](docs/NEXT_INTL_FIX_GUIDE.md) - Next.js 16 + next-intl setup guide
-- [SETUP_COMMAND_CENTER.md](docs/SETUP_COMMAND_CENTER.md) - Command Center setup guide
-- [COMMAND_CENTER_AUDIT.md](docs/COMMAND_CENTER_AUDIT.md) - Command Center audit and roadmap
+- [docs/](docs/) - Documentation directory (plans, audits, guides, tutorials)
+- [PROJECT_MAP.md](PROJECT_MAP.md) - High-level project overview
 - [AGENTS.md](AGENTS.md) - Agent guide with full project reference
+- [project-tracker.json](project-tracker.json) - Project management tracker

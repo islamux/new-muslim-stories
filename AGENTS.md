@@ -10,7 +10,7 @@ This repository hosts a Next.js 16 application for "New Muslim Stories", featuri
 
 ## 1. Build, Lint, and Test Commands
 
-**Package Manager:** `pnpm` (v10.28.0)
+**Package Manager:** `pnpm` (v11.2.2)
 
 | Command | Description |
 |---------|-------------|
@@ -18,11 +18,13 @@ This repository hosts a Next.js 16 application for "New Muslim Stories", featuri
 | `pnpm build` | Build the application for production |
 | `pnpm start` | Start the production server after building |
 | `pnpm lint` | Run ESLint to check for code quality and errors |
+| `pnpm _cc <command>` | Run Command Center CLI (e.g., `pnpm _cc get-project-status`) |
+| `pnpm format` | Format code with Prettier |
 
 **Testing:**
-- Testing is not currently configured in `package.json`.
-- If adding tests, use Jest as the runner (`@types/jest` is already a dev dependency).
-- Run specific test: `npx jest path/to/file.test.ts` (once configured).
+- Tests are not yet configured in `package.json`.
+- `@types/jest` is available as a dev dependency for type support.
+- Run specific test once configured: `npx jest path/to/file.test.ts`.
 
 ## 2. Code Style & Guidelines
 
@@ -113,22 +115,22 @@ The project includes a custom project management toolchain. All data lives in `p
 AI Agents (opencode, gemini-cli, etc.)
         │ MCP protocol
         ▼
-MCP Server (command-center-mcp/) ──► project-tracker.json ◄── TUI Dashboard (command-center-tui/)
-        │                                    ▲                         │
-        ▼                                    │                         ▼
-     CLI (`cc`)                    file watcher (chokidar)    keyboard interaction
+MCP Server (command-center/packages/mcp/) ──► project-tracker.json ◄── TUI Dashboard (command-center/packages/tui/)
+        │                                              ▲                         │
+        ▼                                              │                         ▼
+     CLI (`cc`)                               file watcher (chokidar)    keyboard interaction
 ```
 
-### MCP Server (`command-center-mcp/`)
+### MCP Server (`command-center/packages/mcp/`)
 
-- Build: `cd command-center-mcp && pnpm install && pnpm build`
+- Build: `cd command-center/packages/mcp && pnpm install && pnpm build`
 - Configured in `.mcp.json` at project root
 - 24 MCP tools available to AI agents (see tool list below)
 - Logs to `~/.command-center/logs/command-center.log`
 
 ### CLI (`cc`)
 
-Shell function configured in `~/dotfiles/bash/.bash_aliases`. Auto-detects project by walking up from cwd to find `command-center-mcp/`. Works from any project directory.
+Shell function configured in `~/dotfiles/bash/.bash_aliases`. Auto-detects project by walking up from cwd to find `command-center-mcp/` or `command-center/`. Works from any project directory.
 
 #### Read Commands
 
@@ -188,9 +190,9 @@ TODO ──► IN_PROGRESS ──► REVIEW ──► DONE
 All CLI commands are also available as MCP tools with `_` instead of `-`:
 `get_task_context`, `get_task_summary`, `get_project_status`, `get_milestone_overview`, `list_tasks`, `get_task_history`, `list_agents`, `get_activity_feed`, `start_task`, `complete_task`, `approve_task`, `reject_task`, `reset_task`, `block_task`, `unblock_task`, `update_task`, `log_action`, `enrich_task`, `add_milestone_note`, `set_milestone_dates`, `update_drift`, `create_milestone`, `add_milestone_task`, `register_agent`
 
-### TUI Dashboard (`command-center-tui/`)
+### TUI Dashboard (`command-center/packages/tui/`)
 
-Terminal UI dashboard for visualizing project status. Run: `ccui` or `cd command-center-tui && pnpm dev`
+Terminal UI dashboard for visualizing project status. Run: `ccui` or `cd command-center/packages/tui && pnpm dev`
 
 #### Global Keys
 
