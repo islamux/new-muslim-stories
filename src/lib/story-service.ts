@@ -1,4 +1,4 @@
-import type { StoryData } from './stories';
+import type { StoryData } from '@/types';
 import { parseStoryFile, getStoryFileNames, extractSlugAndLocale } from './story-parser';
 
 /**

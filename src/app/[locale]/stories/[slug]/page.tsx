@@ -1,10 +1,10 @@
 import type { Locale } from '@/types';
-import { getStoryData, getAllStorySlugs } from '@/lib/stories';
+import { StoryService } from '@/lib/story-service';
 import StoryContentDisplay from '@/components/StoryContentDisplay';
 
 // Generate static params for all stories
 export async function generateStaticParams() {
-  return getAllStorySlugs().map((entry) => entry.params);
+  return StoryService.getAllStorySlugs().map((entry) => entry.params);
 }
 
 // Story page component
@@ -14,6 +14,6 @@ export default async function StoryPage({
   params: Promise<{ slug: string; locale: Locale }>;
 }) {
   const { slug, locale } = await params;
-  const story = await getStoryData(slug, locale);
+  const story = await StoryService.getStoryData(slug, locale);
   return <StoryContentDisplay story={story} />;
 }

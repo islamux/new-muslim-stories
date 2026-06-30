@@ -6,7 +6,8 @@ dist/
 .env.local
 .vercel/
 .antigravitycli/
-/.github/
+/.github/agents/
+/.github/prompts/
 /.vscode/
 /.npmrc
 /.prettierrc
