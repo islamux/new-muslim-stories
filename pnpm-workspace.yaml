@@ -1,6 +1,5 @@
-packages:
-  - '.'
-  - 'command-center'
-  - 'command-center/packages/*'
-  - 'command-center-mcp'
-  - 'command-center-tui'
+allowBuilds:
+  '@parcel/watcher': set this to true or false
+  '@swc/core': set this to true or false
+  sharp: set this to true or false
+  unrs-resolver: set this to true or false
