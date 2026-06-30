@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint . --max-warnings=999",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css}\"",
     "optimize-images": "node scripts/optimize-images.mjs",
@@ -15,6 +15,7 @@
   "dependencies": {
     "@fontsource/inter": "^5.2.8",
     "@fontsource/montserrat": "^5.2.8",
+    "dompurify": "^3.4.11",
     "gray-matter": "^4.0.3",
     "next": "^16.0.10",
     "next-intl": "^4.1.0",
@@ -46,7 +47,8 @@
     "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "typescript-eslint": "^8.46.2"
+    "typescript-eslint": "^8.46.2",
+    "vitest": "^4.1.9"
   },
   "packageManager": "pnpm"
 }

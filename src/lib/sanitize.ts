@@ -1,10 +1,12 @@
-let dompurify: typeof import('dompurify') | null = null;
+import type { DOMPurify } from 'dompurify';
 
-async function getDOMPurify(): Promise<typeof import('dompurify')> {
-  if (!dompurify) {
-    dompurify = (await import('dompurify')).default;
+let purify: DOMPurify | null = null;
+
+async function getDOMPurify(): Promise<DOMPurify> {
+  if (!purify) {
+    purify = (await import('dompurify')).default;
   }
-  return dompurify;
+  return purify;
 }
 
 export async function sanitizeHtmlServer(html: string): Promise<string> {

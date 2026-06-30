@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import type { UseMultipleIntersectionObserver, RefItem } from '@/types/hook.types';
+import type { UseMultipleIntersectionObserver } from '@/types/hook.types';
 
 /**
  * Custom hook for observing multiple elements with intersection observer
