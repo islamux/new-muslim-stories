@@ -6,4 +6,3 @@ coverage
 pnpm-lock.yaml
 public/sw.js
 *.md
-project-tracker.json

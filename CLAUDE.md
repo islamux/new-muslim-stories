@@ -32,7 +32,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   - Story parsing: `src/lib/stories.ts`, `src/lib/story-parser.ts`, `src/lib/story-service.ts`
   - Stories directory: `src/stories/` (~69 stories x 2 languages)
 - **Styling**: Tailwind CSS v4 with `@tailwindcss/postcss`
-- **Animations**: Framer Motion and React Scroll Parallax (via `ParallaxProvider` in `ClientProviders.tsx`)
+- **Animations**: CSS transitions and Tailwind animations
 - **Themes**: Dark/Light mode support with `next-themes`
 - **Fonts**: Inter and Montserrat via `@fontsource`
 - **PWA**: Service worker, web manifest, install prompt
@@ -53,7 +53,7 @@ src/
 │   └── offline/              # PWA offline fallback page
 ├── components/               # React components
 │   ├── Button.tsx
-│   ├── ClientProviders.tsx   # NextIntl, Parallax, Theme providers
+│   ├── ClientProviders.tsx   # NextIntl, Theme providers
 │   ├── FeaturedStories.tsx
 │   ├── Footer.tsx
 │   ├── Header.tsx
@@ -136,7 +136,6 @@ interface StoryData {
 
 **Client Providers** (`src/components/ClientProviders.tsx`):
 - NextIntlClientProvider: i18n support
-- ParallaxProvider: Scroll-based animations
 - ThemeProvider: Dark/light mode toggle
 
 **ESLint Configuration**:
@@ -169,12 +168,4 @@ language: "en"  # or "ar"
 - Always use `pnpm` commands instead of `npm` or `yarn`
 - Lockfile: `pnpm-lock.yaml`
 
-## Command Center
 
-This project includes a Command Center for AI-assisted project management:
-- **MCP Server**: `command-center-mcp/` — 24 MCP tools for task/milestone/agent management
-- **TUI Dashboard**: `command-center-tui/` — Terminal UI (Node.js/blessed) with 4 views
-- **CLI**: `cc` shell function (auto-detects project from cwd)
-- **TUI**: `ccui` shell function (auto-detects project from cwd)
-- **Tracker**: `project-tracker.json` — single source of truth
-- See `docs/SETUP_COMMAND_CENTER.md` for setup in new projects

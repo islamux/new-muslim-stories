@@ -4,9 +4,5 @@ node_modules/
 dist/
 .env
 .env.local
-.project-tracker.json
-command-center/node_modules/
-command-center/packages/*/dist/
-.cc-backups/
 .vercel/
 .antigravitycli/

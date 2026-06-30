@@ -25,8 +25,7 @@ This web application, built with Next.js and TypeScript, focuses on showcasing s
     *   Details about the moment of conversion and reason for embracing Islam.
     *   Impactful quotes from them after embracing Islam.
 *   **Visual Effects:**
-    *   Parallax scrolling.
-    *   Framer Motion for animating elements on scroll.
+    *   Scroll-triggered animations.
     *   Calm color gradients (colors like light green, beige, gold, sky blue).
 
 ## ✨ Features
@@ -42,8 +41,7 @@ This web application, built with Next.js and TypeScript, focuses on showcasing s
 - "What's Next?" section (links to learn more about Islam)
 - Responsive design (mobile, tablet, desktop)
 - Static site generation
-- Parallax scrolling and Framer Motion animations
-- Command Center for AI-assisted project management (MCP server + TUI dashboard)
+- Scroll-triggered animations
 - Plausible Analytics integration
 
 🚧 **Planned**:
@@ -78,17 +76,12 @@ pnpm build     # Build for production
 pnpm start     # Start production server
 pnpm lint      # Run ESLint
 pnpm format    # Format code with Prettier
-pnpm _cc <cmd> # Run Command Center CLI (e.g., `pnpm _cc get-project-status`)
 ```
 
 ### Project Structure
 
 ```
 new-muslim-stories/
-├── command-center/        # Project management (MCP server + CLI + TUI dashboard)
-│   └── packages/
-│       ├── mcp/          # MCP server for AI agent coordination
-│       └── tui/          # Terminal UI dashboard (Node.js/blessed)
 ├── docs/                 # Documentation (plans, audits, guides)
 ├── messages/             # i18n translations (en.json, ar.json)
 ├── public/               # Static assets (photos, icons, manifest, sw.js)
@@ -122,10 +115,9 @@ new-muslim-stories/
 │   ├── i18n/             # Internationalization configuration
 │   │   ├── routing.ts, request.ts
 │   └── proxy.ts          # i18n middleware (Next.js 16 proxy)
-├── .mcp.json              # MCP server configuration
-├── project-tracker.json   # Command Center project tracking
 ├── PROJECT_MAP.md         # High-level project overview
-├── pnpm-workspace.yaml    # pnpm workspace config (command-center)
+├── next.config.mjs        # Next.js configuration
+├── postcss.config.mjs     # PostCSS configuration
 └── eslint.config.mjs      # ESLint flat config
 ```
 
@@ -182,4 +174,4 @@ For detailed project documentation, see:
 - [docs/](docs/) - Documentation directory (plans, audits, guides, tutorials)
 - [PROJECT_MAP.md](PROJECT_MAP.md) - High-level project overview
 - [AGENTS.md](AGENTS.md) - Agent guide with full project reference
-- [project-tracker.json](project-tracker.json) - Project management tracker
+- [CLAUDE.md](CLAUDE.md) - Agent instructions
