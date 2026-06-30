@@ -51,13 +51,14 @@ export default function StoryContentDisplay({ story }: StoryContentDisplayProps)
   return (
     <article className="bg-gray-50 dark:bg-gray-900 rounded-lg shadow-md p-8">
       {story.image && (
-        <StoryImage
-          src={story.image}
-          alt={story.firstName}
-          className="w-full h-64 mb-6 rounded-lg"
-          sizes="(max-width: 768px) 100vw, 768px"
-          priority
-        />
+        <div className="relative w-full h-64 mb-6 rounded-lg overflow-hidden">
+          <StoryImage
+            src={story.image}
+            alt={story.firstName}
+            sizes="(max-width: 768px) 100vw, 768px"
+            priority
+          />
+        </div>
       )}
       <div className="flex justify-between items-start">
         <ProfileHeader story={story} />
