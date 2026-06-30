@@ -1,8 +1,7 @@
-import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
+import PlausibleAnalytics from '@/components/PlausibleAnalytics';
 import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration';
 import './globals.css';
-
-const PlausibleAnalytics = dynamic(() => import('@/components/PlausibleAnalytics'), { ssr: false });
 
 export { metadata, viewport } from '@/lib/metadata';
 
@@ -20,7 +19,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
       </head>
       <body>
         {children}
-        <PlausibleAnalytics />
+        <Suspense fallback={null}>
+          <PlausibleAnalytics />
+        </Suspense>
         <ServiceWorkerRegistration />
       </body>
     </html>

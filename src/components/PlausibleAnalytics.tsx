@@ -29,7 +29,7 @@ function loadPlausibleScript(): void {
 
 export function trackEvent(eventName: string, props?: Record<string, string>): void {
   if (typeof window === 'undefined' || !window.plausible) return;
-  window.plausible(eventName, { props });
+  window.plausible(eventName, props ? { props } : undefined);
 }
 
 export default function PlausibleAnalytics(): null {
