@@ -1,4 +1,4 @@
-import { getSortedStoriesData } from '@/lib/stories';
+import { StoryService } from '@/lib/story-service';
 import HomePageClient from '@/components/HomePageClient';
 import { setRequestLocale } from 'next-intl/server';
 
@@ -8,7 +8,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   // Enable static rendering
   setRequestLocale(locale);
 
-  const stories = await getSortedStoriesData(locale);
+  const stories = await StoryService.getSortedStoriesData(locale);
 
   return <HomePageClient stories={stories} />;
 }

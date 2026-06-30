@@ -46,7 +46,8 @@ export default [
       ...next.configs.recommended.rules,
       ...jsxA11y.configs.recommended.rules,
       "react/no-unescaped-entities": "off",
-      "react/react-in-jsx-scope": "off"
+      "react/react-in-jsx-scope": "off",
+      "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
     },
   },
 ];
