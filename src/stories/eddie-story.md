@@ -5,7 +5,7 @@ image: "/images/stories/eddie-redzovic.webp"
 language: "en"
 firstName: "Eddie"
 age: null
-country: "USA"
+country: "United States"
 previousReligion: null
 profilePhoto: "/images/stories/eddie-redzovic.webp"
 featured: false

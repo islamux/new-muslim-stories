@@ -5,7 +5,7 @@ image: "/images/stories/yusuf-estes.webp"
 language: "en"
 firstName: "Yusuf Estes"
 age: null
-country: "USA"
+country: "United States"
 previousReligion: "Christianity"
 profilePhoto: "/images/stories/yusuf-estes.webp"
 featured: false

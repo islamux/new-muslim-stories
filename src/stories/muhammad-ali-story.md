@@ -6,7 +6,7 @@ image: "/images/stories/muhammad-ali.webp"
 language: "en"
 firstName: "Muhammad"
 age: 22
-country: "USA"
+country: "United States"
 previousReligion: "Christianity"
 profilePhoto: "/images/stories/muhammad-ali.webp"
 featured: false
