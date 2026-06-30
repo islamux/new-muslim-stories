@@ -74,7 +74,6 @@ export interface StoryOfTheDayProps {
 export interface StoryImageProps {
   src: string;
   alt: string;
-  className?: string;
   priority?: boolean;
   sizes?: string;
 }
