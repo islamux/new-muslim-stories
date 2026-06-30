@@ -8,7 +8,8 @@ import Section from '@/components/ui/Section';
 import StoryCard from '@/components/StoryCard';
 
 export default function FeaturedStories({ stories }: FeaturedStoriesProps) {
-  const t = useTranslations('Common');
+  const t = useTranslations('Index');
+  const commonT = useTranslations('Common');
   const [selectedCountry, setSelectedCountry] = useState<string>('');
 
   const countries = useMemo(() => {
@@ -34,7 +35,7 @@ export default function FeaturedStories({ stories }: FeaturedStoriesProps) {
         </h2>
         <div className="flex items-center gap-2">
           <label htmlFor="country-filter" className="text-sm text-gray-600 dark:text-gray-300">
-            {t('filterByCountry')}:
+            {commonT('filterByCountry')}:
           </label>
           <select
             id="country-filter"
@@ -42,7 +43,7 @@ export default function FeaturedStories({ stories }: FeaturedStoriesProps) {
             onChange={(e) => setSelectedCountry(e.target.value)}
             className="px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-coral-500"
           >
-            <option value="">{t('filterAll')}</option>
+            <option value="">{commonT('filterAll')}</option>
             {countries.map((country) => (
               <option key={country} value={country}>
                 {country}

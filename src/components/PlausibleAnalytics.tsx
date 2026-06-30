@@ -8,7 +8,10 @@ const DOMAIN = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN || '';
 
 declare global {
   interface Window {
-    plausible?: (event: string, data?: { props?: Record<string, string>; callback?: () => void }) => void;
+    plausible?: (
+      event: string,
+      data?: { props?: Record<string, string>; callback?: () => void },
+    ) => void;
   }
 }
 
@@ -21,7 +24,10 @@ function loadPlausibleScript(): void {
   script.src = `${PLAUSIBLE_URL}/js/script.js`;
   document.head.appendChild(script);
 
-  window.plausible = function q(event: string, data?: { props?: Record<string, string>; callback?: () => void }) {
+  window.plausible = function q(
+    event: string,
+    data?: { props?: Record<string, string>; callback?: () => void },
+  ) {
     (q as unknown as { q: unknown[] }).q = (q as unknown as { q: unknown[] }).q || [];
     (q as unknown as { q: unknown[] }).q.push([event, data]);
   };
@@ -43,9 +49,7 @@ export default function PlausibleAnalytics(): null {
   useEffect(() => {
     if (!DOMAIN || !pathname) return;
 
-    const url = searchParams?.size
-      ? `${pathname}?${searchParams.toString()}`
-      : pathname;
+    const url = searchParams?.size ? `${pathname}?${searchParams.toString()}` : pathname;
 
     trackEvent('pageview', { url });
   }, [pathname, searchParams]);

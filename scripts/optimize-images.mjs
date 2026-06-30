@@ -1,7 +1,7 @@
 import sharp from 'sharp';
 import fs from 'fs';
 import path from 'path';
-import { glob } from 'fs';
+
 
 const extensions = ['.png', '.jpg', '.jpeg'];
 const imageDirs = ['public/images', 'public/images/stories'];
@@ -34,7 +34,6 @@ for (const dir of imageDirs) {
     if (ext === '.png' || ext === '.jpg' || ext === '.jpeg') {
       // Convert to WebP
       const webpPath = path.join(dir, `${baseName}.webp`);
-      const newExt = path.extname(webpPath).toLowerCase();
       await pipeline.webp({ quality: webpQuality }).toFile(webpPath);
       const webpSize = fs.statSync(webpPath).size;
 

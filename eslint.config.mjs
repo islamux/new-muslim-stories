@@ -24,6 +24,7 @@ export default [
       globals: {
         ...globals.browser,
         ...globals.node,
+        ...globals.serviceworker,
       },
       parserOptions: {
         ecmaFeatures: {
@@ -36,7 +37,7 @@ export default [
     files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
   },
   {
-    ignores: ['.next/**', 'out/**', 'build/**', 'next-env.d.ts'],
+    ignores: ['.next/**', 'out/**', 'build/**', 'next-env.d.ts', 'public/sw.js', 'scripts/**'],
   },
   {
     rules: {

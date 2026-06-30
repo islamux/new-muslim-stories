@@ -1,19 +1,84 @@
 @import 'tailwindcss';
-@config "../../tailwind.config.ts";
+
+@theme {
+  --color-green-50: #f0fdf4;
+  --color-green-100: #dcfce7;
+  --color-green-200: #bbf7d0;
+  --color-green-300: #86efac;
+  --color-green-400: #4ade80;
+  --color-green-500: #22c55e;
+  --color-green-600: #16a34a;
+  --color-green-700: #15803d;
+  --color-green-800: #166534;
+  --color-green-900: #14532d;
+  --color-green-950: #0f3d22;
+  --color-beige-50: #fdfbf8;
+  --color-beige-100: #f8f5ef;
+  --color-beige-200: #f0eadf;
+  --color-beige-300: #e6dccb;
+  --color-beige-400: #dbcdaf;
+  --color-beige-500: #d0be93;
+  --color-beige-600: #b8a47a;
+  --color-beige-700: #a08b61;
+  --color-beige-800: #887249;
+  --color-beige-900: #705930;
+  --color-beige-950: #584018;
+  --color-gold-50: #fffbeb;
+  --color-gold-100: #fef3c7;
+  --color-gold-200: #fde68a;
+  --color-gold-300: #fcd34d;
+  --color-gold-400: #fbbf24;
+  --color-gold-500: #f59e0b;
+  --color-gold-600: #d97706;
+  --color-gold-700: #b45309;
+  --color-gold-800: #92400e;
+  --color-gold-900: #78350f;
+  --color-gold-950: #451a03;
+  --color-sky-50: #f0f9ff;
+  --color-sky-100: #e0f2fe;
+  --color-sky-200: #bae6fd;
+  --color-sky-300: #7dd3fc;
+  --color-sky-400: #38bdf8;
+  --color-sky-500: #0ea5e9;
+  --color-sky-600: #0284c7;
+  --color-sky-700: #0369a1;
+  --color-sky-800: #075985;
+  --color-sky-900: #0c4a6e;
+  --color-sky-950: #082f49;
+  --color-coral-50: #fff0ed;
+  --color-coral-100: #ffe0d9;
+  --color-coral-200: #ffc9bf;
+  --color-coral-300: #ffaf9f;
+  --color-coral-400: #ff8f7f;
+  --color-coral-500: #ff7060;
+  --color-coral-600: #e65a4b;
+  --color-coral-700: #cc4436;
+  --color-coral-800: #b32e22;
+  --color-coral-900: #99180d;
+  --color-coral-950: #800200;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-850: #18212f;
+  --color-gray-900: #111827;
+  --color-gray-950: #030712;
+  --font-sans: 'Inter', 'sans-serif';
+  --font-heading: 'Montserrat', 'sans-serif';
+}
 
 @import '@fontsource/inter';
 @import '@fontsource/montserrat';
 
 :root {
-  --foreground-rgb: 17, 24, 39; /* gray-900 */
-  --background-start-rgb: 249, 250, 251; /* gray-50 */
-  --background-end-rgb: 255, 255, 255; /* white */
-
-  /* New palette colors as CSS variables for potential use outside Tailwind */
-  --color-coral-500: 255, 112, 96;
-  --color-sky-500: 14, 165, 233;
-  --color-beige-500: 232, 206, 169;
-  --color-green-500: 34, 197, 94;
+  --foreground-rgb: 17, 24, 39;
+  --background-start-rgb: 249, 250, 251;
+  --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {

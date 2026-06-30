@@ -28,7 +28,7 @@ export class StoryService {
 
     try {
       return await parseStoryFile(fileName);
-    } catch (error) {
+    } catch {
       const fileNames = getStoryFileNames();
       const availableStories = fileNames.map((fileName) => fileName.replace('.md', ''));
       throw new Error(

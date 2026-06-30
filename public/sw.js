@@ -109,7 +109,7 @@ self.addEventListener('fetch', (event) => {
           }
 
           return networkResponse;
-        } catch (error) {
+        } catch {
           // Return offline page or error response
           return new Response('Content not available offline', {
             status: 503,
@@ -200,7 +200,7 @@ self.addEventListener('notificationclick', (event) => {
 
   if (event.action === 'explore') {
     event.waitUntil(
-      clients.openWindow('/en')
+      self.clients.openWindow('/en')
     );
   }
 });
