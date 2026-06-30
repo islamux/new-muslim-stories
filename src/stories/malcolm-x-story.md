@@ -6,7 +6,7 @@ image: "/images/stories/malcolm-x.webp"
 language: "en"
 firstName: "Malcolm"
 age: 39
-country: "USA"
+country: "United States"
 previousReligion: "Nation of Islam"
 profilePhoto: "/images/stories/malcolm-x.webp"
 featured: false
