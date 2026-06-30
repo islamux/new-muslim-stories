@@ -1,8 +1,0 @@
-node_modules
-.next
-dist
-build
-coverage
-pnpm-lock.yaml
-public/sw.js
-*.md

@@ -6,3 +6,8 @@ dist/
 .env.local
 .vercel/
 .antigravitycli/
+/.github/
+/.vscode/
+/.npmrc
+/.prettierrc
+/.prettierignore
