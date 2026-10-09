@@ -29,10 +29,7 @@ export default function StoryCard({ story }: StoryCardProps) {
         </div>
       )}
       <h3 className="mb-2 font-heading text-lg font-bold leading-snug text-ink">
-        <Link
-          href={storyHref}
-          className="hover:text-emerald-700 dark:hover:text-emerald-300"
-        >
+        <Link href={storyHref} className="hover:text-emerald-700 dark:hover:text-emerald-300">
           {story.title}
         </Link>
       </h3>

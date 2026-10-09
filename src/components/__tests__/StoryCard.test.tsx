@@ -11,7 +11,9 @@ vi.mock('next-intl', () => ({
 
 // Link and StoryImage need Next.js router/image context that jsdom lacks.
 vi.mock('@/navigation', () => ({
-  Link: ({ href, children }: { href: string; children: ReactNode }) => <a href={href}>{children}</a>,
+  Link: ({ href, children }: { href: string; children: ReactNode }) => (
+    <a href={href}>{children}</a>
+  ),
 }));
 
 vi.mock('@/components/ui/StoryImage', () => ({
